@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427202451) do
+ActiveRecord::Schema.define(:version => 20130427210859) do
 
   create_table "installs", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -35,7 +35,10 @@ ActiveRecord::Schema.define(:version => 20130427202451) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
   end
+
+  add_index "pins", ["user_id"], :name => "index_pins_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
