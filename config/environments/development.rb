@@ -34,4 +34,8 @@ Thetens::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # In production host should be updated to the actual host of your application
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
+
