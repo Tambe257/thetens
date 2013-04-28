@@ -1,5 +1,6 @@
-<h1><%= @user.name %></h1>
-
+<div class="profilepic">
+	<h1><%= image_tag @user.image(:small) %>     <%= @user.name %></h1>
+</div>
 <div id="pins">
   <%= render @pins %>
 </div>
