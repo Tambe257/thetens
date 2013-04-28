@@ -7,7 +7,7 @@ Thetens::Application.routes.draw do
 
   # devise_for :installs
 
-  root :to => 'pages#home'
+  root :to => 'pins#index'
 
   get 'about' => 'pages#about' 
 
