@@ -4,10 +4,7 @@
  	<strong><%= pin.artist %></strong>
  </p>
  <p class:"description">
- 	<strong><%= pin.album %></strong>
- </p>
- <p class:"description">
- 	<%= pin.description %>
+ 	<strong><%= pin.album %> - <%= pin.date %></strong>
  </p>
  <p>
  	<strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>

@@ -1,23 +1,25 @@
 <div class="row">
 		<div class="span6 offset3">
 			<div class="well">	
-				<%= image_tag @pin.image %>
-				<p>
-				  <%= @pin.artist %>
-				</p>
-				<p>
-				  <%= @pin.album %>
-				</p>
-				<p>
-				  <%= @pin.description %>
-				</p>
-				<p>
-				  <%= @pin.user.name %>
-				</p>
-				<% if current_user == @pin.user %>
-				<%= link_to 'Edit', edit_pin_path(@pin) %> |
-				<%= link_to 'Back', pins_path %>
-			<% end %>
+				<div class="boxshow">
+					<%= image_tag @pin.image(:medium) %>
+					<p>
+					  <strong><%= @pin.artist %></strong>
+					</p>
+					<p>
+					  <strong><%= @pin.album %> - <%= @pin.date %></strong>
+					</p>
+					<p>
+					  <%= @pin.description %>
+					</p>
+					<p>
+					  <%= @pin.user.name %>
+					</p>
+					<% if current_user == @pin.user %>
+						<%= link_to 'Edit', edit_pin_path(@pin) %> |
+						<%= link_to 'Back', pins_path %>
+					<% end %>
+				</div>
 			</div>
 		</div>	
 </div>
