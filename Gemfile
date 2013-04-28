@@ -8,6 +8,7 @@ gem "paperclip", "~> 3.0"
 gem 'aws-sdk'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
+gem "friendly_id", "~> 4.0.9"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

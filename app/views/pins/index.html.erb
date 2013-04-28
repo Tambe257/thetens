@@ -1,7 +1,7 @@
 <%= render 'pages/home' %>
 
 <div id="pins">
-  <%= render @pins %>
+  <%= render @pins.shuffle %>
 </div>  
 
 <%= will_paginate @pins %>

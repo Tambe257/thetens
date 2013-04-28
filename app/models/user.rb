@@ -15,4 +15,7 @@ class User < ActiveRecord::Base
 
   has_many :pins, :dependent => :destroy
   has_attached_file :image, styles: { small: "75x108>"}
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 end
