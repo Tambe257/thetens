@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130428134823) do
+ActiveRecord::Schema.define(:version => 20130428150646) do
 
   create_table "installs", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20130428134823) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "image_remote_url"
+    t.string   "artist"
   end
 
   add_index "pins", ["user_id"], :name => "index_pins_on_user_id"
