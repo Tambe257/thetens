@@ -13,8 +13,8 @@
 					  <%= @pin.description %>
 					</p>
 					<p>
-					  <%= @pin.user.name %>
-					</p>
+ 						<strong>Posted by <%= link_to @pin.user.name, @pin.user %></strong>
+ 					</p>
 					<% if current_user == @pin.user %>
 						<%= link_to 'Edit', edit_pin_path(@pin) %> |
 						<%= link_to 'Back', pins_path %>
