@@ -2,7 +2,6 @@
 	<h1><%= image_tag @user.image(:small) %>     <%= @user.name %></h1>
 </div>
 <div id="pins">
-  <%= render @pins %>
+  <%= render @pins = @pins.find(:all, [:date == '2012']) %>
 </div>
-
 <%= will_paginate @pins %>
