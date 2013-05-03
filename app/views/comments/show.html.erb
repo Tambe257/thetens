@@ -9,7 +9,10 @@
   <b>Body:</b>
   <%= @comment.body %>
 </p>
-
+<p>
+  <b>Posted by</b>
+  <%= @comment.author %>
+</p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>

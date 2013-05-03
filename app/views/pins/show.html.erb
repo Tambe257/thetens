@@ -26,15 +26,17 @@
 							<div id="comments">
 								<%= render :partial => @pin.comments %>
 							</div>
-							<%= simple_form_for [@pin, Comment.new]	do |f| %>
-								
-								<p>
-									<%= f.input :body, :label => "New Comment", as: :text, input_html: { rows: '3'} %>
-								</p>	
+							<% if user_signed_in? %>
+								<%= simple_form_for [@pin, Comment.new]	do |f| %>
+									
+									<p>
+										<%= f.input :body, :label => "New Comment", as: :text, input_html: { rows: '3'} %>
+										<%= f.input :author, as: :text, input_html: { rows: "1" }, label: "Posted by" %>
+									</p>	
 
-								<p><%= f.submit "Add Comment", class: "btn btn-primary" %></p>
-							<% end %>		
-					
+									<p><%= f.submit "Add Comment", class: "btn btn-primary" %></p>
+								<% end %>		
+							<% end %>
 				</div>
 			</div>
 		</div>	
