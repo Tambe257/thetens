@@ -9,9 +9,10 @@ body{
 
 @import 'bootstrap-responsive';
 
+
 .navbar-inner{
     @include box-shadow(none !important);
-    border: 0;
+    border: 1;
 }
 
 .footer{
@@ -24,7 +25,7 @@ body{
 
 .hero-unit {
     height: 400px;
-    width: 1050px;
+    width: auto;
     padding-top: 10px;
     padding-left: 15px;
     background-image: url(ttable.jpg);
@@ -44,6 +45,7 @@ body{
   border-radius: 5px;
   box-shadow: 1px 1px 10px #444;
   width: 214px;
+  background-color: #F5F5F5;
 }
 
 .box img {
@@ -67,4 +69,8 @@ body{
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+
+.comments p {
+  font-size: 5px;
 }

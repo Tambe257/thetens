@@ -13,9 +13,11 @@ Thetens::Application.routes.draw do
   devise_for :users
   match 'users/:id' => 'users#show', as: :user
 
+
   # devise_for :installs
 
   root :to => 'pins#index'
+
 
   get 'about' => 'pages#about' 
 

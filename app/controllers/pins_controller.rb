@@ -23,6 +23,7 @@ class PinsController < ApplicationController
       format.json { render json: @pin }
     end
   end
+ 
 
   # GET /pins/new
   # GET /pins/new.json
@@ -84,3 +85,4 @@ class PinsController < ApplicationController
     end
   end
 end
+
