@@ -1,7 +1,5 @@
 class CommentsController < ApplicationController
 
-  
-
   # POST /comments
   # POST /comments.json
   def create
@@ -16,6 +14,16 @@ class CommentsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to pins_url }
+      format.json { head :no_content }
     end
   end
 end
