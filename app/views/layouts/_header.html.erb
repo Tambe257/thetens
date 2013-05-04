@@ -17,6 +17,11 @@
                           <%= link_to 'About',  about_path %>
                       </li>
                   </ul>
+                  <form action="/pins" class="navbar-search pull-left" method="get">
+                    <input id="search" type="text" name="search" class="search-query" placeholder="Search">
+                    <%= image_submit_tag("search.png", :name => nil) %>
+                  
+                  </form>    
                   <ul class="nav pull-right">
                     <% if user_signed_in? %>
                       <li><%= link_to 'Add +',  new_pin_path %></li>

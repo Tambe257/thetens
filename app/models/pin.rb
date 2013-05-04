@@ -14,6 +14,14 @@ class Pin < ActiveRecord::Base
   belongs_to :user
   has_attached_file :image, styles: { medium: "320x240>"}
   has_many :comments, dependent: :destroy
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['description LIKE ?', "%#{search}%"])
+    else
+      find(:all, order: "created_at desc")
+    end
+  end      
   
   def image_remote_url=(url_value)
     self.image = URI.parse(url_value) unless url_value.blank?
