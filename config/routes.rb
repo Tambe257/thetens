@@ -5,16 +5,21 @@ Thetens::Application.routes.draw do
     resources :comments
   end  
 
-  get "users/show"
-
-
+  
   resources :pins
 
 
   devise_for :users
-  match 'users/:id' => 'users#show', as: :user
+  resources :users, only: [:show, :tens2011] do
+    member do
+      get :show
+      get :tens2011
+    end
+  end    
 
-
+  #match 'users/:id' => 'users#show', as: :user
+  
+  #match 'users/:id' => 'users#tens2011'
   # devise_for :installs
 
   root :to => 'pins#index'
