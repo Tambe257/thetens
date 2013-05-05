@@ -1,8 +1,11 @@
 <div class="profilepic">
 	<h1><%= image_tag @user.image(:small) %>     <%= @user.name %></h1>
 </div>
-<div>
-	<%= link_to '2011', tens2011_user_path(@user) %>
+<div class="tens">
+	<ul>
+		<li><strong><%= link_to '2011', tens2011_user_path(@user) %></strong></li>
+		<li><strong><%= link_to '2012', '#' %></strong></li>
+	</ul>	
 </div>	
 <div id="pins">
   <%= render @pins %>

@@ -1,5 +1,5 @@
 class Pin < ActiveRecord::Base
-  attr_accessible :description, :image, :image_remote_url, :artist, :album, :date
+  attr_accessible :description, :image, :image_remote_url, :artist, :album, :date, :rank
 
 
   validates :description, presence: true

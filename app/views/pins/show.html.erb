@@ -12,6 +12,9 @@
 					  <strong><%= @pin.album %> - <%= @pin.date %></strong>
 					</p>
 					<p>
+					  <strong><%= link_to @pin.user.name, @pin.user %> ranks this as their #<%= @pin.rank %> favorite album of the year</strong>
+					</p>
+					<p>
 					  <%= @pin.description %>
 					</p>
 					<p>

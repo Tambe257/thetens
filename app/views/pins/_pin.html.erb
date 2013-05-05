@@ -9,7 +9,11 @@
 	<p>
 		<strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
 	</p>	
-
+	<% if pin.rank.present? %>
+	<p>
+		<strong>Ranked #<%= pin.rank %> of <%= pin.date %></strong>
+	</p>
+	<% end %>
 	<% if current_user == pin.user %>
 	  <p>
 		  <%= link_to 'Edit', edit_pin_path(pin) %>

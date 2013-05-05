@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503021248) do
+ActiveRecord::Schema.define(:version => 20130505151026) do
 
   create_table "comments", :force => true do |t|
     t.integer  "pin_id"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20130503021248) do
     t.string   "artist"
     t.string   "album"
     t.integer  "date"
+    t.integer  "rank"
   end
 
   add_index "pins", ["user_id"], :name => "index_pins_on_user_id"
