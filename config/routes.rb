@@ -10,10 +10,13 @@ Thetens::Application.routes.draw do
 
 
   devise_for :users
-  resources :users, only: [:show, :tens2011] do
+  resources :users, only: [:show, :tens2010, :tens2011, :tens2013, :tens2012] do
     member do
       get :show
+      get :tens2010
       get :tens2011
+      get :tens2012
+      get :tens2013
     end
   end    
 

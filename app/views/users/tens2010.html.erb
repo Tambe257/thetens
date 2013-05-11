@@ -1,0 +1,7 @@
+<div class="profilepic">
+	<h1><%= image_tag @user.image(:small) %>     <%= @user.name %> - Top Ten of 2010</h1>
+</div>
+<div id="pins">
+  <%= render @pins.where(:date => '2010').order('rank DESC') %>
+</div>
+<%= will_paginate @pins %>

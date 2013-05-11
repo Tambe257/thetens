@@ -28,3 +28,4 @@ class Pin < ActiveRecord::Base
     super
   end
 end
+
