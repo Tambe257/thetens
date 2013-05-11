@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   def about
   end
 
-
+  def reviewers
+  	@users = User.all
+  end	
 
 end

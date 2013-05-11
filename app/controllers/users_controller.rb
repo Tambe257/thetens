@@ -11,31 +11,31 @@ class UsersController < ApplicationController
 
 	def tens2008
     @user = User.find(params[:id])
-    @pins = @user.pins.page(params[:page]).per_page(20)
+    @pins = @user.pins.page(params[:page]).per_page(50)
 	end
 
 	def tens2009
     @user = User.find(params[:id])
-    @pins = @user.pins.page(params[:page]).per_page(20)
+    @pins = @user.pins.page(params[:page]).per_page(50)
 	end
 
 	def tens2010
     @user = User.find(params[:id])
-    @pins = @user.pins.page(params[:page]).per_page(20)
+    @pins = @user.pins.page(params[:page]).per_page(50)
 	end
 
 	def tens2011
     @user = User.find(params[:id])
-    @pins = @user.pins.page(params[:page]).per_page(20)
+    @pins = @user.pins.page(params[:page]).per_page(50)
 	end
 
 	def tens2012
     @user = User.find(params[:id])
-    @pins = @user.pins.page(params[:page]).per_page(20)
+    @pins = @user.pins.page(params[:page]).per_page(50)
 	end
 
 	def tens2013
     @user = User.find(params[:id])
-    @pins = @user.pins.page(params[:page]).per_page(20)
+    @pins = @user.pins.page(params[:page]).per_page(50)
 	end
 end
