@@ -72,9 +72,22 @@ body{
   border-radius: 5px;
 }
 
+.smallpic {
+  height: 35px;
+  width: 35px;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
 .comments p {
   font-size: 5px;
 }
+
+.dropdown-menu li {
+  padding: 1px;
+ }
 
 .tens li {
   list-style-type: none;

@@ -7,20 +7,25 @@
 	<div class="tens">
 		<h3>Click To See The Tens year by year: </h3>
 		<ul>
-			<li><strong><%= link_to '2000', tens2000_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2001', tens2001_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2002', tens2002_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2003', tens2003_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2004', tens2004_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2005', tens2005_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2006', tens2006_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2007', tens2007_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2008', tens2008_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2009', tens2009_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2010', tens2010_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2011', tens2011_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2012', tens2012_user_path(@user), class: "btn btn-primary" %></strong></li>
-			<li><strong><%= link_to '2013', tens2013_user_path(@user), class: "btn btn-primary" %></strong></li>
+			<li class="dropdown">
+			<a href+"#" class="dropdown-toggle btn" data-toggle="dropdown">Year</a>
+
+			<ul class="dropdown-menu">
+				<li><strong><%= link_to '2000', tens2000_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2001', tens2001_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2002', tens2002_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2003', tens2003_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2004', tens2004_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2005', tens2005_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2006', tens2006_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2007', tens2007_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2008', tens2008_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2009', tens2009_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2010', tens2010_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2011', tens2011_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2012', tens2012_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+				<li><strong><%= link_to '2013', tens2013_user_path(@user), class: "btn btn-primary btn-small" %></strong></li>
+			</ul>	
 		</ul>	
 	</div>	
 </div>
