@@ -79,11 +79,16 @@ body{
 .tens li {
   list-style-type: none;
   display: inline;
-  padding: 5px;
-  
+  padding: 5px 5px 5px 5px;
 }
 
 .users li {
   list-style-type: none;
   padding: 5px;
+}
+
+.users img {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
