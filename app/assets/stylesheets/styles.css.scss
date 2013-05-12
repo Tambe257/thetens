@@ -87,6 +87,7 @@ body{
 
 .dropdown-menu ul li {
   padding: 1px;
+  width: 50px;
  }
 
 .tens li {
@@ -104,4 +105,9 @@ body{
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+
+.dropdown a {
+  display: inline-block;
+  width: 150px;
 }
