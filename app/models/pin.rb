@@ -1,5 +1,5 @@
 class Pin < ActiveRecord::Base
-  attr_accessible :description, :image, :image_remote_url, :artist, :album, :date, :rank
+  attr_accessible :description, :image, :image_remote_url, :artist, :album, :date, :rank, :video, :video_html
 
 
   validates :description, presence: true
@@ -10,6 +10,7 @@ class Pin < ActiveRecord::Base
   validates_attachment :image, presence: true,
   														 content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/gif', 'image/png'] },	
   														 size: { less_than: 5.megabytes }
+  has_many :videos
 
   belongs_to :user
   has_attached_file :image, styles: { medium: "320x240>"}
@@ -27,6 +28,14 @@ class Pin < ActiveRecord::Base
   def image_remote_url=(url_value)
     self.image = URI.parse(url_value) unless url_value.blank?
     super
+  end
+
+  auto_html_for :video do
+    html_escape
+    image
+    youtube(:width => 400, :height => 250)
+    link :target => "_blank", :rel => "nofollow"
+    simple_format
   end
 end
 

@@ -18,6 +18,8 @@
 					  <%= @pin.description %>
 					</p>
 					<p>
+						<%= link_to @pin.video_html, :class => 'youtube title_link' %> 
+					<p>
  						<strong>Posted by <%= link_to @pin.user.name, @pin.user %></strong>
  					</p>
 					<% if current_user == @pin.user %>
