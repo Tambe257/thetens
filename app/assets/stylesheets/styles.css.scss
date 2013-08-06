@@ -57,11 +57,17 @@ body{
 }
 
 .boxshow img {
-  margin-left: 130px;
+  max-width: 80%;
+  margin-left: 25%;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+
+.vid a {
+  text-align: center;
+}
+
 .description {
   margin: 10px 0 5px;
 }

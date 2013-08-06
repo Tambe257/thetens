@@ -1,11 +1,9 @@
 <div class="row">
-		<div class="span6 offset3">
+		<div class="span8 offset2">			
 			<div class="well">	
 				<div class="boxshow">
 					<%= image_tag @pin.image(:medium) %>
 					<p>
-
-						
 					  <strong><%= @pin.artist %></strong>
 					</p>
 					<p>
@@ -17,9 +15,9 @@
 					<p>
 					  <%= @pin.description %>
 					</p>
-					<p>
+					<div class="vid">
 						<%= link_to @pin.video_html, :class => 'youtube title_link' %> 
-					<p>
+					</div>
  						<strong>Posted by <%= link_to @pin.user.name, @pin.user %></strong>
  					</p>
 					<% if current_user == @pin.user %>
@@ -45,4 +43,5 @@
 				</div>
 			</div>
 		</div>	
+		
 </div>
