@@ -9,7 +9,21 @@ body{
 
 @import 'bootstrap-responsive';
 
-
+.stars, .stars0
+{
+   background: transparent url("stars.png") no-repeat top left;
+   width:100px;
+   height:20px;
+   float:left;
+   display:block;
+   margin: 0px;
+}
+.stars0 {background-position:-100px;}
+.stars1 {background-position:-80px;}
+.stars2 {background-position:-60px;}
+.stars3 {background-position:-40px;}
+.stars4 {background-position:-20px;}
+.stars5 {background-position: 0px;}
 .navbar-inner{
     @include box-shadow(none !important);
     border: 1;
@@ -45,7 +59,7 @@ body{
   border-radius: 5px;
   box-shadow: 1px 1px 10px #444;
   width: 214px;
-  height: 380px;
+  height: 420px;
   background-color: #F5F5F5;
 }
 

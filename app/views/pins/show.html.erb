@@ -14,6 +14,21 @@
 					</p>
 					<p>
 					  <%= @pin.description %>
+
+					  <% if @pin.rating == 1 %>
+					  	<div class="stars stars1"></div>
+					  <% elsif @pin.rating == 2 %>
+					  	<div class="stars stars2"></div>
+					  <% elsif @pin.rating == 3 %>
+					  	<div class="stars stars3"></div>	
+					  <% elsif @pin.rating == 4 %>
+					  	<div class="stars stars4"></div>
+					  <% elsif @pin.rating == 5 %>
+					  	<div class="stars stars5"></div>			
+					  <% else %>
+					  	<div class="stars stars0"></div>	
+					  <% end %>	
+					</br>
 					</p>
 					<div class="vid">
 						<%= link_to @pin.video_html, :class => 'youtube title_link' %> 

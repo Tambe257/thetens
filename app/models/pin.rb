@@ -1,5 +1,5 @@
 class Pin < ActiveRecord::Base
-  attr_accessible :description, :image, :image_remote_url, :artist, :album, :date, :rank, :video, :video_html
+  attr_accessible :description, :image, :image_remote_url, :artist, :album, :date, :rank, :video, :video_html, :rating
 
 
   validates :description, presence: true
@@ -7,6 +7,7 @@ class Pin < ActiveRecord::Base
   validates :artist, presence: true
   validates :album, presence: true
   validates :date, presence: true
+  validates :rating, presence: true
   validates_attachment :image, presence: true,
   														 content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/gif', 'image/png'] },	
   														 size: { less_than: 5.megabytes }

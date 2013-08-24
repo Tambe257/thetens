@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130525145235) do
+ActiveRecord::Schema.define(:version => 20130824192723) do
 
   create_table "comments", :force => true do |t|
     t.integer  "pin_id"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20130525145235) do
     t.integer  "rank"
     t.string   "video_html"
     t.string   "video"
+    t.integer  "rating"
   end
 
   add_index "pins", ["user_id"], :name => "index_pins_on_user_id"
