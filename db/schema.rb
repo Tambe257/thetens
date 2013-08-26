@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130824192723) do
+ActiveRecord::Schema.define(:version => 20130826172801) do
 
   create_table "comments", :force => true do |t|
     t.integer  "pin_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130824192723) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "author"
+    t.integer  "user_id"
   end
 
   add_index "comments", ["pin_id"], :name => "index_comments_on_pin_id"

@@ -31,7 +31,9 @@
 					</br>
 					</p>
 					<div class="vid">
-						<%= link_to @pin.video_html, :class => 'youtube title_link' %> 
+						<% unless @pin.video_html.blank? %>
+							<%= link_to @pin.video_html, :class => 'youtube title_link' %>
+						<% end %> 
 					</div>
  						<strong>Posted by <%= link_to @pin.user.name, @pin.user %></strong>
  					</p>
@@ -49,7 +51,6 @@
 									
 									<p>
 										<%= f.input :body, :label => "New Comment", as: :text, input_html: { rows: '3' } %>
-										<%= f.input :author, as: :text, input_html: { rows: "1" }, label: "Posted by" %>
 									</p>	
 
 									<p><%= f.submit "Add Comment", class: "btn btn-primary" %></p>

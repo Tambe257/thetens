@@ -1,10 +1,11 @@
 class CommentsController < ApplicationController
-
+  before_filter :authenticate_user!, except: [:index, :show]
   # POST /comments
   # POST /comments.json
   def create
     @pin = Pin.find(params[:pin_id])
     @comment = @pin.comments.create(params[:comment])
+    @comment.user = current_user
 
     respond_to do |format|
       if @comment.save
