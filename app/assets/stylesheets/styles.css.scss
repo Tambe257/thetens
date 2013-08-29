@@ -29,6 +29,10 @@ body{
     border: 1;
 }
 
+.social_logo {
+  padding-top: 20px;
+}
+
 .footer{
     margin-top: 50px;
     color: $grayLight;
@@ -101,8 +105,29 @@ body{
   border-radius: 5px;
 }
 
+.smallpic_nav img {
+  height: 30px;
+  width: 30px;
+  padding: 0px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.smallpic_comment {
+  height: 35px;
+  width: 35px;
+  padding: 3px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
 .comments p {
   font-size: 5px;
+}
+
+.comments img {
+  margin-left: 0%;
 }
 
 .dropdown-menu ul li {

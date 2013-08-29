@@ -56,6 +56,15 @@
 									<p><%= f.submit "Add Comment", class: "btn btn-primary" %></p>
 								<% end %>		
 							<% end %>
+					<a class="social_logo" href="/images/FB_logo.png" 
+						onclick="
+						window.open(
+						'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+						'facebook-share-dialog', 
+						'width=626,height=436'); 
+						return false;">
+						<%= image_submit_tag("FB_logo.png", :name => nil) %>
+					</a>		
 				</div>
 			</div>
 		</div>	
