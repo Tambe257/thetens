@@ -27,6 +27,8 @@ Thetens::Application.routes.draw do
       get :tens2011
       get :tens2012
       get :tens2013
+      get :tens5star
+      get :tensnum1s
     end
   end    
 

@@ -73,4 +73,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @pins = @user.pins.page(params[:page]).per_page(50)
 	end
+
+	def tens5star
+    @user = User.find(params[:id])
+    @pins = @user.pins.page(params[:page]).per_page(50)
+	end
+	
+	def tensnum1s
+    @user = User.find(params[:id])
+    @pins = @user.pins.page(params[:page]).per_page(50)
+	end
 end
