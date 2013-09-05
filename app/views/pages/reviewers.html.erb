@@ -3,6 +3,7 @@
   <tbody>
 	  <tr>
 	   <tr>
+	    <th></th>
 	    <th>Reviewer:</th>
 	    <th>Words Of Wisdom:</th>
 	    <th>Twitter:</th>
@@ -12,9 +13,13 @@
 	   </tr>	
 	    <% @users.each do |user| %>
 	    	<td>
-	      	<%= link_to (image_tag user.image(:small)), user %> <%= link_to user.name, user %>
+	      	<%= link_to (image_tag user.image(:small)), user %>
 	    	</td>
 	    	
+	    	<td>
+	      	<%= link_to user.name, user %>
+	    	</td>
+
 	    	<td id="status">
 	    		<% if user.status.present? %>
 	      	  <%= user.status %>

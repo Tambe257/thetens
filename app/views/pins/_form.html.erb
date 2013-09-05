@@ -4,14 +4,14 @@
 	  <%= f.full_error :image_content_type, class: "alert alert-error" %>
 
     <%= f.input :image, label: "Upload an image" %>
-    <%= f.input :image_remote_url, label: "Or enter a url" %>
-    <%= f.input :artist, as: :text, input_html: { rows: "1" }, label: "Artist" %>
-    <%= f.input :album, as: :text, input_html: { rows: "2" }, label: "Album Title" %>
-    <%= f.input :date, as: :text, input_html: { rows: "1" }, label: "Release Year" %>
-    <%= f.input :rank, as: :text, input_html: { rows: "1" }, label: "Rank" %>
-    <%= f.input :description, as: :text, input_html: { rows: "3" }, label: "Review" %>
-    <%= f.input :video, label: "Enter a Youtube Link" %>
+    <%= f.input :image_remote_url, input_html: { rows: "3", :class => "span6" }, :hint => "Find an image of the album cover on Google Images, copy the image url, and paste it here", label: "Or enter a url" %>
+    <%= f.input :artist, as: :text, input_html: { rows: "1", :class => "span6" }, label: "Artist" %>
+    <%= f.input :album, as: :text, input_html: { rows: "2", :class => "span6" }, label: "Album Title" %>
+    <%= f.input :date, as: :text, input_html: { rows: "1", :class => "span1" }, label: "Release Year" %>
+    <%= f.input :rank, as: :text, input_html: { rows: "1", :class => "span1" }, :hint => "(Enter the number that you rank this album for the year)", label: "Rank" %>
+    <%= f.input :video, input_html: { rows: "1", :class => "span6" }, :hint => "Enter a Youtube url of a performance from this album, or your own video review", label: "Enter a Youtube Link" %>
     <%= f.input :rating, collection: 0..5, label: "Rate From 0 To 5 Stars: " %>
+    <%= f.input :description, as: :text, input_html: { rows: "5", :class => "span6" }, label: "Review" %>
     
     
   <div class="form-actions">
