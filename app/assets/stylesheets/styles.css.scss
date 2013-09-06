@@ -31,14 +31,24 @@ body{
     font-size: 125%;
 }
 
+.navbar-search {
+  padding-right: 5px;
+}
+
 .social_logo {
   padding-right: 5px;
   float: left;
 }
 
+.social_logo_nav {
+  padding-right: 15px;
+  padding-top: 5px;
+  float: left;
+}
+
 .twitter-share-button {
   padding-left: 5px;
-  padding-top: 0px;
+  padding-top: 10px;
 }
 .footer{
     margin-top: 50px;
