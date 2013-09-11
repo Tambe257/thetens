@@ -1,5 +1,9 @@
 Thetens::Application.routes.draw do
-  resources :comments
+  resources :comments do
+    resources :pins
+    resources :users
+  end  
+
   resources :pins do
 
     resources :comments
@@ -43,6 +47,8 @@ Thetens::Application.routes.draw do
   get 'about' => 'pages#about' 
 
   get 'reviewers' => 'pages#reviewers'
+
+  get 'comments_board' => 'pages#comments_board'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

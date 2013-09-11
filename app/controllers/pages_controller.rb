@@ -9,4 +9,7 @@ class PagesController < ApplicationController
   	@users = User.all
   end	
 
+  def comments_board
+  	@comments = Comment.all
+  end
 end
