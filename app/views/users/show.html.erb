@@ -41,6 +41,6 @@
 	</div>
 </div>
 <div id="pins">
-  <%= render @pins %>
+  <%= render @pins.order("created_at DESC") %>
 </div>
 <%= will_paginate @pins %>
