@@ -1,16 +1,24 @@
 <h1>Comment Board:</h1>
-<table class="table-striped table-bordered table-condensed table-hover">
+<table class="table-striped table-bordered table-condensed table-hover comment_board">
   <tbody>
 	  <tr>
 	   <tr>
+	    <th></th>	    
+	    <th>Album - Artist</th>
 	    <th>Click On The Comment Below To Go To The Review:</th>
-	    <th>Comment By:</th>
+	    <th>Commenter:</th>
 	    <th>Reviewer:</th>
-	    <th>Album:</th>
-	    <th>Artist:</th>
 	    <th>Posted:</th>
 	   </tr>	
 	    <% @comments.reverse.each do |comment| %>
+	    	<td>
+	      	<%= image_tag comment.pin.image %>
+	    	</td>
+	    	
+	    	<td>
+	      	<%= comment.pin.album %> - <%= comment.pin.artist %>
+	    	</td>
+
 	    	<td>
 	      	<%= link_to (comment.body), comment.pin %>
 	    	</td>
@@ -23,13 +31,7 @@
 	      	<%= link_to (image_tag comment.pin.user.image(:small)), comment.pin.user %>
 	    	</td>
 
-	    	<td>
-	      	<%= comment.pin.album %>
-	    	</td>
 	    	
-	    	<td>
-	      	<%= comment.pin.artist %>
-	    	</td>
 
 	    	<td>
 	      	<%= time_ago_in_words(comment.created_at) %> ago</br>
