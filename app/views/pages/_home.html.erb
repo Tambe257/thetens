@@ -1,6 +1,10 @@
 <% if user_signed_in? %>
-	<h4>Click The Album Below To See The Review</h4>
+<h4>Here are the 5 most recent reviews!</h4>
+<div id="pins">
+  <%= render @pins[0, 5] %>
+</div> 
 
+<h4>Scroll down to browse the review library...</h4>
 <% else %>
 
 <div class="center hero-unit">
