@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
-<h4>Here are the 5 most recent reviews!</h4>
+<h4>Here are the newest reviews!</h4>
 <div id="pins">
-  <%= render @pins[0, 5] %>
+  <%= render @pins[0, 10] %>
 </div> 
 
 <h4>Scroll down to browse the review library...</h4>
