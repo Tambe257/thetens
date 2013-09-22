@@ -119,6 +119,8 @@ body{
 }
 
 .profilepic img {
+  height: 100px;
+  width: 100px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -162,7 +164,7 @@ body{
   width: 60px;
 }
 .comment_board td {
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .dropdown-menu ul li {
