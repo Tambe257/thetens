@@ -1,7 +1,10 @@
 <div class="span4">
 	<div class="profilepic">	
-		<h1><%= image_tag @user.image(:small) %>     <%= @user.name %></h1>
+		<%= image_tag @user.image(:small) %>
 	</div>
+	<div>
+		    <h2><%= @user.name %></h2>
+	</div>	    
 </div>
 
 <div class="row">
