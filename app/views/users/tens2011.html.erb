@@ -3,6 +3,6 @@
 </div>
 
 <div id="pins">
-  <%= render @pins.where(:date => '2011').order('rank DESC') %>
+  <%= render @pins.where(:year => '2011').order('rank DESC') %>
 </div>
 <%= will_paginate @pins %>

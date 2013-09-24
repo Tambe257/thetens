@@ -4,7 +4,7 @@
 		<strong><h6><%= pin.album %><h6></strong>
 	</p>
 	<p class="description">
-		<strong><h6><%= pin.artist %> - <%= pin.date %><h6></strong>
+		<strong><h6><%= pin.artist %> - <%= pin.year %><h6></strong>
 	
 	</p>
 	<p>	  
@@ -28,7 +28,7 @@
 	</p>	
 	<% if pin.rank.present? %>
 	<p>
-		<strong><h5>Ranked #<%= pin.rank %> of <%= pin.date %></h5></strong>
+		<strong><h5>Ranked #<%= pin.rank %> of <%= pin.year %></h5></strong>
 	</p>
 	<% end %>
 	<% if current_user == pin.user %>

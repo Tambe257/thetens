@@ -2,6 +2,6 @@
 	<h1><%= link_to (image_tag @user.image(:small)), @user %>     <%= @user.name %> - Top Ten of 2006</h1>
 </div>
 <div id="pins"> 
-	<%= render @pins.where(:date => '2006').order('rank DESC') %>
+	<%= render @pins.where(:year => '2006').order('rank DESC') %>
 </div>
 <%= will_paginate @pins %>
