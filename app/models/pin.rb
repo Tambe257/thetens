@@ -6,7 +6,6 @@ class Pin < ActiveRecord::Base
   validates :user_id, presence: true
   validates :artist, presence: true
   validates :album, presence: true
-  validates :date, presence: true
   validates :year, presence: true
   validates :rating, presence: true
   validates_attachment :image, presence: true,
