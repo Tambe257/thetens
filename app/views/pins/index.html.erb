@@ -1,8 +1,12 @@
 <%= render 'pages/home' %>
 
+<h4>Browse the newest reviews!</h4>
+
 <div id="pins">
-  <%= render @pins.shuffle %>
+  <%= render @pins %>
 </div>  
+
+</br>
 
 <%= will_paginate @pins %>
 

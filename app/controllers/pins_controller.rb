@@ -5,11 +5,11 @@ class PinsController < ApplicationController
   # GET /pins.json
   def index
     @pins = Pin.search(params[:search])
-    @pins = @pins.paginate(:page => params[:page], :per_page => 20)
+    @pins = @pins.paginate(:page => params[:page], :per_page => 50)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @pins }
-      format.js
+      # format.js
     end
   end
 
