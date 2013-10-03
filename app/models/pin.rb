@@ -38,5 +38,10 @@ class Pin < ActiveRecord::Base
     link :target => "_blank", :rel => "nofollow"
     simple_format
   end
+
+  def to_param
+    "#{id} #{album}".parameterize
+  end
+
 end
 
