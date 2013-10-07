@@ -1,4 +1,4 @@
-<h1>Comment Board:</h1>
+<div class="comment_title"><h1>Comment Board</h1></div>
 <table class="table-striped  table-condensed table-hover comment_board">
   <tbody>
 	  <tr>
@@ -10,7 +10,7 @@
 	    <th>Reviewer:</th>
 	    <th>Posted:</th>
 	   </tr>	
-	    <% @comments.reverse.take(50).each do |comment| %>
+	    <% @comments.reverse.take(30).each do |comment| %>
 	    	<td>
 	      	<%= image_tag comment.pin.image %>
 	    	</td>
