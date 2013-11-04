@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130924011600) do
+ActiveRecord::Schema.define(:version => 20131104175944) do
 
   create_table "comments", :force => true do |t|
     t.integer  "pin_id"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20130924011600) do
     t.integer  "rank"
     t.string   "video_html"
     t.string   "video"
-    t.integer  "rating"
+    t.string   "rating"
     t.string   "year"
   end
 
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20130924011600) do
     t.string   "twitter"
     t.string   "lastfm"
     t.string   "status"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

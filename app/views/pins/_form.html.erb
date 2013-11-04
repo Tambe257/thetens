@@ -9,7 +9,7 @@
     <%= f.input :year, as: :text, input_html: { rows: "1", :class => "span1" }, label: "Release Year" %>
     <%= f.input :rank, as: :text, input_html: { rows: "1", :class => "span1" }, :hint => "(Enter the number that you rank this album for the year)", label: "Rank" %>
     <%= f.input :video, input_html: { rows: "1", :class => "span6" }, :hint => "Enter a Youtube url of a performance from this album, or your own video review", label: "Enter a Youtube Link" %>
-    <%= f.input :rating, collection: 0..5, label: "Rate From 0 To 5 Stars: " %>
+    <%= f.input :rating, collection: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5], label: "Rate From 0 To 5 Stars: " %>
     <%= f.input :description, as: :text, input_html: { rows: "5", :class => "span6" }, label: "Review" %>
     
     

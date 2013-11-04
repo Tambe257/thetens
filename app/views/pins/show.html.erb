@@ -16,19 +16,28 @@
 					</p>
 					<p>
 					  <%= @pin.description %>
-
-					  <% if @pin.rating == 1 %>
-					  	<div class="stars stars1"></div>
-					  <% elsif @pin.rating == 2 %>
-					  	<div class="stars stars2"></div>
-					  <% elsif @pin.rating == 3 %>
-					  	<div class="stars stars3"></div>	
-					  <% elsif @pin.rating == 4 %>
-					  	<div class="stars stars4"></div>
-					  <% elsif @pin.rating == 5 %>
-					  	<div class="stars stars5"></div>			
+					</p>
+					<p>  
+					  <% if @pin.rating == "1" %>
+					  	<span class="rating r1"></span>
+					  <% elsif @pin.rating == "1.5" %>
+					  	<span class="rating r15"></span>	
+					  <% elsif @pin.rating == "2" %>
+					  	<span class="rating r2"></span>
+					  <% elsif @pin.rating == "2.5" %>
+					  	<span class="rating r25"></span>	
+					  <% elsif @pin.rating == "3" %>
+					  	<span class="rating r3"></span>
+					  <% elsif @pin.rating == "3.5" %>
+					  	<span class="rating r35"></span>		
+					  <% elsif @pin.rating == "4" %>
+					  	<span class="rating r4"></span>
+					  <% elsif @pin.rating == "4.5" %>
+					  	<span class="rating r45"></span>	
+					  <% elsif @pin.rating == "5" %>
+					  	<span class="rating r5"></span>			
 					  <% else %>
-					  	<div class="stars stars0"></div>	
+					  	<span class="rating r0"></span>	
 					  <% end %>	
 					</br>
 					</p>
