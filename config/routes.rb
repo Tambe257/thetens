@@ -50,6 +50,8 @@ Thetens::Application.routes.draw do
 
   get 'comments_board' => 'pages#comments_board'
 
+  get 'tens2013' => 'pages#tens2013'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

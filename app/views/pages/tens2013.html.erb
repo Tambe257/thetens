@@ -1,0 +1,18 @@
+<div class="tens_page">
+	<h2>Your Top Ten Lists of 2013!</h2>
+	<% @users.each do |user| %>
+		<div class="tens_lists well span6">
+		<div class="reviewer"><%= link_to (image_tag user.image(:medium)), user %></div> <h3><%= user.name %></h3>
+		
+			<% user.pins.order('rank DESC').each do |pin| %>
+				<% if pin.date == 2013 %>
+				<ul class="list">   
+				  <li><%= link_to (image_tag pin.image(:medium)), pin %> <h4>#<%= pin.rank %> -  <%= pin.album %> - <%= pin.artist %> - </h4>
+				  </li>  	
+		  	</ul>
+		  <% end %>
+		<% end %>   	
+		</div>
+	<% end %>	  
+ 	
+</div>	

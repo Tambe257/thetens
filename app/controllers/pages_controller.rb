@@ -12,4 +12,10 @@ class PagesController < ApplicationController
   def comments_board
   	@comments = Comment.all
   end
+
+  def tens2013
+    @users = User.includes(:pins).where('pins.date=?', '2013')
+    @pins = Pin.all
+  end
+  
 end
