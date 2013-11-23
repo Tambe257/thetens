@@ -14,7 +14,7 @@ class PagesController < ApplicationController
   end
 
   def tens2013
-    @users = User.includes(:pins).where('pins.date=?', '2013')
+    @users = User.includes(:pins).where('pins.year=?', '2013')
     @pins = Pin.all
   end
   
