@@ -7,7 +7,7 @@
 				<% user.pins.order('rank DESC').each do |pin| %>
 					<% if (pin.year == '2013') && (pin.rank.present?) %>
 						<ul class="list">   
-				 			<li><%= link_to (image_tag pin.image(:medium)), pin %> <h4>#<%= pin.rank %> -  <%= pin.album %> - <%= pin.artist %> - </h4>
+				 			<li><%= link_to (image_tag pin.image(:medium)), pin %> <h4>#<%= pin.rank %> -  <%= pin.album %><br/> - <%= pin.artist %> - </h4>
 				  		</li>  	
 		  			</ul>
 		  		<% end %>
