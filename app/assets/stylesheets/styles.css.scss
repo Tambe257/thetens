@@ -102,6 +102,9 @@ span.r5 {background-position: 0 0;}
   text-align: center;
   margin-bottom: 100px;
 }
+.reviewer_board {
+  padding-bottom: 36px;
+}
 .tens_list li {
   list-style-type: none;
   display: inline;
@@ -112,7 +115,23 @@ span.r5 {background-position: 0 0;}
   text-align: center;
 
 }
-
+.ver2 {
+  height: auto;
+  font-weight: bold;
+  text-align: center;
+  background-color: #B9B9B7;
+}
+.ver2 li {
+  list-style: none;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  clear: left;
+}
+.ver2 img {
+  height: 100px;
+  width: 100px;
+}
 .twitter-share-button {
   padding-left: 5px;
   padding-top: 0px;
@@ -124,7 +143,13 @@ span.r5 {background-position: 0 0;}
   float: right;
   position: absolute;
 }
-
+.tens2013 {
+  padding-bottom: 36px;
+}
+.tens2013 h1 {
+  font-weight: bold;
+  text-align: center;
+}
 .tens_lists {
   width: 500px;
   padding-bottom: 100px;
@@ -136,7 +161,6 @@ span.r5 {background-position: 0 0;}
   text-align: center;
 }
 .reviewer img {
-  height: 150px;
   -webkit-border-radius: 500px;
   border-top-left-radius: 500px;
   border-top-right-radius: 500px;
@@ -259,6 +283,9 @@ span.r5 {background-position: 0 0;}
 
 .comments img {
   margin-left: 0%;
+}
+.comment_board {
+  padding-bottom: 36px;
 }
 .comment_board img {
   height: 60px;
