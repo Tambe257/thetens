@@ -3,6 +3,10 @@ class PagesController < ApplicationController
   end
 
   def about
+    @pins_total = Pin.count
+    @users_total = User.count
+    @pins = Pin.all
+
   end
 
   def reviewers

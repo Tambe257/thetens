@@ -31,6 +31,8 @@ class Pin < ActiveRecord::Base
     super
   end
 
+
+
   auto_html_for :video do
     html_escape
     image
