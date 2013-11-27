@@ -43,5 +43,8 @@ class Pin < ActiveRecord::Base
     "#{id} #{album}".parameterize
   end
 
+  def self.find_for_user(pin_id, user)
+    user.admin? ? find(pin_id) : user.pins.find(pin_id)
+  end
 end
 

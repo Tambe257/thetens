@@ -39,10 +39,12 @@
 		<strong><h5>Ranked #<%= pin.rank %> of <%= pin.year %></h5></strong>
 	</p>
 	<% end %>
-	<% if current_user == pin.user %>
-	  <p>
-		  <%= link_to 'Edit', edit_pin_path(pin) %>
-		  <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %>
-	  </p>
-	<% end %> 
+	<% if user_signed_in? %>
+		<% if current_user == pin.user || current_user.admin? %>
+		  <p>
+			  <%= link_to 'Edit', edit_pin_path(pin) %>
+			  <%= link_to content_tag(:i, "", class:"icon-trash"), pin, method: :delete, data: { confirm: 'Are you sure?' } %>
+		  </p>
+		<% end %> 
+	<% end %>	
 </div>	
