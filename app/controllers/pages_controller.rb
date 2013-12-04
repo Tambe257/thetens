@@ -6,6 +6,9 @@ class PagesController < ApplicationController
     @pins_total = Pin.count
     @users_total = User.count
     @pins = Pin.all
+    @popular_artist = Pin.count(:all, :group => 'artist', :order => 'count(*) DESC').first
+    @popular_album = Pin.count(:all, :group => 'album', :order => 'count(*) DESC').first
+    @five_stars = Pin.count(:all, :group => 'rating', :order => 'count(*) DESC').first
 
   end
 

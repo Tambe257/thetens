@@ -48,7 +48,8 @@
 					</div>
  						<strong>Posted by <%= link_to @pin.user.name, @pin.user %></strong>
  					</p>
-					<% if current_user == @pin.user %>
+					
+					<% if current_user == @pin.user || current_user.admin? %>
 						<%= link_to 'Edit', edit_pin_path(@pin) %> |
 					<% end %>	
 						<%= link_to 'Back', pins_path %>

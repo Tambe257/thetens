@@ -7,5 +7,16 @@
 	<p>
 		Total reviewers: <%= @users_total %>
 	</p>
-<%= @hash %>
+
+	<p>
+		<h3>The most reviewed artist on the site: <%= @popular_artist[0] %> (<%= @popular_artist[1] %> reviews)</h3> 
+	</p>
+
+	<p>
+		<h3>The most reviewed album on the site: <%= @popular_album[0] %> (<%= @popular_album[1] %> reviews)</h3> 
+	</p>
+
+	<p>
+		<h3>Number of 5 star reviews on the site: <%= @five_stars[0] %></h3> 
+	</p>
 </div>

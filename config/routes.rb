@@ -43,7 +43,6 @@ Thetens::Application.routes.draw do
 
   root :to => 'pins#index'
 
-
   get 'about' => 'pages#about' 
 
   get 'reviewers' => 'pages#reviewers'
