@@ -7,6 +7,8 @@ class CommentsController < ApplicationController
     @comment = @pin.comments.create(params[:comment])
     @comment.user = current_user
 
+    MyMailer.comment_email(@pin.user).deliver
+
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @pin, notice: 'Comment was successfully created.' }

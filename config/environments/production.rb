@@ -68,6 +68,16 @@ Thetens::Application.configure do
   # In production host should be updated to the actual host of your application
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    #domain:               'thetens.us',
+    user_name:            'tambe257@gmail.com',
+    password:             'Vogonz257',
+    authentication:       'plain',
+    enable_starttls_auto: true  }
+
   # Configuring Amazon S3 for Paperclip uploads
   config.paperclip_defaults = {
     :storage => :s3,

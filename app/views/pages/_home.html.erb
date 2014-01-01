@@ -1,5 +1,7 @@
 <% if user_signed_in? %>
 	
+	<h3 class="tens_link"><%= link_to 'Click here to see theTens of 2013!', tens2013_path %></h3>
+
 <% else %>
 
 	<div class="center hero-unit">
@@ -12,4 +14,5 @@
 		</p>
 	</div>
 
+	<h3 class="tens_link"><%= link_to 'Click here to see theTens of 2013!', tens2013_path %></h3>
 <% end %>

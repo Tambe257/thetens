@@ -10,6 +10,9 @@ body{
 
 @import 'bootstrap-responsive';
 
+.tens_link {
+  text-align: center;
+}
 .stars, .stars0
 {
    background: transparent url("stars.png") no-repeat top left;
@@ -47,7 +50,9 @@ span.r4 {background-position: -23px 0;}
 span.r45{background-position: -23px 21px;}
 span.r5 {background-position: 0 0;}
 
-
+.dropdown {
+  height: 50px;
+}
 .navbar-inner{
     @include box-shadow(none !important);
     border: 1;
@@ -356,11 +361,11 @@ table {
   text-decoration: underline;
 }
 
-.about_pin {
+.stats_pin {
   margin-bottom: 50px;
 }
 
-.about_title {
+.stats_title {
   text-align: center;
   text-decoration: underline;
 

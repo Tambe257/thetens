@@ -1,7 +1,7 @@
 <div class="box">
 	<%= link_to (image_tag pin.image(:medium)), pin %>
 	<p class="description">
-		<strong><h6><%= pin.album %><h6></strong>
+		<strong><h6><%= truncate(pin.album, length: 50) %><h6></strong>
 	</p>
 	<p class="description">
 		<strong><h6><%= pin.artist %> - <%= pin.year %><h6></strong>

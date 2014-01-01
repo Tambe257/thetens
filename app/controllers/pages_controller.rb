@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def about
+  def stats
     @pins_total = Pin.count
     @users_total = User.count
     @pins = Pin.all

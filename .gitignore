@@ -25,3 +25,5 @@ doc/
 
 # Ignore sampleimages
 /sampleimages
+
+/config/initializers/app_env_vars.rb
