@@ -14,7 +14,7 @@ class PagesController < ApplicationController
     @week = Pin.where('created_at >= ?', 1.week.ago.utc).count
     @user_week_count = User.joins(:pins).where('pins.created_at >= ?', 1.week.ago.utc).count(:all, :group => 'name', :order => 'count(*) DESC').first
     @user_week = User.joins(:pins).group('users.id').where('pins.created_at >= ?', 1.week.ago.utc).order('count(pins.id) desc').limit(1).first
-    @ave_rating = Pin.average('rating')
+    #@ave_rating = Pin.average('rating')
     @rating_count = Pin.count(:all, :group => 'rating', :order => 'count(*) DESC').first
   end
 
