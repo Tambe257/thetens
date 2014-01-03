@@ -177,6 +177,15 @@ span.r5 {background-position: 0 0;}
   -moz-border-radius: 500px;
   zoom: 1;
 }
+.reviewer_stats img {
+  -webkit-border-radius: 500px;
+  border-top-left-radius: 500px;
+  border-top-right-radius: 500px;
+  border-bottom-right-radius: 500px;
+  border-bottom-left-radius: 500px;
+  -moz-border-radius: 500px;
+  zoom: 1;
+}
 .footer{
   position: fixed;
     bottom: 0pt;
@@ -368,7 +377,10 @@ table {
 .stats_title {
   text-align: center;
   text-decoration: underline;
+}
 
+#stats {
+  margin-bottom: 50px;
 }
 
 #status {

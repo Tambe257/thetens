@@ -1,1 +1,7 @@
-<h1>Welcome to theTens!</h1>
+<h1>Welcome to theTens <%= @user.name %>!</h1>
+
+<p>We're psyched to have you on board. This site is all about sharing what music you're listening to and discovering what others are too. Post reviews often, then rank them to add to the top ten list page at the end of each year.<p>
+
+<h2>Click "+add" after you sign in to start posting your reviews!</h2>
+
+<h2>Head over to the comment page to see what people are talking about too! <%= link_to 'theComments', 'http://thetens.us/comments_board' %></h2>

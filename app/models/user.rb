@@ -17,6 +17,12 @@ class User < ActiveRecord::Base
   has_attached_file :image, styles: { small: "75x108>"}
   has_many :comments
 
+  after_create :send_admin_mail
+  
+  def send_admin_mail
+    MyMailer.welcome_email(self).deliver
+  end
+
   extend FriendlyId
   friendly_id :name, use: :slugged
 end
