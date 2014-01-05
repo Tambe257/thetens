@@ -9,7 +9,7 @@
 			<%= render Pin.last %>
 		</div>
 	</div>	
-		<div class="span8">
+		<div id="stats_content"class="span8">
 
 		<p>
 			<h3 class="reviewer_stats">Top reviewer of the week is <%= @user_week.name %> <%= image_tag @user_week.image(:small) %>
@@ -73,6 +73,7 @@
 
 		<p>
 			<h3><%= link_to image_tag("twitter29x29.png"), "http://www.twitter.com/thetensreviews", :target => "_blank" %> - Follow us on Twitter</h3>
+			<br/>
 		</p>
 	</div>
 </div>

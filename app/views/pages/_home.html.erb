@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 	
-	<h3 class="tens_link"><%= link_to 'Click here to see theTens of 2013!', tens2013_path %></h3>
+	<h3 class="tens_link"><%= link_to image_tag('starburst-2013.png'), tens2013_path %></h3>
 
 <% else %>
 
@@ -12,7 +12,8 @@
 		<p>
 	  	<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
 		</p>
+		
 	</div>
 
-	<h3 class="tens_link"><%= link_to 'Click here to see theTens of 2013!', tens2013_path %></h3>
+	<div class="tens_starburst"><%= link_to image_tag('starburst-2013.png'), tens2013_path %></div>
 <% end %>

@@ -294,6 +294,10 @@ span.r5 {background-position: 0 0;}
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+
+.dropdown_menu {
+ width: 115px;
+}
 .comments p {
   font-size: 5px;
 }
@@ -379,7 +383,14 @@ table {
   text-decoration: underline;
 }
 
+.tens_starburst {
+  text-align: center;
+}
 #stats {
+  margin-bottom: 50px;
+}
+
+#stats_content {
   margin-bottom: 50px;
 }
 
