@@ -5,11 +5,11 @@
 		  <tr>
 		   <tr>
 		    <th></th>	    
-		    <th>Album - Artist</th>
-		    <th>Click On The Comment Below To Go To The Review:</th>
-		    <th>Commenter:</th>
-		    <th>Reviewer:</th>
-		    <th>Posted:</th>
+		    <th><h4>Album - Artist</h4></th>
+		    <th><h4>Click On The Comment Below:</h4></th>
+		    <th><h4>Commenter:</h4></th>
+		    <th><h4>Reviewer:</h4></th>
+		    <th><h4>Posted:</h4></th>
 		   </tr>	
 		    <% @comments.reverse.take(30).each do |comment| %>
 		    	<td>
@@ -17,11 +17,11 @@
 		    	</td>
 		    	
 		    	<td>
-		      	<%= comment.pin.album %> - <%= comment.pin.artist %>
+		      	<h4><%= comment.pin.album %> - <%= comment.pin.artist %></h4>
 		    	</td>
 
 		    	<td>
-		      	<%= link_to truncate(comment.body, length: 50), comment.pin %>
+		      	<h4><%= link_to truncate(comment.body, length: 50), comment.pin %></h4>
 		    	</td>
 
 		    	<td>

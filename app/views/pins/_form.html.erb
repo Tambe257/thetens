@@ -1,19 +1,35 @@
-<%= simple_form_for(@pin, html: { class: "form-horizontal"}) do |f| %>
+<div class="panel-body">
+  <%= simple_form_for(@pin, html: { class: "form-horizontal"}) do |f| %>
 	  <%= f.error_notification %>
 	  <%= f.full_error :image_file_size, class: "alert alert-error" %>
 	  <%= f.full_error :image_content_type, class: "alert alert-error" %>
-
-    <%= f.input :image, label: "Upload an image" %>
-    <%= f.input :artist, as: :text, input_html: { rows: "1", :class => "span6" }, label: "Artist" %>
-    <%= f.input :album, as: :text, input_html: { rows: "2", :class => "span6" }, label: "Album Title" %>
-    <%= f.input :year, as: :text, input_html: { rows: "1", :class => "span1" }, label: "Release Year" %>
-    <%= f.input :rank, as: :text, input_html: { rows: "1", :class => "span1" }, :hint => "(Enter the number that you rank this album for the year)", label: "Rank" %>
-    <%= f.input :video, input_html: { rows: "1", :class => "span6" }, :hint => "Enter a Youtube url of a performance from this album, or your own video review", label: "Enter a Youtube Link" %>
-    <%= f.input :rating, collection: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5], label: "Rate From 0 To 5 Stars: " %>
-    <%= f.input :description, as: :text, input_html: { rows: "5", :class => "span6" }, label: "Review" %>
-    
-    
-  <div class="form-actions">
+    <div class="form-group">    
+      <%= f.input :image, label: "Upload an image" %>
+    </div>
+    <div class="form-group"> 
+      <%= f.input :artist, as: :text, input_html: { rows: "1", :class => "form-control" }, label: "Artist" %>
+    </div>
+    <div class="form-group"> 
+      <%= f.input :album, as: :text, input_html: { rows: "2", :class => "form-control" }, label: "Album Title" %>
+    </div>
+    <div class="form-group"> 
+      <%= f.input :year, as: :text, input_html: { rows: "1", :class => "form-control" }, label: "Release Year" %>
+    </div>
+    <div class="form-group"> 
+      <%= f.input :rank, as: :text, input_html: { rows: "1", :class => "form-control" }, :hint => "(Enter the number that you rank this album for the year)", label: "Rank" %>
+    </div>
+    <div class="form-group"> 
+      <%= f.input :video, input_html: { rows: "1", :class => "form-control" }, :hint => "Enter a Youtube url of a performance from this album, or your own video review", label: "Enter a Youtube Link" %>
+    </div>
+    <div class="form-group"> 
+      <%= f.input :rating, collection: [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5], label: "Rate From 0 To 5 Stars: " %>
+    </div>
+    <div class="form-group"> 
+      <%= f.input :description, as: :text, input_html: { rows: "5", :class => "form-control" }, label: "Review" %>
+    </div>
+   
     <%= f.button :submit, "Post Review", class: "btn btn-primary" %>
-  </div>
-<% end %>
+  <% end %>
+</div>
+
+

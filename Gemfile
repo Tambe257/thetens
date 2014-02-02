@@ -1,42 +1,53 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
-gem 'rails', '3.2.12'
+gem 'rails', '4.0.2'
+gem 'sass-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'devise'
+gem 'turbolinks'
+gem 'jquery-turbolinks'
+gem 'jbuilder', '~> 2.0.2'
+gem 'bootstrap-sass', '~> 3.1.0.0'
+gem 'twitter-bootstrap-rails'
+gem 'devise', '~> 3.2.2'
 gem 'simple_form'
 gem "paperclip", "~> 3.0"
-gem 'aws-sdk'
-gem 'will_paginate', '3.0.3'
-gem 'bootstrap-will_paginate', '0.0.6'
-gem "friendly_id", "~> 4.0.9"
-gem 'faker', '1.1.2'
+gem 'aws-sdk', '~> 1.32.0'
+gem 'will_paginate', '3.0.5'
+gem 'will_paginate-bootstrap'
+gem "friendly_id", "~> 5.0.2"
+gem 'faker', '1.2.0'
 gem 'auto_html'
+gem 'protected_attributes'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :production do
 	gem 'pg'
+	gem 'rails_12factor'
 end
 
 group :development, :test do	
   gem 'sqlite3'
 end
 
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'bootstrap-sass', '~> 2.2.2.0'
+
+  
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
-  gem 'uglifier', '>= 1.0.3'
-end
-
-gem 'jquery-rails'
+ 
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

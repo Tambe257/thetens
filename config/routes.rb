@@ -51,6 +51,12 @@ Thetens::Application.routes.draw do
 
   get 'tens2013' => 'pages#tens2013'
 
+  get 'tens2012' => 'pages#tens2012'
+
+  get 'five_star' => 'pages#five_star'
+
+  get 'number_ones' => 'pages#number_ones'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

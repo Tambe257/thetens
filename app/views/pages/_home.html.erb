@@ -1,10 +1,6 @@
-<% if user_signed_in? %>
-	
-	<h3 class="tens_link"><%= link_to image_tag('starburst-2013.png'), tens2013_path %></h3>
+<% if user_signed_in? == false %>
 
-<% else %>
-
-	<div class="center hero-unit">
+	<div class="center jumbotron">
 		<h1>Welcome to theTens!</h1>
 		<p>
 	 	 Where Your Opinion Matters
@@ -12,8 +8,7 @@
 		<p>
 	  	<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
 		</p>
-		
+		<%= link_to content_tag(:i, "", class:"icon-home"), root_path %>
 	</div>
 
-	<div class="tens_starburst"><%= link_to image_tag('starburst-2013.png'), tens2013_path %></div>
 <% end %>

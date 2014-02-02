@@ -1,79 +1,105 @@
-<div id="stats">
-	<div class="stats_title">
-		<h1>All About theTens</h1>
-		<br/>
-	</div>	
-	<div class="stats_pin span3">
-		<h4>The most recent review posted:</h4>
-		<div id="pins">
-			<%= render Pin.last %>
-		</div>
-	</div>	
-		<div id="stats_content"class="span8">
+<div class="container stats_container">
+	<div class="row">
 
-		<p>
-			<h3 class="reviewer_stats">Top reviewer of the week is <%= @user_week.name %> <%= image_tag @user_week.image(:small) %>
-			</h3>
-
-				<h3>This week <%= @user_week.name %> posted <%= @user_week_count[1] %> reviews!</h3> 
-		</p>
-			
-		<p>
-			<h3>Total reviews posted to the site: <%= @pins_total %></h3>
-		</p>
-
-		<p>
-			<h3>Total reviewers: <%= @users_total %></h3>
-		</p>
-
-		<p>
-			<h3>The most reviewed artist: <%= @popular_artist[0] %> (<%= @popular_artist[1] %> reviews)</h3> 
-		</p>
-
-		<p>
-			<h3>The most reviewed album: <%= @popular_album[0] %> (<%= @popular_album[1] %> reviews)</h3> 
-		</p>
-
-		<p>
-			<h3>Number of 5 star reviews: <%= @five_stars %></h3> 
-		</p>
-
-		<p>
-			<h3>Album most ranked as #1: <%= @no_1_album[0] %> (<%= @no_1_album[1] %> reviews)</h3> 
-		</p>
-
-		<p>
-			<h3>Most reviews have been given   
-		
-			<% if @rating_count[0] == "1" %>
-							  	<span class="rating r1"></span>
-							  <% elsif @rating_count[0] == "1.5" %>
-							  	<span class="rating r15"></span>	
-							  <% elsif @rating_count[0] == "2" %>
-							  	<span class="rating r2"></span>
-							  <% elsif @rating_count[0] == "2.5" %>
-							  	<span class="rating r25"></span>	
-							  <% elsif @rating_count[0] == "3" %>
-							  	<span class="rating r3"></span>
-							  <% elsif @rating_count[0] == "3.5" %>
-							  	<span class="rating r35"></span>		
-							  <% elsif @rating_count[0] == "4" %>
-							  	<span class="rating r4"></span>
-							  <% elsif @rating_count[0] == "4.5" %>
-							  	<span class="rating r45"></span>	
-							  <% elsif @rating_count[0] == "5" %>
-							  	<span class="rating r5"></span>			
-							  <% else %>
-							  	<span class="rating r0"></span>	
-			<% end %>
-		</h3>
-		<p>
-			<h3><%= link_to image_tag("FB_logo.png"), "https://www.facebook.com/pages/The-Tens/271346382911804", :target => "_blank" %> - Follow us on facebook</h3>
-		</p>
-
-		<p>
-			<h3><%= link_to image_tag("twitter29x29.png"), "http://www.twitter.com/thetensreviews", :target => "_blank" %> - Follow us on Twitter</h3>
+		<div class="stats_title">
+			<h1>All About theTens</h1>
 			<br/>
-		</p>
-	</div>
-</div>
+		</div>	
+		<div class="stats_pin col-xs-3">
+			<h4>The most recent review posted:</h4>
+			<div id="pins">
+				<%= render Pin.last %>
+			</div>
+		</div>	
+			<div id="stats_content"class="col-xs-9">
+		<div class="panel panel-default stats_panel">			
+			<div class="panel-heading">
+				<p>
+					<h3 class="reviewer_stats">Top reviewer of the week is <%= @user_week.name %> <%= image_tag @user_week.image(:small) %>
+					</h3>
+
+					<h3>This week <%= @user_week.name %> posted <%= @user_week_count[1] %> reviews!</h3> 
+				</p>
+			</div> <!-- panel heading -->	
+			<div class="panel-body">
+				<p>
+					<h3>Total reviews posted to the site: <%= @pins_total %></h3>
+				</p>
+
+				<p>
+					<h3>Total reviewers: <%= @users_total %></h3>
+				</p>
+
+				<p>
+					<h3>The most reviewed artist: <%= @popular_artist[0] %> (<%= @popular_artist[1] %> reviews)</h3> 
+				</p>
+
+				<p>
+					<h3>The most reviewed album: <%= @popular_album[0] %> (<%= @popular_album[1] %> reviews)</h3> 
+				</p>
+
+				<p>
+					<h3>Number of 5 star reviews: <%= @five_stars %></h3> 
+				</p>
+
+				<p>
+					<h3><%= link_to 'Click To See All 5 Star Reviews!', five_star_path %></h3>
+				</p>
+
+				<p>
+					<h3>Album most ranked as #1: <%= @no_1_album[0] %> (<%= @no_1_album[1] %> reviews)</h3> 
+				</p>
+
+				<p>
+					<h3><%= link_to 'Click To See All #1 Reviews!', number_ones_path %></h3>
+				</p>
+
+				<p>
+					<h3>Most reviews have been given   
+				
+					<% if @rating_count[0] == "1" %>
+									  	<span class="rating r1"></span>
+									  <% elsif @rating_count[0] == "1.5" %>
+									  	<span class="rating r15"></span>	
+									  <% elsif @rating_count[0] == "2" %>
+									  	<span class="rating r2"></span>
+									  <% elsif @rating_count[0] == "2.5" %>
+									  	<span class="rating r25"></span>	
+									  <% elsif @rating_count[0] == "3" %>
+									  	<span class="rating r3"></span>
+									  <% elsif @rating_count[0] == "3.5" %>
+									  	<span class="rating r35"></span>		
+									  <% elsif @rating_count[0] == "4" %>
+									  	<span class="rating r4"></span>
+									  <% elsif @rating_count[0] == "4.5" %>
+									  	<span class="rating r45"></span>	
+									  <% elsif @rating_count[0] == "5" %>
+									  	<span class="rating r5"></span>			
+									  <% else %>
+									  	<span class="rating r0"></span>	
+					<% end %>
+				</h3>
+				<p>
+					<h3><%= link_to image_tag("FB_logo.png"), "https://www.facebook.com/pages/The-Tens/271346382911804", :target => "_blank" %> - Follow us on facebook</h3>
+				</p>
+
+				<p>
+					<h3><%= link_to image_tag("twitter29x29.png"), "http://www.twitter.com/thetensreviews", :target => "_blank" %> - Follow us on Twitter</h3>
+					<br/>
+				</p>
+			</div>
+		</div> <!-- panel-body -->	
+	</div> <!-- panel -->
+	</div> <!-- row -->
+	<div class="row">
+		<div class="panel panel-default stats_tens">
+			<div class="panel-heading">
+				<h2>theTens Pages:</h2>
+			</div>
+			<div class="panel-body">
+				<div class="tens_starburst_stats"><%= link_to image_tag('starburst-2012 medium.png'), tens2012_path %></div>
+				<div class="tens_starburst_stats"><%= link_to image_tag('starburst-2013 medium.png'), tens2013_path %></div>
+			</div>
+		</div>	
+	</div>		
+</div><!-- container -->	

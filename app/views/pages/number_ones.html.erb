@@ -1,0 +1,7 @@
+<div class="page_container">
+	<div class="number_ones_title"><h2>All #1 Reviews!</h2></div>
+
+	<div id="pins">
+	  <%= render @pins.where(:rank => 1) %>
+	</div>
+</div>

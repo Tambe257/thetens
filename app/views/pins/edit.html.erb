@@ -1,6 +1,15 @@
-<h1>Edit Review</h1>
+<div class="form_page">
+	<div class="panel panel-default form_page">
+		<div class="panel-heading form_heading">
+			<h1>Edit Review</h1>
+		</div>	
+		<div class="panel-body">	
+			<%= render 'form' %>
+		</div>	
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @pin %> |
-<%= link_to 'Back', pins_path %>
+		<div class="panel-footer">
+			<%= link_to 'Show', @pin %> |
+			<%= link_to 'Back', pins_path %>
+		</div>	
+	</div>
+</div>	
