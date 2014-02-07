@@ -1,0 +1,32 @@
+<div class="blog_container">
+  <div class="blog_title">
+    <h1>theBlog</h1>
+    <br/>
+  </div>
+  <div>
+    <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
+  </div>  
+    <div class="col-lg-8">
+      <% @posts.each do |post| %>
+        <hr>
+        <h1><%= post.title %></h1>
+        <p class="lead blog_pic">by <%= link_to post.user.name, post.user %> | <%= image_tag post.user.image(:small) %></p>
+        
+                  
+                  <hr>
+                  <%= link_to (image_tag post.image(:medium)), post %>
+                  <hr>
+                  <p><%= simple_format post.body %></p>
+
+                  <br/>
+          <p><%= link_to 'Show', post %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+          <i class="fa fa-clock-o"></i> <%= post.created_at.strftime("%m/%d/%Y") %></p>
+                  <hr>  
+      <% end %>
+    </div>  
+  <br>
+
+</div>

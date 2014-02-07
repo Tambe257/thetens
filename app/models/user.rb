@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
   
   has_many :comments
 
+  has_many :posts
+
   after_create :send_admin_mail
   
   def send_admin_mail

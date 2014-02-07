@@ -1,4 +1,6 @@
 Thetens::Application.routes.draw do
+  resources :posts
+
   resources :comments do
     resources :pins
     resources :users
@@ -56,6 +58,8 @@ Thetens::Application.routes.draw do
   get 'five_star' => 'pages#five_star'
 
   get 'number_ones' => 'pages#number_ones'
+
+  get 'blog' => 'posts#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

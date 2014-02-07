@@ -353,6 +353,21 @@ text-align: center;
   border-radius: 5px;
 }
 
+.blog_pic img {
+  height: 45px;
+  width: 45px;
+  -webkit-border-radius: 500px;
+  border-top-left-radius: 500px;
+  border-top-right-radius: 500px;
+  border-bottom-right-radius: 500px;
+  border-bottom-left-radius: 500px;
+  -moz-border-radius: 500px;
+}
+
+.blog_container {
+  margin-bottom: 125px;
+}
+
 .dropdown_menu {
  width: 115px;
 }
@@ -458,6 +473,10 @@ table {
 .stats_title {
   text-align: center;
   text-decoration: underline;
+}
+
+.blog_title {
+  text-align: center;
 }
 
 .stats_panel {
