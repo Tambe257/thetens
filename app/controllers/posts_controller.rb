@@ -1,11 +1,19 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  require 'will_paginate/array'
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all(:order => 'created_at DESC')
+    @posts = Post.searchblog(params[:search])
+    @posts = @posts.paginate(:page => params[:page], :per_page => 2)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+      # format.js
+    end
   end
 
   # GET /posts/1
