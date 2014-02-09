@@ -150,6 +150,10 @@ text-align: center;
   padding-bottom: 36px;
 }
 
+.reviewer_board a:visited {
+  color: #428bca;
+}
+
 .reviewer_stats img {
   margin-left: 10px;
 }
@@ -641,6 +645,10 @@ table {
 .page_container {
   margin-bottom: 50px;
 }
+
+#pins a:visited {
+  color: #428bca;
+}
 #search_form{
   display: inline-block;
 }
@@ -659,6 +667,10 @@ table {
 
 #ones td {
   text-align: center;
+}
+
+#ones a:visited {
+  color: white;
 }
 
 #timestamp {
