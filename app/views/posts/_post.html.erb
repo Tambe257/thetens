@@ -1,0 +1,23 @@
+<h1><%= post.title %></h1>
+          <p class="lead blog_pic">by <%= link_to post.user.name, post.user %> | <%= image_tag post.user.image(:small) %></p>
+
+          <hr>
+          <div class="blogimages">
+            <% if post.image.present? %>
+              <%= image_tag post.image %>
+            <% end %>  
+            <% unless post.video_html.blank? %>
+              <%= link_to post.video_html, :class => 'youtube title_link' %>
+            <% end %> 
+          </div>    
+          <hr>
+                    
+          <p><%= simple_format post.body %></p>
+
+          <br/>
+            <p><%= link_to 'Show', post %>
+              <%= link_to 'Edit', edit_post_path(post) %>
+              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+            <i class="fa fa-clock-o"></i> <%= post.created_at.strftime("%m/%d/%Y") %></p>
+                    <hr>  

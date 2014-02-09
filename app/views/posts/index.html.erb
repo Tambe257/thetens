@@ -7,35 +7,47 @@
     <div>
       <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
     </div>        
-      <div class="col-lg-8 blog_posts">
+      <div class="col-lg-8">
         <% @posts.each do |post| %>
           <hr>
-          <h1><%= post.title %></h1>
-          <p class="lead blog_pic">by <%= link_to post.user.name, post.user %> | <%= image_tag post.user.image(:small) %></p>
-          
-                    
-                    <hr>
-                    <%= link_to (image_tag post.image(:medium)), post %>
-                    <hr>
-                    <p><%= simple_format post.body %></p>
+          <div class="blog_posts">
+            <h1><%= link_to post.title, post %></h1>
+            <p class="lead blog_pic">by <%= link_to post.user.name, post.user %> | <%= image_tag post.user.image(:small) %></p>
 
-                    <br/>
-            <p><%= link_to 'Show', post %>
-              <%= link_to 'Edit', edit_post_path(post) %>
-              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <hr>
+            <div class="blogimages">
+              <% if post.image.present? %>
+                <%= image_tag post.image %>
+              <% end %>  
+              <% unless post.video_html.blank? %>
+                <%= link_to post.video_html, :class => 'youtube title_link' %>
+              <% end %> 
+            </div>    
+            <br style="clear:both" />
+            <hr>
+              
+            <p><%= simple_format truncate(post.body, length: 250) %></p><%= link_to 'Read More', post, class: "btn btn-primary" %></p>
 
-            <i class="fa fa-clock-o"></i> <%= post.created_at.strftime("%m/%d/%Y") %></p>
-                    <hr>  
+            <br/>
+              <p><%= link_to 'Show', post %> | 
+                <%= link_to 'Edit', edit_post_path(post) %> |
+                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+              <i class="fa fa-clock-o"></i> Posted on <%= post.created_at.strftime("%m/%d/%Y") %>
+              </p>
+            <hr>  
+          </div>    
         <% end %>
-        <%= will_paginate @posts %>
+        <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
         <p style="text-align:left;"><a href="#">Back To The Top</a></p>
       </div> <!-- blog_posts--> 
+      
       <div class="col-lg-4">
                 <div class="well blog_search">
                   <h4>Blog Search</h4>
                     <form class="navbar-form" role="search">
                       <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" name="searchblog" id="searchblog">
+                        <input type="text" class="form-control" placeholder="Search" name="search" id="search">
                           <div class="input-group-btn">
                             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                           </div>
@@ -43,20 +55,32 @@
                     </form> <!-- search -->        
                 </div>
                 <!-- /well -->
-                <div class="well">
-                    <h4>Recent Posts</h4>
-                    <div class="row">
-                        
-                    </div>
+                <div class="well recent_posts">
+                  <h4>Recent Posts</h4>
+                  <div class="row">
+                      <div class="row">
+                      <div class="col-lg-10">
+                          <ul class="list-unstyled">
+                          <!--    <li>1 - <%= link_to truncate(@recent_posts[0].title, length: 35), @recent_posts[0] %>
+                              </li>
+                              <li>2 - <%= link_to truncate(@recent_posts[1].title, length: 35), @recent_posts[1] %>
+                              </li>
+                              <li>3 - <%= link_to truncate(@recent_posts[2].title, length: 35), @recent_posts[2] %>
+                              </li>
+                              <li>4 - <%= link_to truncate(@recent_posts[3].title, length: 35), @recent_posts[3] %>
+                              </li> -->
+                          </ul>
+                      </div>
+                    </div>  
+                  </div>
                 </div>
                 <!-- /well -->
                 <div class="well">
-                    <h4>Side Widget Well</h4>
-                    <p>Bootstrap's default well's work great for side widgets! What is a widget anyways...?</p>
+                    <h4>About theBlog</h4>
+                    <p>This blog is your free space to use for all sorts of things. Review a single track that you heard. Post a list of your favorite music videos of all time. Comment on other reviewer's top ten lists. Anything!</p>
                 </div>
                 <!-- /well -->
             </div>
         </div>
   </div>
-
 </div>  

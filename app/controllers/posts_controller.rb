@@ -6,9 +6,9 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.searchblog(params[:search])
-    @posts = @posts.paginate(:page => params[:page], :per_page => 2)
-
+    @posts = Post.search(params[:search])
+    @posts = @posts.paginate(:page => params[:page], :per_page => 5)
+    @recent_posts = Post.all.order("created_at DESC").limit(5)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
@@ -19,6 +19,15 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    def show
+    @post = Post.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @post }
+      format.js
+    end
+  end
   end
 
   # GET /posts/new

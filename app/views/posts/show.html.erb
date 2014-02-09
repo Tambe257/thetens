@@ -1,14 +1,70 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+    <div class="col-xs-12 boxwell">      
+      <div class="well"> 
+        <div> 
+          <div class="blogboxshow">
+            <p>
+              <strong><h2><%= @post.title %></h2></strong>
+            </p>
+            <hr>
+              <div class="blogshowimages">
+                <% if @post.image.present? %>
+                  <%= image_tag @post.image %>
+                <% end %>  
+                
+              </div>    
+            <br style="clear:both" />
+            <hr>
+          </div>    
+            <p>
+              <%= @post.body %>
+            </p>
+            
+            <hr>
+            <div class="blogshowvideo">
+              <% unless @post.video_html.blank? %>
+                <%= link_to @post.video_html, :class => 'youtube title_link' %>
+              <% end %> 
+            </div>  
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+            <h4>Comments</h4>
+              <div id="comments">
+                <%= render :partial => @post.blog_comments %>
+              </div>
+              <% if user_signed_in? %>
+                <%= simple_form_for [@post, BlogComment.new] do |f| %>
+                  
+                  <p>
+                    <%= f.input :body, :label => "New Comment", as: :text, input_html: { rows: '3', :class => "form-control" } %>
+                  </p>  
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+                  <p><%= f.submit "Add Comment", class: "btn btn-primary" %></p>
+                <% end %>   
+              <% end %>
+              <p id="notice"><%= notice %></p>
+              <hr>        
+            <div class="blogshowlinks">  
+              <%= link_to 'Edit', edit_post_path(@post) %> |
+              <%= link_to 'Back To theBlog', posts_path %>
+            
+              <div class="blogshowsocial">  
+                <a class="social_logo" href="/images/FB_logo.png" 
+                  onclick="
+                  window.open(
+                  'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+                  'facebook-share-dialog', 
+                  'width=626,height=436'); 
+                  return false;">
+                  <%= image_submit_tag("FB_logo.png", :name => nil) %>
+                </a>
+            
+                <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-hashtags="thetens">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+                </script>
+              </div>
+            </div>  
+        </div>  
+    </div>
+  </div>  
+</div>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>

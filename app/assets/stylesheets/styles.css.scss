@@ -15,6 +15,10 @@ body{
     background-color: white;
 }
 
+hr {
+  border-top: 1px solid #191515;
+}
+
 .tens_link {
   text-align: center;
 }
@@ -54,6 +58,10 @@ span.r35{background-position: -46px 21px;}
 span.r4 {background-position: -23px 0;}
 span.r45{background-position: -23px 21px;}
 span.r5 {background-position: 0 0;}
+
+a:visited {
+  color: white;
+}
 
 .dropdown {
   height: 50px;
@@ -303,6 +311,34 @@ text-align: center;
 .boxwell {
   margin-bottom: 40px;
 }
+
+.blogboxshow {
+  text-align: center;
+}
+
+.blogboxshow img {
+  max-width: 80%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.blogshowvideo {
+  text-align: center;
+}
+
+.blogshowsocial {
+  float: right;
+}
+
+.recent_posts ul {
+  padding-left: 12px;
+}
+
+.recent_posts a:visited {
+  color: black;
+}
+
 .vid a {
   text-align: center;
 }
@@ -364,6 +400,27 @@ text-align: center;
   -moz-border-radius: 500px;
 }
 
+.blogimages {
+  width: 800px;
+}
+
+.blogimages img {
+  max-width:325px;
+  max-height:350px;
+  width: auto;
+  height: auto;
+  padding-right: 35px;
+  float: left;
+}
+
+.blogshowimages img {
+  max-width:325px;
+  max-height:350px;
+  width: auto;
+  height: auto;
+  text-align: center;
+}
+
 .blog_container {
   margin-bottom: 50px;
 
@@ -371,6 +428,19 @@ text-align: center;
 
 .blog_search {
   height: 130px;
+}
+
+.blog_posts {
+  width: 730px;
+  height: 700px;
+}
+
+.blog_posts a:visited {
+  color: black;
+}
+
+.blogshowlinks a {
+  color: black;
 }
 
 .dropdown_menu {
@@ -521,7 +591,7 @@ table {
 }
 
 .form_page {
-  margin-bottom: 40px;
+  margin-bottom: 70px;
 }
 
 .form_heading {

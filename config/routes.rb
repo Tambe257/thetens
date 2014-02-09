@@ -1,5 +1,13 @@
 Thetens::Application.routes.draw do
-  resources :posts
+  resources :blog_comments do
+    resources :posts
+    resources :users
+  end  
+
+  resources :posts do
+
+    resources :blog_comments
+  end  
 
   resources :comments do
     resources :pins

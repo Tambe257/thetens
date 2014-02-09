@@ -1,14 +1,24 @@
-<%= simple_form_for(@post) do |f| %>
-  <%= f.error_notification %>
+<div class="panel-body">
+  <%= simple_form_for(@post, html: { class: "form-horizontal"}) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :body %>
-    <%= f.input :image, label: "Upload an image" %>
+    <div class="form-inputs">
+      <div class="form-group">
+        <%= f.input :title, input_html: { rows: "1", :class => "form-control" } %>
+      </div>  
+      <div class="form-group">  
+        <%= f.input :body, input_html: { rows: "5", :class => "form-control" } %>
+      </div> 
+      <div class="form-group">  
+        <%= f.input :image, label: "Upload an image" %>
+      </div> 
+      <div class="form-group">
+        <%= f.input :video, input_html: { rows: "1", :class => "form-control" }, :hint => "Enter a Youtube url of a performance from this album, or your own video review", label: "Enter a Youtube Link" %>
+      </div> 
+    </div>
+
     
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+      <%= f.button :submit, "Submit Post", class: "btn btn-primary" %>
+    
+  <% end %>
+</div>
