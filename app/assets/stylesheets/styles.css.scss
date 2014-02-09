@@ -312,6 +312,11 @@ text-align: center;
   border-radius: 5px;
 }
 
+
+.boxshow a:visited {
+  color: #428bca;
+}
+
 .boxwell {
   margin-bottom: 40px;
 }
@@ -326,6 +331,7 @@ text-align: center;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
+
 
 .blogshowvideo {
   text-align: center;
@@ -470,6 +476,10 @@ text-align: center;
 
 .comment_board th {
   text-align: center;
+}
+
+.comment_board a:visited {
+  color: #428bca;
 }
 
 .dropdown-menu ul li {
