@@ -19,6 +19,10 @@ hr {
   border-top: 1px solid #191515;
 }
 
+a:hover {
+  background-color: inherit;
+}
+
 .tens_link {
   text-align: center;
 }
@@ -341,12 +345,20 @@ text-align: center;
   float: right;
 }
 
+.recent_posts {
+  box-shadow: 1px 1px 1px #444;
+}
+
 .recent_posts ul {
   padding-left: 12px;
 }
 
 .recent_posts a:visited {
   color: black;
+}
+
+.blog_about {
+  box-shadow: 1px 1px 1px #444;
 }
 
 .vid a {
@@ -411,7 +423,7 @@ text-align: center;
 }
 
 .blogimages {
-  width: 800px;
+  width: 700px;
 }
 
 .blogimages img {
@@ -419,8 +431,17 @@ text-align: center;
   max-height:350px;
   width: auto;
   height: auto;
-  padding-right: 35px;
+  padding-right: 25px;
   float: left;
+}
+
+.blogimages a {
+  padding-right: 15px;
+  
+}
+.blogcontrols {
+  float:right;
+  margin-top: 20px;
 }
 
 .blogshowimages img {
@@ -438,11 +459,17 @@ text-align: center;
 
 .blog_search {
   height: 130px;
+  box-shadow: 1px 1px 1px #444;
 }
 
 .blog_posts {
   width: 730px;
-  height: 700px;
+  height: auto;
+  padding-left: 9px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-top: 2px;
+  box-shadow: 1px 1px 10px #444;
 }
 
 .blog_posts a:visited {
@@ -451,6 +478,10 @@ text-align: center;
 
 .blogshowlinks a {
   color: black;
+}
+
+.blog_video a {
+  text-align: center;
 }
 
 .dropdown_menu {
@@ -579,6 +610,10 @@ table {
 
 .stats_container {
   margin-bottom: 50px;
+}
+
+.stats_container a:visited {
+  color: #5D8BCA;
 }
 
 .tens_starburst {
