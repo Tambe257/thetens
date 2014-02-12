@@ -29,7 +29,7 @@ class BlogCommentsController < ApplicationController
     @blog_comment = @post.blog_comments.create(params[:blog_comment])
     @blog_comment.user = current_user
 
-    MyMailer.blog_comment(@post.user).deliver
+    MyMailer.blog_alert(@post.user).deliver
 
     respond_to do |format|
       if @blog_comment.save
