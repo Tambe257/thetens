@@ -1,10 +1,12 @@
 <div class="user_show">
 	<div class="row">
-		<div class="col-xs-4">
+		<div class="col-md-12">
 			<div class="profilepic">	
 				<h1><%= image_tag @user.image(:small) %>     <%= @user.name %></h1>
 			</div>
-		</div>
+			<div class="statusshow">	
+				<h1><%= @user.status %></h1>
+			</div>
 			<div class="tens">
 				</br>
 				<ul>
@@ -12,7 +14,7 @@
 						<a href="#" class="dropdown-toggle btn btn-sm btn-primary" data-toggle="dropdown">Filter by Year
 							<span class="caret"></span> 
 						</a>
-						<ul class="dropdown-menu">
+						<ul class="dropdown-menu user_dropdown">
 							<li><strong><%= link_to '2000', tens2000_user_path(@user) %></strong></li>
 							<li><strong><%= link_to '2001', tens2001_user_path(@user) %></strong></li>
 							<li><strong><%= link_to '2002', tens2002_user_path(@user) %></strong></li>
@@ -30,13 +32,7 @@
 						</ul>	
 				</ul>	
 			</div>	
-	</div>	
-	<div class="row">
-		<div class="col-xs-8">
-			<div class="statusshow">	
-				<h1><%= @user.status %></h1>
-			</div>
-		</div>
+	</div>		
 	</div>
 	<div id="pins">
 	  <%= render @pins.order("created_at DESC") %>
