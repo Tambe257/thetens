@@ -1,11 +1,11 @@
-<div class="blog_container">
+
   <div class="blog_title">
     <%= image_tag('blog.jpg')%>
   </div>
   <div>
     <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
   </div>        
-  <div class="col-lg-8">
+  <div class="col-lg-8 blog_container">
     <% @posts.each do |post| %>
       <hr>
       <div class="blog_posts">
@@ -44,7 +44,7 @@
     <p style="text-align:left;"><a href="#">Back To The Top</a></p>
   </div> <!-- col-lg-8--> 
     
-  <div class="col-lg-4">
+  <div class="col-lg-4 blog_wells">
     <div class="well blog_search">
       <h4>Blog Search</h4>
       <form class="navbar-form" role="search">
@@ -64,6 +64,8 @@
           <ul class="list-unstyled">
             <li>1 - <%= link_to truncate(@recent_posts[0].title, length: 30), @recent_posts[0] %>
             </li>
+            <li>2 - <%= link_to truncate(@recent_posts[1].title, length: 30), @recent_posts[1] %>
+            </li>
           </ul>
         </div> 
       </div>
@@ -75,4 +77,4 @@
     </div>
     <!-- /well -->
   </div>
-</div>
+
