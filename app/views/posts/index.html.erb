@@ -32,12 +32,14 @@
           </div>  
           <% if post.video_html.present? %>
             <div class="blog_video">
-              <br style="clear:both" />
+              <div style="clear:both"></div>
+              <br />
               <%= link_to post.video_html, :class => 'youtube title_link' %>
             </div>
           <% end %> 
         </div><!-- blogimages-->    
-        <br style="clear:both" /> 
+        <div style="clear:both"></div>
+        <br /> 
       </div><!-- blog_posts-->    
     <% end %>
     <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
