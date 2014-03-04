@@ -613,8 +613,14 @@ table {
   padding-left: 10px;
   padding-bottom: 10px;
 }
+
 .stats_pin {
   margin-bottom: 50px;
+  margin-left: 17%;
+}
+
+.stats_pin_title {
+  text-align: center;
 }
 
 .stats_title {
@@ -656,12 +662,21 @@ table {
   display: inline;
 }
 
+.tens_links {
+  text-align: center;
+}
+
 .stats_tens{
   background-color: #f8f8f8;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   box-shadow: 1px 1px 10px #444;
+  width: auto;
+}
+
+.stats_tens img {
+  text-align: center;
 }
 
 .stats_tens h2 {
