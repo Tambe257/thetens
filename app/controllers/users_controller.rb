@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	def show
     @user = User.friendly.find(params[:id])
     @pins = @user.pins.page(params[:page]).per_page(50)
+    @rating_count = @user.pins.group("rating").count(:order => 'count(*) DESC')
 	end
 
 	def tens2000
