@@ -152,16 +152,17 @@ text-align: center;
 }
 
 .rating_table {
-  width: 200px;
-  margin-left: 0px;
-  margin-top: 0px;
-  position: relative;
+  
+  margin: 0 auto;
 }
 
 .rating_table th tr {
   text-align: center;
 }
 
+.rating_table a:visited {
+  color: #428bca;
+}
 .reviewer_board {
   padding-bottom: 36px;
   padding-top: 2px;
@@ -400,17 +401,26 @@ text-align: center;
 .profile {
   height: auto;
   width: 100%;
-  float: left;
+  
   border-style: solid;
   border-width: 1px;
   border-color: black;
-  display: inline;
+  display: inline-block;
+  text-align: center;
 }
 
-.profile ul {
-  list-style-type: none;
-  margin-left: 50px;
-  margin-top: -10px;
+.profile li {
+  width: 15px;  
+  text-align: center;
+}
+
+.profile li ul {
+  display: none;
+  position: absolute;
+}
+
+.profile_buttons li {
+  display: inline;
 }
 
 .profilepic img {
@@ -421,9 +431,11 @@ text-align: center;
   border-bottom-left-radius: 500px;
   -moz-border-radius: 500px;
   zoom: 1;
-
 }
 
+.test {
+  text-align: center;
+}
 .smallpic {
   height: 45px;
   width: 45px;

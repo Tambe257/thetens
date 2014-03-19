@@ -1,61 +1,79 @@
 <div class="user_show">
 	<div class="row">
 		<div class="col-lg-12">
-			<div class="profile well">
-				<div class="col-lg-6">
+			<div class="profile well" id="accordion">
+				<div class="col-lg-12">
 					<div class="profilepic">	
 						<h1><%= image_tag @user.image(:small) %>     <%= @user.name %></h1>
 					</div>
-					<ul>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle btn btn-sm btn-primary" data-toggle="dropdown">Filter by Year
-								<span class="caret"></span> 
-							</a>
-							<ul class="dropdown-menu user_dropdown">
-								<li><strong><%= link_to '2000', tens2000_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2001', tens2001_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2002', tens2002_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2003', tens2003_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2004', tens2004_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2005', tens2005_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2006', tens2006_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2007', tens2007_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2008', tens2008_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2009', tens2009_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2010', tens2010_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2011', tens2011_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2012', tens2012_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2013', tens2013_user_path(@user) %></strong></li>
-								<li><strong><%= link_to '2014', tens2014_user_path(@user) %></strong></li>
-							</ul>	
-						</ul>	
+					<ul class="profile_buttons">
+						<li>
+							<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#demo">Ratings
+							</button>
+						</li>	
+						<li>
+							<button type="button" class="btn btn-danger" data-toggle="collapse" data-target="#years">Filter
+							</button>
+						</li>
+					</ul>	
 					<div class="statusshow">	
 						<h1><%= @user.status %></h1>
 					</div>
 				</div>	
-			<div class="rating_table col-lg-6">
-				<table class= "table table-bordered table-striped table-condensed">
-					<th colspan="4"><%= @user.name %>'s <br /> Rating Count</th>
-					<tr>
-						<td><span class="rating r0"></span> <%= @rating_count[nil] %></td>
-						<td><span class="rating r15"></span> <%= @rating_count["1.5"] %></td>	
-						<td><span class="rating r3"></span> <%= @rating_count["3"] %></td>
-						<td><span class="rating r45"></span> <%= @rating_count["4.5"] %></td>	
-					</tr>
-					<tr>
-						<td><span class="rating r05"></span> <%= @rating_count["0.5"] %></td>
-						<td><span class="rating r2"></span> <%= @rating_count["2"] %></td>	
-						<td><span class="rating r35"></span> <%= @rating_count["3.5"] %></td>
-						<td><span class="rating r5"></span> <%= @rating_count["5"] %></td>	
-					</tr>
-					<tr>
-						<td><span class="rating r1"></span> <%= @rating_count["1"] %></td>
-						<td><span class="rating r25"></span> <%= @rating_count["2.5"] %></td>	
-						<td><span class="rating r4"></span> <%= @rating_count["4"] %></td>	
-						<td>Total Reviews: <%= @user.pins.count %></td>
-					</tr>
-				</table>
-			</div>		
+				
+				<div id="years" class="collapse">
+					<br />
+					<div class="rating_table col-lg-6">
+						<table class= "table table-bordered table-striped table-condensed">
+							<th colspan="4">Filter By Year</th>
+							<tr>
+								<td><strong><%= link_to '2000', tens2000_user_path(@user) %></strong></td>
+								<td><strong><%= link_to '2001', tens2001_user_path(@user) %></strong></td>	
+								<td><strong><%= link_to '2002', tens2002_user_path(@user) %></strong></td>
+								<td><strong><%= link_to '2003', tens2003_user_path(@user) %></strong></td>	
+							</tr>
+							<tr>
+								<td><strong><%= link_to '2004', tens2004_user_path(@user) %></strong></td>
+								<td><strong><%= link_to '2005', tens2005_user_path(@user) %></strong></td>	
+								<td><strong><%= link_to '2006', tens2006_user_path(@user) %></strong></td>
+								<td><strong><%= link_to '2007', tens2007_user_path(@user) %></strong></td>	
+							</tr>
+							<tr>
+								<td><strong><%= link_to '2008', tens2008_user_path(@user) %></strong></td>
+								<td><strong><%= link_to '2009', tens2009_user_path(@user) %></strong></td>	
+								<td><strong><%= link_to '2010', tens2010_user_path(@user) %></strong></td>	
+								<td><strong><%= link_to '2011', tens2011_user_path(@user) %></strong></td>
+							</tr>
+						</table>
+					</div>	
+				</div>	
+
+				<div id="demo" class="collapse">
+					<br />
+					<div class="rating_table col-lg-6">
+						<table class= "table table-bordered table-striped table-condensed">
+							<th colspan="4"><%= @user.name %>'s <br /> Rating Count</th>
+							<tr>
+								<td><span class="rating r0"></span> <%= @rating_count[nil] %></td>
+								<td><span class="rating r15"></span> <%= @rating_count["1.5"] %></td>	
+								<td><span class="rating r3"></span> <%= @rating_count["3"] %></td>
+								<td><span class="rating r45"></span> <%= @rating_count["4.5"] %></td>	
+							</tr>
+							<tr>
+								<td><span class="rating r05"></span> <%= @rating_count["0.5"] %></td>
+								<td><span class="rating r2"></span> <%= @rating_count["2"] %></td>	
+								<td><span class="rating r35"></span> <%= @rating_count["3.5"] %></td>
+								<td><span class="rating r5"></span> <%= @rating_count["5"] %></td>	
+							</tr>
+							<tr>
+								<td><span class="rating r1"></span> <%= @rating_count["1"] %></td>
+								<td><span class="rating r25"></span> <%= @rating_count["2.5"] %></td>	
+								<td><span class="rating r4"></span> <%= @rating_count["4"] %></td>	
+								<td>Total Reviews: <%= @user.pins.count %></td>
+							</tr>
+						</table>
+					</div>	
+				</div>	
 			</div>	
 			</div>
 	</div>
