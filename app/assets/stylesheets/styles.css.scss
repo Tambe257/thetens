@@ -152,7 +152,7 @@ text-align: center;
 }
 
 .rating_table {
-  
+  text-align: center;
   margin: 0 auto;
 }
 
@@ -331,11 +331,15 @@ text-align: center;
 
 .boxshow img {
   max-width: 80%;
-  margin-left: 25%;
+  text-align: center;
   margin-bottom: 15px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+
+.boxshow_image {
+  text-align: center;
 }
 
 .boxshow a:visited {
@@ -401,7 +405,6 @@ text-align: center;
 .profile {
   height: auto;
   width: 100%;
-  
   border-style: solid;
   border-width: 1px;
   border-color: black;

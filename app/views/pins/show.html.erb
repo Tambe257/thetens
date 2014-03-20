@@ -2,7 +2,9 @@
 		<div class="col-xs-8 col-xs-offset-2 boxwell">			
 			<div class="well">	
 				<div class="boxshow">
-					<%= image_tag @pin.image(:medium) %>
+					<div class="boxshow_image">
+						<%= image_tag @pin.image(:medium) %>
+					</div>	
 					<p>
 					  <strong><%= @pin.album %></strong>
 					</p>
