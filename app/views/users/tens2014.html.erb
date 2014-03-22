@@ -1,7 +1,9 @@
-<div class="profilepic">
-	<h1><%= link_to (image_tag @user.image(:small)), @user %>     <%= @user.name %> - Reviews of 2014</h1>
-</div>
-<div id="pins">
-  <%= render @pins.where(:year => '2014').order('rank DESC') %>
-</div>
-<%= will_paginate @pins %>
+<div class="user_show">
+	<div class="profilepic">
+		<h1><%= link_to (image_tag @user.image(:small)), @user %>     <%= @user.name %> - Reviews of 2014</h1>
+	</div>
+	<div id="pins">
+	  <%= render @pins.where(:year => '2014').order('rank DESC') %>
+	</div>
+	<%= will_paginate @pins %>
+</div>	
