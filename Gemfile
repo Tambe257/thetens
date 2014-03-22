@@ -21,8 +21,6 @@ gem "friendly_id", "~> 5.0.2"
 gem 'faker', '1.2.0'
 gem 'auto_html'
 gem 'protected_attributes'
-gem 'twitter', '~> 5.7.1'
-gem "twitter-text", "~> 1.8.0"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
