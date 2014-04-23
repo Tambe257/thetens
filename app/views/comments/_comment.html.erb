@@ -1,7 +1,7 @@
 <%= div_for(comment) do %>
 	<%= h(comment.body) %>
 	<p class="comments">
-		<strong>Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= image_tag comment.user.image(:small), class: "smallpic_comment" %><%= comment.user.name %></strong></br>
+		<strong>Posted <%= time_ago_in_words(comment.created_at) %> ago by <%= image_tag comment.user.image, class: "smallpic_comment" %><%= comment.user.name %></strong></br>
 	</p>
 	<% if user_signed_in? %>
 		<% if current_user == comment.user || current_user.admin? %>	
