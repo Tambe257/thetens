@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment = @pin.comments.create(params[:comment])
     @comment.user = current_user
 
-    #MyMailer.comment_email(@pin.user).deliver
+    MyMailer.comment_email(@pin.user).deliver
 
     respond_to do |format|
       if @comment.save
