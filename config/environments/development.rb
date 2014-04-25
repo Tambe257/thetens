@@ -44,7 +44,7 @@ Thetens::Application.configure do
     port:                 587,
     #domain:               'thetens.us',
     user_name:            'tambe257@gmail.com',
-    password:             'A1Ex13226',
+    password:             'a1Ex13226',
     authentication:       'plain',
     enable_starttls_auto: true  }
 
