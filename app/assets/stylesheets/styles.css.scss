@@ -278,14 +278,19 @@ text-align: center;
     padding-top: 10px;
     color: #999;
     a{
-        color: gray;
+        color: #428bca;
     }
 
 }
+
 .footer p{
   position: relative;
   margin-left: 10px;
   float: left;
+}
+
+.foot_links a {
+  color: gray;
 }
 .social {
   float: right;
@@ -300,7 +305,30 @@ text-align: center;
     color: black;  
 }
 
+.welcome_box {
+  margin-top: 50px;
+  height: 150px;
+  width: 300px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
 
+.welcome_box_heading {
+  height: 30px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.welcome_box_btn {
+  text-align: center;
+}
+
+.panel-footer a {
+  color: #428bca;
+}
 /* Required for jQuery Masonry */
 
 .box {

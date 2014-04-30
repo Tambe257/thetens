@@ -47,6 +47,11 @@ Thetens::Application.routes.draw do
     end
   end    
 
+  resource :user, only: [:edit] do
+    collection do
+      patch 'update_password'
+    end
+  end
   #match 'users/:id' => 'users#show', as: :user
   
   #match 'users/:id' => 'users#tens2011'
