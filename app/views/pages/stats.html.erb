@@ -29,10 +29,12 @@
 			<div class="panel panel-default stats_panel">			
 				<div class="panel-heading">
 					<p>
-						<h3 class="reviewer_stats">Top reviewer of the week is <%= @user_week.name %> <%= image_tag @user_week.image(:small) %>
-						</h3>
+						<% if Pin.where("created_at >= ?", 1.week.ago.utc) %>
+							<h3 class="reviewer_stats">Top reviewer of the week is <%= @user_week.name %> <%= image_tag @user_week.image(:small) %>
+							</h3>
 
-						<h3>This week <%= @user_week.name %> posted <%= @user_week_count[1] %> reviews!</h3> 
+							<h3>This week <%= @user_week.name %> posted <%= @user_week_count[1] %> reviews!</h3> 
+						<% end %>	
 					</p>
 				</div> <!-- panel heading -->	
 				<div class="panel-body">
