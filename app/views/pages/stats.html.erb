@@ -29,7 +29,7 @@
 			<div class="panel panel-default stats_panel">			
 				<div class="panel-heading">
 					<p>
-						<% if Pin.where("created_at >= ?", 1.week.ago.utc) %>
+						<% if Pin.last.created_at >= 1.week.ago.utc %>
 							<h3 class="reviewer_stats">Top reviewer of the week is <%= @user_week.name %> <%= image_tag @user_week.image(:small) %>
 							</h3>
 
