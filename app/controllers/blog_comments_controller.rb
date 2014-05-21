@@ -35,6 +35,14 @@ class BlogCommentsController < ApplicationController
       if @blog_comment.save
         format.html { redirect_to @post, notice: 'Blog comment was successfully created.' }
         format.json { render action: 'show', status: :created, location: @blog_comment }
+
+        @blog_commenter = @post.blog_comments.collect(&:user)
+        @blog_commenter = @blog_commenter.uniq
+        
+        @blog_commenter.each do |blog_commenter|  
+          MyMailer.blog_commenter_email(blog_commenter).deliver
+        end  
+
       else
         format.html { render action: 'new' }
         format.json { render json: @blog_comment.errors, status: :unprocessable_entity }
