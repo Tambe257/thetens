@@ -40,7 +40,9 @@ class BlogCommentsController < ApplicationController
         @blog_commenter = @blog_commenter.uniq
         
         @blog_commenter.each do |blog_commenter|  
-          MyMailer.blog_commenter_email(blog_commenter).deliver
+          if blog_commenter != @post.user || blog_commenter != @blog_comment.user
+            MyMailer.blog_commenter_email(blog_commenter).deliver
+          end  
         end  
 
       else
