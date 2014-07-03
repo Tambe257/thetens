@@ -614,6 +614,24 @@ text-align: center;
   color: #428bca;
 }
 
+.blog_comment_board {
+  padding-bottom: 50px;
+}
+.blog_comment_board img {
+  height: 90px;
+  width: 90px;
+}
+.blog_comment_board td {
+  max-width: 800px;
+}
+
+.blog_comment_board th {
+  text-align: center;
+}
+
+.blog_comment_board a:visited {
+  color: #428bca;
+}
 .dropdown-menu ul li {
   padding: 1px;
   width: 50px;

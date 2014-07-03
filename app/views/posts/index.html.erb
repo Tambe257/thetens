@@ -4,6 +4,7 @@
   </div>
   <div>
     <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
+    <%= link_to 'Blog Comment Board', blog_comments_board_path, class: "btn btn-primary" %>
   </div>        
   <div class="col-lg-8 blog_container">
     <% @posts.each do |post| %>

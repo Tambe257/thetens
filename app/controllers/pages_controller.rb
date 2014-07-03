@@ -28,6 +28,10 @@ class PagesController < ApplicationController
   	@comments = Comment.all
   end
 
+  def blog_comments_board
+    @blog_comments = BlogComment.all
+  end
+
   def tens2013
     @users = User.includes(:pins).where('pins.year=?', '2013')
     @pins = Pin.all

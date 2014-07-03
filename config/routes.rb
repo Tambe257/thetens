@@ -65,6 +65,8 @@ Thetens::Application.routes.draw do
 
   get 'comments_board' => 'pages#comments_board'
 
+  get 'blog_comments_board' => 'pages#blog_comments_board'
+
   get 'tens2013' => 'pages#tens2013'
 
   get 'tens2012' => 'pages#tens2012'

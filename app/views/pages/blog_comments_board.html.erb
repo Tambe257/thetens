@@ -1,0 +1,37 @@
+<div class="blog_comment_board">
+	<div class="comment_title"><h1>Blog Comment Board</h1></div>
+	<table class="table-striped  table-condensed table-hover blog_comment_board">
+	  <tbody>
+		  <tr>
+		   <tr>
+		    <th></th>	    
+		    <th><h3>Blog Post Title:</h3></th>
+		    <th><h3>Commenter:</h3></th>
+		    <th><h3>Reviewer:</h3></th>
+		    <th><h3>Posted:</h3></th>
+		   </tr>	
+		    <% @blog_comments.reverse.take(30).each do |blog_comment| %>
+		    	<td>
+		      	<%= image_tag blog_comment.post.image %>
+		    	</td>
+
+		    	<td>
+		      	<h4><%= link_to truncate(blog_comment.post.title, length: 70), blog_comment.post %></h4>
+		    	</td>
+
+		    	<td>
+		      	<%= link_to (image_tag blog_comment.user.image(:small)), blog_comment.user %>
+		    	</td>
+
+		    	<td>
+		      	<%= link_to (image_tag blog_comment.post.user.image(:small)), blog_comment.post.user %>
+		    	</td>
+
+		    	<td>
+		      	<%= time_ago_in_words(blog_comment.created_at) %> ago</br>
+		    	</td>
+		    </tr>	    
+		  <% end %>
+		</tbody>    
+	</table>
+</div>
