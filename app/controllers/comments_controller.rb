@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
         @commenter = @commenter.uniq
         
         @commenter.each do |commenter| 
-          if commenter != @pin.user || commenter != @comment.user
+          if commenter.id != @pin.user_id && commenter.id != @comment.user_id
             MyMailer.commenter_email(commenter).deliver
           end  
         end  
