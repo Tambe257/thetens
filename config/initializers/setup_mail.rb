@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   :port                 => 587,
   :domain               => "www.thetens.us",
   :user_name            => 'tambe257@gmail.com',
-  :password             => 'V0gonz77',
+  :password             => 'V0g0nz!1977',
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
