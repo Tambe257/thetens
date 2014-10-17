@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/css?family=Signika+Negative);
 
 $navbarBackgroundHighlight: white;
 $navbarBackground: white;
@@ -825,6 +826,14 @@ table {
 
 .page_container {
   margin-bottom: 50px;
+}
+
+.review-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  font-family: 'Signika Negative', sans-serif;
+  margin-bottom: 15px;
 }
 
 #pins a:visited {

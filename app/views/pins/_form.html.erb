@@ -3,6 +3,10 @@
 	  <%= f.error_notification %>
 	  <%= f.full_error :image_file_size, class: "alert alert-error" %>
 	  <%= f.full_error :image_content_type, class: "alert alert-error" %>
+    
+    <div class="form-group"> 
+      <%= f.input :title, as: :text, input_html: { rows: "1", :class => "form-control" }, label: "Title Your Review" %>
+    </div>
     <div class="form-group">    
       <%= f.input :image, label: "Upload an image" %>
     </div>
