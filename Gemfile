@@ -13,7 +13,7 @@ gem 'bootstrap-sass', '~> 3.1.1.0'
 gem 'twitter-bootstrap-rails', '~> 2.2.8'
 gem 'devise', '~> 3.2.2'
 gem 'simple_form'
-gem "paperclip", "~> 3.0"
+gem "paperclip", "~> 4.2.0"
 gem 'aws-sdk', '~> 1.32.0'
 gem 'will_paginate', '3.0.5'
 gem 'will_paginate-bootstrap'
@@ -21,6 +21,7 @@ gem "friendly_id", "~> 5.0.2"
 gem 'faker', '1.2.0'
 gem 'auto_html'
 gem 'protected_attributes'
+gem 'ckeditor', '~> 4.0.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

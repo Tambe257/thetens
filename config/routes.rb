@@ -1,4 +1,5 @@
 Thetens::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   resources :blog_comments do
     resources :posts
     resources :users

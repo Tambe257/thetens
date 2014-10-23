@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require jquery.masonry.min.js
 //= require twitter/bootstrap
+//= require ckeditor/init
 //= require_tree .
