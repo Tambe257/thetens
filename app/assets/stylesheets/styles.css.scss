@@ -348,8 +348,14 @@ text-align: center;
   width: 214px;
   height: 420px;
   background-color: #F5F5F5;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
+.box:hover {
+  background-color: #fff;
+  box-shadow: 1px 1px 5px #444;
+}
 .box img {
   width: 100%;
   -webkit-border-radius: 5px;
@@ -378,6 +384,10 @@ text-align: center;
   color: #428bca;
 }
 
+.btn:hover {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
 .pin_edit a:visited {
   color: #428bca;
 }
