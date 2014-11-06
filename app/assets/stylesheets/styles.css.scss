@@ -98,7 +98,7 @@ a:visited {
 }
 
 .navbar img {
-  margin-right: 90px;
+ 
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -416,6 +416,11 @@ text-align: center;
   float: right;
 }
 
+.logo {
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
 .recent_posts {
   box-shadow: 1px 1px 1px #444;
 }
@@ -497,6 +502,7 @@ text-align: center;
   -moz-border-radius: 5px;
   border-radius: 5px;
   float: right;
+  margin-right: 90px;
 }
 
 .index_title {
@@ -794,12 +800,9 @@ table {
 
 .header_title {
   text-align: center;
-  font-size: 350%;
 }
 
 .header_title img {
-  float:right;
-  margin-right: 105px;
   margin-top: 10px;
 }
 
