@@ -812,9 +812,11 @@ table {
 
 .header_row2 {
   outline: auto 1px;
+  -moz-outline: auto 1px;
   outline-color: black;
+  -moz-outline-color: black;
   outline-width: 1px;
-  
+  -moz-outline-width: 1px;
 }
 
 .input_container {
