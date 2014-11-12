@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
 	attr_accessible :title, :body, :image, :video, :video_html
 
 	has_attached_file :image, styles: { medium: "320x240>"}
-
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
 	has_many :videos
 	has_many :blog_comments, dependent: :destroy
