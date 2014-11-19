@@ -800,6 +800,7 @@ table {
 
 .header_title {
   text-align: center;
+  font-size: 350%;
 }
 
 .header_title img {
@@ -843,13 +844,15 @@ table {
   margin-bottom: 50px;
 }
 
-.review-title {
+.review-title p {
+  height: auto;
   text-align: center;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 25px;
   font-family: 'Signika Negative', sans-serif;
   margin-bottom: 15px;
 }
+
 
 #pins a:visited {
   color: #428bca;
