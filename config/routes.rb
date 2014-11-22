@@ -68,6 +68,8 @@ Thetens::Application.routes.draw do
 
   get 'blog_comments_board' => 'pages#blog_comments_board'
 
+  get 'tens2014' => 'pages#tens2014'
+
   get 'tens2013' => 'pages#tens2013'
 
   get 'tens2012' => 'pages#tens2012'

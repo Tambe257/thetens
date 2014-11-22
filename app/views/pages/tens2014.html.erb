@@ -1,0 +1,33 @@
+<div class="tens2014">
+  <h3 class="tens_link"><%= image_tag('starburst2014.png') %></h3>
+
+  <% @users.each do |user| %>
+    <ul  class="ver2 well"> 
+      <li><div class="reviewer"><%= link_to (image_tag user.image(:small)), user %><h4><%= user.name %></h4></div></li> 
+      <% user.pins.order('rank DESC').each do |pin| %>
+        <% if pin.year == '2014' && (pin.rank == 10 || pin.rank == 9 || pin.rank == 8 || pin.rank == 7 || pin.rank == 6 || pin.rank == 5 || pin.rank == 4 || pin.rank == 3 || pin.rank == 2 || pin.rank == 1 )  %> 
+          <li><div class="span2"><%= link_to (image_tag pin.image(:medium)), pin %><br/> #<%= pin.rank %> <br/> <%= truncate(pin.album, length:15) %></div></li>
+        <% end %>
+      <% end %> 
+    </ul>   
+  <% end %>  
+
+  <% @users.each do |user| %>
+    <table class="tensTable2014">
+      <tr>
+        <td><%= link_to (image_tag user.image(:small)), user %></td>
+        <td><%= user.name %></td>
+      </tr>
+      <% user.pins.order('rank DESC').each do |pin| %>
+        <% if pin.year == '2014' && (pin.rank == 10 || pin.rank == 9 || pin.rank == 8 || pin.rank == 7 || pin.rank == 6 || pin.rank == 5 || pin.rank == 4 || pin.rank == 3 || pin.rank == 2 || pin.rank == 1 )  %> 
+        <tr>
+          
+          <td><%= link_to (image_tag pin.image), pin %> #<%= pin.rank %>  <%= truncate(pin.album, length:15) %></td>
+        </tr>  
+
+        <% end %>
+      <% end %> 
+        
+    </table>  
+  <% end %> 
+</div>  
