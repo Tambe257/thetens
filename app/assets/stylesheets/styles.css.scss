@@ -898,6 +898,11 @@ table {
   margin-bottom: 15px;
 }
 
+a.login {
+  color: black;
+  float: right;
+  font-size: 20px;
+}
 
 #pins a:visited {
   color: #428bca;
@@ -929,4 +934,11 @@ table {
 #timestamp {
   position: relative;
   float: right;
+}
+
+@media (max-width: 991px) {
+
+  .sr-only {
+    margin-right: 20px;
+  }
 }
