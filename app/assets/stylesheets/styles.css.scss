@@ -348,14 +348,11 @@ text-align: center;
 }
 
 .welcome_box {
-  margin-top: 50px;
+  margin-top: 25px;
   height: 150px;
-  width: 300px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  width: 350px;
+  background-color: transparent;
+  float: left;
 }
 
 .welcome_box_heading {
@@ -366,6 +363,11 @@ text-align: center;
 
 .welcome_box_btn {
   text-align: center;
+}
+
+.welcome_to {
+  float: left;
+  width: 700px;
 }
 
 .panel-footer a {
@@ -775,6 +777,11 @@ table {
 
 .search_box {
   padding-bottom: 8px;
+}
+
+.sign_up_button {
+  float: right;
+  margin: 16px 77px 0 0;
 }
 
 .stats_panel {

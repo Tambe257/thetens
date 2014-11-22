@@ -1,30 +1,19 @@
 <% if user_signed_in? == false %>
 
 	<div class="center jumbotron">
-		<h1>Welcome to theTens!</h1>
-		<p>
-	 	 The Music Review Site
-	 	</p>
-	 	<p>
-	 	 Where <strong>Your</strong> Opinion Matters
-		</p>
-		
-		<!--<div class="welcome_box">
-			<div class="welcome_box_heading">
-				<p>How Does It Work?</p>
+		<div class="row">
+			<div class="welcome_to">
+				<h1>Welcome to theTens!</h1>
 			</div>	
-			<p>
-				<ul>
-					<li>Create an account</li> 
-					<li>Post a new review</li>
-					<li>Rank Your Reviews</li> 
-				</ul>	
-		  	<div class="welcome_box_btn"> -->
-		  		<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large" %>
-		  		<!--
-		  	</div>	
-			</p>
-		</div>	-->
+			<div class="welcome_box">
+				<p>
+			 	 The Music Review Site
+			 	</p>
+			 	<p>
+			 	 Where <strong>Your</strong> Opinion Matters
+				</p>
+			</div>		
+		</div>	
 		<%= link_to content_tag(:i, "", class:"icon-home"), root_path %>
 	</div>
 
