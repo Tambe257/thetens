@@ -6,8 +6,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.search(params[:search])
-    @posts = @posts.paginate(:page => params[:page], :per_page => 5)
+    if params[:search]
+      @posts = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 5)
+    else
+      @posts = Post.paginate(:page => params[:page], :per_page => 5)
+    end  
+    
     @recent_posts = Post.all.order("created_at DESC").limit(5)
     respond_to do |format|
       format.html # index.html.erb
