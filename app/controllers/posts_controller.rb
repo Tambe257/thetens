@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     if params[:search]
       @posts = Post.search(params[:search]).paginate(:page => params[:page], :per_page => 5)
     else
-      @posts = Post.paginate(:page => params[:page], :per_page => 5)
+      @posts = Post.paginate(:page => params[:page], :per_page => 5).order("created_at DESC")
     end  
     
     @recent_posts = Post.all.order("created_at DESC").limit(5)
