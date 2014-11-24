@@ -93,6 +93,19 @@ a:visited {
 .navbar li {
   font-size: 130%;
 }
+@media ('max-width: 991px') {
+  .navbar li {
+    font-size: 115%;
+  }
+}
+
+@media ('max-width: 767px') {
+  .navbar li {
+    font-size: 115%;
+    margin-left: 20px;
+  }
+}
+
 .navbar li a {
   width: auto;
 }
@@ -107,6 +120,10 @@ a:visited {
 .navbar-header a {
 font-size: 150%;
 text-align: center;
+}
+
+.navbar-toggle {
+  margin-right: 25px;
 }
 
 .new_review {
@@ -198,6 +215,26 @@ text-align: center;
   text-align: center;
 
 }
+
+ul.menu {
+  list-style-type: none;
+  float: right;
+  margin: 20px 90px 0 0;
+}
+
+a.menu {
+  color: black;
+  text-decoration: none;
+}
+
+a.menu:visited {
+  text-decoration: none;
+}
+
+a.menu:hover {
+  text-decoration: none;
+}
+
 .ver2 {
   height: auto;
   font-weight: bold;
