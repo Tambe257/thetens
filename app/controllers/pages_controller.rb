@@ -34,19 +34,19 @@ class PagesController < ApplicationController
   end
 
   def tens2014
-    @users = User.includes(:pins).where('pins.year=?', '2014')
+    @users = User.eager_load(:pins).where('pins.year=?', '2014')
     @pins = Pin.all
     @pins_ten = Pin.where(:year => '2014', :rank => ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1'], :rank => !nil)
   end
 
   def tens2013
-    @users = User.includes(:pins).where('pins.year=?', '2013')
+    @users = User.eager_load(:pins).where('pins.year=?', '2013')
     @pins = Pin.all
     @pins_ten = Pin.where(:year => '2013', :rank => ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1'], :rank => !nil)
   end
   
   def tens2012
-    @users = User.includes(:pins).where('pins.year=?', '2012')
+    @users = User.eager_load(:pins).where('pins.year=?', '2012')
     @pins = Pin.all
     @pins_ten = Pin.where(:year => '2012', :rank => ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1'], :rank => !nil)
   end
