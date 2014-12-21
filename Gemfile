@@ -22,6 +22,7 @@ gem 'faker', '1.2.0'
 gem 'auto_html'
 gem 'protected_attributes'
 gem 'ckeditor', '~> 4.0.11'
+gem 'font-awesome-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
