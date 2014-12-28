@@ -54,6 +54,7 @@ module Thetens
     config.active_record.whitelist_attributes = true
 
     config.assets.paths << "#{Rails}/vendor/assets/fonts"
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
     # Enable the asset pipeline
     config.assets.enabled = true
@@ -67,5 +68,7 @@ module Thetens
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w(ckeditor/*)
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
+
   end
 end
