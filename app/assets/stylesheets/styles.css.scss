@@ -280,8 +280,8 @@ outline-width:1px;
 }
 
 .header_title {
-text-align:center;
-font-size:350%;
+text-align: center;
+font-size: 350%;
 }
 
 .header_title img {
@@ -290,6 +290,11 @@ margin-top:10px;
 
 .home {
 width:40px;
+}
+
+.home-page-tens {
+  text-align: center;
+  width: 100%;
 }
 
 .index_search {
@@ -364,6 +369,7 @@ font-size:130%;
 
 .navbar li a {
 width:auto;
+padding: 15px 30px 15px 0px ;
 }
 
 .navbar-default .navbar-nav > li > a,.recent_posts a:visited,.blog_posts a:visited,.blogshowlinks a {
@@ -583,6 +589,10 @@ box-shadow:1px 1px 10px #444;
 .stats_pin {
 margin-bottom:50px;
 margin-left:17%;
+}
+
+.stats_pin_title {
+  
 }
 
 .stats_social iframe {
@@ -814,6 +824,10 @@ font-size:115%;
 
 .sr-only {
 margin-right:20px;
+}
+
+#pins {
+  text-align: center;
 }
 }
 
