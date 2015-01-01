@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.masonry.min.js
+//= require bootstrap-sprockets
 //= require twitter/bootstrap
 //= require ckeditor/init
 //= require_tree .
