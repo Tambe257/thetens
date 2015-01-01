@@ -69,6 +69,10 @@ module Thetens
     config.assets.precompile += %w(ckeditor/*)
     config.assets.precompile += %w( .svg .eot .woff .ttf )
     config.assets.precompile += [ 'styles.css.scss']
+    config.assets.precompile += [
+        'glyphicons-halflings.png',
+        'glyphicons-halflings-white.png'
+      ]
 
   end
 end
