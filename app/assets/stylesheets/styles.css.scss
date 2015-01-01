@@ -15,11 +15,11 @@ $font-family-sans-serif:                         'Lato', 'Helvetica Neue', Helve
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: font-path('/vendor/assets/fonts/glyphicons-halflings-regular.eot');
-  src: font-path('/vendor/assets/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
-    font-path('/vendor/assets/fonts/glyphicons-halflings-regular.woff') format('woff'), 
-    font-path('/vendor/assets/fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
-    font-path('/vendor/assets/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: font-path('/assets/fonts/glyphicons-halflings-regular.eot');
+  src: font-path('/assets/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    font-path('/assets/fonts/glyphicons-halflings-regular.woff') format('woff'), 
+    font-path('/assets/fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
+    font-path('/assets/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 #search_form {
