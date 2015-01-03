@@ -42,11 +42,12 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"> theMenu 
                   <span class="caret"></span>
                 </a>
-            <ul class="dropdown-menu">
-              <li class="dropdown-toggle"><%= link_to 'Add +',  new_pin_path %></li>
-              <li><%= link_to 'Edit Profile',  edit_user_registration_path %></li>
-              <li><%= link_to 'Logout',  destroy_user_session_path, method: :delete %></li>
-            </ul>  
+              <ul class="dropdown-menu">
+                <li class="dropdown-toggle"><%= link_to 'Add +',  new_pin_path %></li>
+                <li><%= link_to 'Edit Profile',  edit_user_registration_path %></li>
+                <li><%= link_to 'Logout',  destroy_user_session_path, method: :delete %></li>
+              </ul> 
+            </li> 
             <% else %>
               <li><%= link_to 'Login',  new_user_session_path %></li>
             <% end %>  
