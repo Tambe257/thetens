@@ -173,7 +173,10 @@ margin-bottom:40px;
 transition:all .2s;
 }
 
-.btn-danger {
+.btn:visited, .btn-sm:visited {
+  color: white;
+}
+.btn-danger, .btn-sm {
   color: white;
 }
 
@@ -381,7 +384,7 @@ width:auto;
 padding: 15px 30px 15px 0px ;
 }
 
-.navbar-default .navbar-nav > li > a,.recent_posts a:visited,.blog_posts a:visited,.blogshowlinks a {
+.navbar-default .navbar-nav > li > a,.recent_posts a:visited {
 color:black;
 }
 
