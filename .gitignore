@@ -27,3 +27,5 @@ doc/
 /sampleimages
 
 /config/initializers/app_env_vars.rb
+
+public/assets/
