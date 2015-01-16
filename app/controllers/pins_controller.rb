@@ -40,6 +40,13 @@ class PinsController < ApplicationController
     end
   end
 
+  def copy
+    @source = Pin.find(params[:id])
+    @image = @source.image.url
+    @pin = Pin.new(artist: @source.artist, album: @source.album, year: @source.year, image_remote_url: @image)
+    render 'new'
+  end
+
   # GET /pins/1/edit
   def edit
     @pin = Pin.find_for_user(params[:id], current_user)    
