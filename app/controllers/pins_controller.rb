@@ -43,7 +43,7 @@ class PinsController < ApplicationController
   def copy
     @source = Pin.find(params[:id])
     @image = @source.image.url
-    @pin = Pin.new(artist: @source.artist, album: @source.album, year: @source.year, image_remote_url: @image)
+    @pin = Pin.new(artist: @source.artist, album: @source.album, year: @source.year, image_remote_url: @image.to_s)
     render 'new'
   end
 
