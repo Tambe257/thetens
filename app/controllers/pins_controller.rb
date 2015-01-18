@@ -45,7 +45,7 @@ class PinsController < ApplicationController
     @image = @source.image
     @image_url = @source.image.url
     @pin = Pin.new(artist: @source.artist, album: @source.album, year: @source.year, image_remote_url: @image.to_s)
-    render 'new'
+    render 'copy'
   end
 
   # GET /pins/1/edit
