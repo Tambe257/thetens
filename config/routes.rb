@@ -85,6 +85,8 @@ Thetens::Application.routes.draw do
 
   get 'blog' => 'posts#index'
 
+  get 'covers' => 'pages#covers'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

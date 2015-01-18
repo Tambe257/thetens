@@ -58,4 +58,8 @@ class PagesController < ApplicationController
   def number_ones
     @pins = Pin.all
   end 
+
+  def covers
+    @pins = Pin.all
+  end  
 end
