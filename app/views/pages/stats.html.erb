@@ -16,10 +16,10 @@
 				</div>	
 			</div>	
 			<div class="panel panel-default col-md-4 stats_tens">
-				<div class="panel-heading">
+				<div id="links-header" class="panel-heading">
 					<h2>theTens Pages:</h2>
 				</div>
-				<div class="panel-body tens_links">
+				<div id="tens-links" class="panel-body tens_links">
 					<div class="tens_starburst_stats"><%= link_to image_tag('starburst-2012 medium.png'), tens2012_path %></div>
 					<div class="tens_starburst_stats"><%= link_to image_tag('starburst-2013 medium.png'), tens2013_path %></div>
 				</div>
@@ -121,3 +121,14 @@
 		<iframe src="https://embed.spotify.com/?uri=spotify:user:tambe257:playlist:3yVgfok7jqaCqiuMaQF7SB" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
 	</div>
 </div><!-- container -->	
+
+<script>
+	
+	$(function() {
+
+		$('#links-header').on('click', function(){
+			$('#tens-links').slideToggle(500);
+		});
+	});
+
+</script>

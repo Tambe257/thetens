@@ -67,12 +67,11 @@ margin-bottom:60px;
 .blog_pic img {
 height:45px;
 width:45px;
--webkit-border-radius:500px;
+@include border-radius(500px);
 border-top-left-radius:500px;
 border-top-right-radius:500px;
 border-bottom-right-radius:500px;
 border-bottom-left-radius:500px;
--moz-border-radius:500px;
 }
 
 .blog_posts {
@@ -96,9 +95,7 @@ margin-bottom:50px;
 
 .blogboxshow img {
 max-width:80%;
--webkit-border-radius:5px;
--moz-border-radius:5px;
-border-radius:5px;
+@include border-radius(5px);
 }
 
 .blogcontrols {

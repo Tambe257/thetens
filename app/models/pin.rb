@@ -1,5 +1,5 @@
 class Pin < ActiveRecord::Base
-  attr_accessible :description, :image, :image_remote_url, :artist, :album, :date, :rank, :video, :video_html, :rating, :year, :title
+  attr_accessible :description, :image, :image_remote_url, :artist, :album, :date, :rank, :video, :video_html, :rating, :year, :title, :tag_list
 
   has_attached_file :image, styles: { medium: "320x240>"}
   validates :description, presence: true
@@ -16,6 +16,8 @@ class Pin < ActiveRecord::Base
   belongs_to :user
   
   has_many :comments, dependent: :destroy
+
+  acts_as_taggable
 
   def self.search(search)
     if search

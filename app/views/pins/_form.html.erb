@@ -32,6 +32,11 @@
       <%= f.input :description, :as => :ckeditor, input_html: { rows: "5", :class => "form-control" }, label: "Review" %>
     </div>
    
+    <% if user_signed_in? && current_user.admin? %>
+      <div class="form-group">
+        <%= f.input :tag_list, input_html: { rows: "1", :class => "form-control" }, label: "Tags: (seperated by commas)" %>
+      </div>
+    <% end %>
     <%= f.button :submit, "Post Review", class: "btn btn-primary" %>
   <% end %>
 </div>
