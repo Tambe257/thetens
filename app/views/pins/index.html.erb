@@ -1,22 +1,5 @@
 <%= render 'pages/home' %>
 
-<div class="row">
-	<div class="index_title">
-		<h4>Browse the newest reviews!</h4>
-	</div>
-	<% if current_page? root_path %>
-		<div class="index_search">
-      <form class="form" role="search">
-        <div class="input-group pull-right  search_box">
-          <input type="text" class="form-control" placeholder="Search" name="search" id="search">
-            <div class="input-group-btn">
-              <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-            </div>
-        </div>
-      </form>
-    </div>  
-	<% end %>	        
-</div>
 <div id="pins">
   <%= render @pins %>
 </div>  

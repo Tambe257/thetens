@@ -1,13 +1,7 @@
 <nav class="navbar navbar-static-top navbar-default" role="navigation">
   <div class="row header_row1">
     <div class="header_title">
-      theTens
-      <% if user_signed_in? %>
-        <%= link_to (image_tag current_user.image(:small), class: "header_pic"), current_user %>
-        <%= link_to 'New Review',  new_pin_path, class: "btn btn-danger new_review" %>
-      <% else %> 
-        <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large sign_up_button" %>
-      <% end %>
+      The Music Review Site Where <span style="color: red"><strong>YOUR</strong></span> Opinion Matters
     </div>
   </div>
   <div class="row header_row2">  
@@ -36,15 +30,22 @@
           </li>  
           <li><%= link_to 'theBlog',  blog_path %></li>
         </ul>  
+          
+        <div class="index_search">
+          <form class="form" role="search">
+            <div class="input-group pull-left  search_box">
+              <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+                <div class="input-group-btn">
+                  <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+          </form>
+        </div>    
+        <% unless user_signed_in? %>
           <ul class="nav navbar-nav navbar-right">
-            <% if user_signed_in? %>
-              <li><%= link_to 'Edit Profile',  edit_user_registration_path %></li>
-              <li><%= link_to 'Logout',  destroy_user_session_path, method: :delete %></li>
-            </ul> 
-            <% else %>
-              <li><%= link_to 'Login',  new_user_session_path %></li>
-            <% end %>  
-          </ul>       
+            <li><%= link_to 'Login',  new_user_session_path %></li>
+          </ul>  
+        <% end %>        
       </div>
     </div>
   </div>  

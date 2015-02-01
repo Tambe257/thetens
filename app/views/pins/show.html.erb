@@ -92,9 +92,10 @@
 						</script>
 						<div id="timestamp">Posted: <%= @pin.created_at.strftime("%m/%d/%Y") %></div>
 						<% if user_signed_in? && current_user.admin? %>
-							<p>
+						<br/>
+							<div class="tags">
 	              Tags: <%= @pin.tag_list %>
-	            </p>
+	            </div>
             <% end %>
 					</div>
 				</div>
