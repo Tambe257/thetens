@@ -268,6 +268,15 @@ font-size:5px;
   margin-bottom: 0px;
 }
 
+.covers-review-link {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.covers-review-link a:visited {
+  color: #428bca;
+} 
+
 p.cover-text a {
   color: #ffffff;
 }
@@ -298,6 +307,12 @@ width:50px;
 
 .dropdown_menu {
 width:115px;
+}
+
+
+.edit-pin-image img {
+  width: 200px;
+  height: 200px;
 }
 
 .five_star_title,.number_ones_title,.stats_tens h2 {
@@ -945,6 +960,8 @@ float:right;
 margin:20px 90px 0 0;
 }
 
+/* Covers page CSS*/
+
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000;
@@ -952,7 +969,7 @@ margin:20px 90px 0 0;
   margin: 0 3px 3px 3px;
 }
   /* flip the pane when hovered */
-  .flip-container:hover .flipper, .flip-container.hover .flipper {
+  .flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
     transform: rotateY(180deg);
   }
 
@@ -992,8 +1009,15 @@ margin:20px 90px 0 0;
   text-decoration: none;
   text-align: center;
   padding-top: 20px;
-  margin-top: 3px;
+  margin: 3px -3px;
 }
+
+.back a {
+  color: white;
+  text-decoration: none;
+}
+
+/* End of covers page CSS */
 
 @media (max-width: 991px){
 

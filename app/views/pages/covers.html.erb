@@ -4,20 +4,17 @@
 <% @pins.shuffle.each do |pin| %>
   <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
     <div class="flipper">
-    <div class="front">
-      <div class="covers">
-        <%= link_to (image_tag pin.image), pin %>
-        
-          
+      <div class="front">
+        <div class="covers">
+          <%= link_to (image_tag pin.image), pin %>
+        </div>
       </div>
+      <div class="back">
+        <%= link_to pin do %>
+          <p><%= truncate(pin.album, length:20) %> <br/>by<br/> <%= pin.artist %> <br/><%= link_to "Review This Abum", copy_pin_path(pin) %></p>
+        <% end %>  
+      </div>      
     </div>
-    <div class="back">
-      <%= link_to pin do %>
-            <p><%= truncate(pin.album, length:20) %> <br/>by<br/> <%= pin.artist %> <br/><%= link_to "Review This Abum", copy_pin_path(pin) %></p>
-
-          <% end %>  
-    </div>      
-  </div>
   </div>
 
 <% end %>  

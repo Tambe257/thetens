@@ -24,6 +24,7 @@ gem 'protected_attributes'
 gem 'ckeditor', '~> 4.0.11'
 gem 'font-awesome-rails'
 gem 'acts-as-taggable-on', '~> 3.4'
+gem 'haml', '~> 4.0.6'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

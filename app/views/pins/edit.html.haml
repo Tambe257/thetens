@@ -1,0 +1,11 @@
+%div{:class => "form_page"}
+	%div{:class => "panel panel-default form_page"}
+		%div{:class => "panel-heading form_heading"}
+			%h1 Edit Review
+			
+		%div{:class => "panel-body"}	
+			= render 'form'
+
+		%div{:class => "panel-footer pin_edit"}
+			= link_to 'Show', @pin |
+			= link_to 'Back', pins_path

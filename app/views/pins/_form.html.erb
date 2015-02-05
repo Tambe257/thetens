@@ -1,5 +1,7 @@
 <div class="panel-body">
-  <%= image_tag @pin.image, :class => "form-image" %>
+  <div class="edit-pin-image">
+    <%= image_tag @pin.image, :class => "form-image" %>
+  </div>  
   <%= simple_form_for(@pin, html: { class: "form-horizontal"}) do |f| %>
 	  <%= f.error_notification %>
 	  <%= f.full_error :image_file_size, class: "alert alert-error" %>
