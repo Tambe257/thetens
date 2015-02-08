@@ -1,12 +1,22 @@
 <div class="row">
 	<div class="main-home-section">
 		<% if user_signed_in? == false %>
-		<%= link_to image_tag('theTensLogo.png'), root_path, class: "logo" %>
-			<div class="home_page_tens">
-			  <%= link_to image_tag('starburst2012small.png'), tens2012_path %>
+		<div class="logo_section">
+			<div class="logo">
+				<%= link_to image_tag('theTensLogo3.png'), root_path %>
+			</div>
+			
+			<div class="tens_balloons">	
+				<%= link_to image_tag('starburst2012small.png'), tens2012_path %>
 			  <%= link_to image_tag('starburst2013small.png'), tens2013_path %>
 			  <%= link_to image_tag('starburst2014small.png'), tens2014_path %>
 			  <%= link_to image_tag('starburst2015small.png'), tens2015_path %>
+			</div>  
+		</div>	
+			<div class="home_page_tens">
+				<% @pins.shuffle do |pin| %>
+					<%= render pin %>
+				<% end %>
 			</div>
 			<div class="home-page-box">
 				<div class="sign_up_box">
@@ -15,7 +25,7 @@
 				</div>
 			</div>	
 		<% else %>
-			<%= link_to image_tag('theTensLogo.png'), root_path, class: "logo" %>
+			<%= link_to image_tag('theTensLogo3.png'), root_path, class: "logo" %>
 			
 			<div class="home_page_tens">
 			  <%= link_to image_tag('starburst2012small.png'), tens2012_path %>

@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
   def home
+    @pins = Pin.all
+    @pin_shuffle = Pin.all.shuffle
+    @pins_rock = Pin.tagged_with('Rock').last(5)
   end
 
   def stats
@@ -67,5 +70,9 @@ class PagesController < ApplicationController
 
   def covers
     @pins = Pin.all
+
+    if params[:tag]
+      @pins = Pin.tagged_with(params[:tag])
+    end  
   end  
 end

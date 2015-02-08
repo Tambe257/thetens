@@ -6,9 +6,14 @@ class PinsController < ApplicationController
   def index
     if params[:search]
       @pins = Pin.search(params[:search]).paginate(:page => params[:page], :per_page => 50)
+    elsif params[:tag]
+      @pins = Pin.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 50)
     else  
       @pins = Pin.paginate(:page => params[:page], :per_page => 50).order("created_at DESC")
     end  
+
+    @pins_rock = Pin.tagged_with("Rock")
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @pins }
@@ -96,6 +101,10 @@ class PinsController < ApplicationController
       format.html { redirect_to pins_url }
       format.json { head :no_content }
     end
+  end
+
+  def tag_cloud
+    @tags = Post.tag_counts_on(:tags)
   end
 end
 

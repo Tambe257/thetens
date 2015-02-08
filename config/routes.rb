@@ -90,6 +90,10 @@ Thetens::Application.routes.draw do
 
   get 'covers' => 'pages#covers'
 
+  get 'home' => 'pages#home'
+
+  get 'tags/:tag', to: 'pins#index', as: :tag
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

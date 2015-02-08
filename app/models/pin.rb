@@ -19,6 +19,10 @@ class Pin < ActiveRecord::Base
 
   acts_as_taggable
 
+  attr_accessible :tag_list # Lots of other fields in here as well, but not relevant
+
+  acts_as_taggable_on :tags
+
   def self.search(search)
     if search
       losearch = search.downcase
