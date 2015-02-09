@@ -1,4 +1,4 @@
-<div class="home_wrapper">
+<div id="home_wrapper">
   <div class="main-home-section">
     <% if user_signed_in? == false %>
     <div class="logo_section">
@@ -64,7 +64,13 @@
               <li><%= link_to 'Logout',  destroy_user_session_path, method: :delete %></li>
             </ul>
           </div> 
+          <div class="home_page_profile">
+            <p><%= current_user.name %></p>
+            <p>Reviews Posted: <%= current_user.pins.count %></p>
+          </div>  
           <div class="review-button"><%= link_to 'New Review',  new_pin_path, class: "btn btn-danger new_review" %></div> 
+
+
         </div>
       </div>  
     <% end %>
@@ -72,7 +78,7 @@
   
   <hr>
   <!-- Newest reviews -->
-  <div class="row">
+  
     <div class="home_page_rows">
       <div class="home_page_rows_header">
         <p>Newest Reviews:</p>
@@ -95,12 +101,12 @@
           </p>  
         </div>  
       <% end %> 
-  </div>  <!-- Row -->
+    </div>  
   <!-- Newest reviews -->
 
   <hr>
   <!-- Rock reviews -->
-  <div class="row">
+  
     <div class="home_page_rows">
       <div class="home_page_rows_header">
         <p>Rock Reviews:</p>
@@ -123,13 +129,13 @@
           </p>  
         </div>  
       <% end %> 
-  </div>  <!-- Row -->
+    </div>
   <!-- Rock reviews -->
 
   <hr>
 
   <!-- Pop reviews -->
-  <div class="row">
+ 
     <div class="home_page_rows">
       <div class="home_page_rows_header">
         <p>Pop Reviews:</p>
@@ -152,13 +158,12 @@
           </p>  
         </div>  
       <% end %> 
-  </div>  <!-- Row -->
+    </div>  
   <!-- Pop reviews -->
 
   <hr>
 
   <!-- Rap reviews -->
-  <div class="row">
     <div class="home_page_rows">
       <div class="home_page_rows_header">
         <p>Rap Reviews:</p>
@@ -181,13 +186,12 @@
           </p>  
         </div>  
       <% end %> 
-  </div>  <!-- Row -->
+    </div>  
   <!-- Rap reviews -->
 
   <hr>
 
   <!-- Alternative reviews -->
-  <div class="row">
     <div class="home_page_rows">
       <div class="home_page_rows_header">
         <p>Alternative Reviews:</p>
@@ -210,6 +214,6 @@
           </p>  
         </div>  
       <% end %> 
-  </div>  <!-- Row -->
+    </div>  
   <!-- Alternative reviews -->
 </div> <!-- Wrapper --> 
