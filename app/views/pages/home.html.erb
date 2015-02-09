@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="home_wrapper">
   <div class="main-home-section">
     <% if user_signed_in? == false %>
     <div class="logo_section">
@@ -69,13 +69,147 @@
       </div>  
     <% end %>
   </div>
+  
   <hr>
+  <!-- Newest reviews -->
   <div class="row">
     <div class="home_page_rows">
-      <p>Rock Reviews:</p>
+      <div class="home_page_rows_header">
+        <p>Newest Reviews:</p>
+        <%= link_to "All Reviews...", "http://localhost:3000" %>
+      </div>  
+      <% @pins_newest.each do |pin| %>
+        <div class="short_box">
+          <div class="short_box_image_box">
+            <%= link_to (image_tag pin.image(:medium)), pin %>
+          </div>
+          <p class="description">
+            <strong><h5><%= truncate(pin.album, length: 25) %><h5></strong>
+          </p>
+          <p class="description">
+            <strong><h5><%= pin.artist %> - <%= pin.year %><h5></strong>
+          
+          </p>
+          <p>
+            <strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
+          </p>  
+        </div>  
+      <% end %> 
+  </div>  <!-- Row -->
+  <!-- Newest reviews -->
+
+  <hr>
+  <!-- Rock reviews -->
+  <div class="row">
+    <div class="home_page_rows">
+      <div class="home_page_rows_header">
+        <p>Rock Reviews:</p>
+        <%= link_to "All Rock Reviews...", "http://localhost:3000/tags/Rock" %>
+      </div>  
       <% @pins_rock.each do |pin| %>
-        <%= render pin %>
-      <% end %>
-    </div>
-  </div>  
-</div>  
+        <div class="short_box">
+          <div class="short_box_image_box">
+            <%= link_to (image_tag pin.image(:medium)), pin %>
+          </div>
+          <p class="description">
+            <strong><h5><%= truncate(pin.album, length: 25) %><h5></strong>
+          </p>
+          <p class="description">
+            <strong><h5><%= pin.artist %> - <%= pin.year %><h5></strong>
+          
+          </p>
+          <p>
+            <strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
+          </p>  
+        </div>  
+      <% end %> 
+  </div>  <!-- Row -->
+  <!-- Rock reviews -->
+
+  <hr>
+
+  <!-- Pop reviews -->
+  <div class="row">
+    <div class="home_page_rows">
+      <div class="home_page_rows_header">
+        <p>Pop Reviews:</p>
+        <%= link_to "All Pop Reviews...", "http://localhost:3000/tags/Pop" %>
+      </div>  
+      <% @pins_pop.each do |pin| %>
+        <div class="short_box">
+          <div class="short_box_image_box">
+            <%= link_to (image_tag pin.image(:medium)), pin %>
+          </div>  
+          <p class="description">
+            <strong><h5><%= truncate(pin.album, length: 25) %><h5></strong>
+          </p>
+          <p class="description">
+            <strong><h5><%= pin.artist %> - <%= pin.year %><h5></strong>
+          
+          </p>
+          <p>
+            <strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
+          </p>  
+        </div>  
+      <% end %> 
+  </div>  <!-- Row -->
+  <!-- Pop reviews -->
+
+  <hr>
+
+  <!-- Rap reviews -->
+  <div class="row">
+    <div class="home_page_rows">
+      <div class="home_page_rows_header">
+        <p>Rap Reviews:</p>
+        <%= link_to "All Rap Reviews...", "http://localhost:3000/tags/Rap" %>
+      </div>  
+      <% @pins_rap.each do |pin| %>
+        <div class="short_box">
+          <div class="short_box_image_box">
+            <%= link_to (image_tag pin.image(:medium)), pin %>
+          </div>  
+          <p class="description">
+            <strong><h5><%= truncate(pin.album, length: 25) %><h5></strong>
+          </p>
+          <p class="description">
+            <strong><h5><%= pin.artist %> - <%= pin.year %><h5></strong>
+          
+          </p>
+          <p>
+            <strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
+          </p>  
+        </div>  
+      <% end %> 
+  </div>  <!-- Row -->
+  <!-- Rap reviews -->
+
+  <hr>
+
+  <!-- Alternative reviews -->
+  <div class="row">
+    <div class="home_page_rows">
+      <div class="home_page_rows_header">
+        <p>Alternative Reviews:</p>
+        <%= link_to "All Alternative Reviews...", "http://localhost:3000/tags/Alternative" %>
+      </div>  
+      <% @pins_alternative.each do |pin| %>
+        <div class="short_box">
+          <div class="short_box_image_box">
+            <%= link_to (image_tag pin.image(:medium)), pin %>
+          </div>  
+          <p class="description">
+            <strong><h5><%= truncate(pin.album, length: 25) %><h5></strong>
+          </p>
+          <p class="description">
+            <strong><h5><%= pin.artist %> - <%= pin.year %><h5></strong>
+          
+          </p>
+          <p>
+            <strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
+          </p>  
+        </div>  
+      <% end %> 
+  </div>  <!-- Row -->
+  <!-- Alternative reviews -->
+</div> <!-- Wrapper --> 

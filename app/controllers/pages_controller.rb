@@ -3,6 +3,10 @@ class PagesController < ApplicationController
     @pins = Pin.all
     @pin_shuffle = Pin.all.shuffle
     @pins_rock = Pin.tagged_with('Rock').last(5)
+    @pins_pop = Pin.tagged_with('Pop').last(5)
+    @pins_rap = Pin.tagged_with('Rap').last(5)
+    @pins_alternative = Pin.tagged_with('Alternative').last(5)
+    @pins_newest = Pin.last(5).reverse
   end
 
   def stats

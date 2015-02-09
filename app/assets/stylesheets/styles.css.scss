@@ -412,11 +412,28 @@ width:40px;
 }
 
 .home_page_rows {
-  height: 480px;
+  height: 360px;
+  width: 1200px;
+  position: relative;
+  padding-left: 20px;
 }
 
-.home_page_rows p {
-  
+.home_page_rows_header {
+  width: 1200px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.home_page_rows_header p {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.home_page_rows_header a {
+  font-size: 20px;
+  position: absolute;
+  left: 960px;
+  margin-top: -30px;
 }
 
 .home_page_tens {
@@ -431,6 +448,10 @@ width:40px;
 .home_page_tens_title {
   margin-top: -10px;
   font-size: 35px;
+}
+
+.home_wrapper {
+  padding-bottom: 80px;
 }
 
 .index_search {
@@ -660,6 +681,35 @@ zoom:1;
 margin-top: 8px;
 }
 
+.short_box {
+margin:5px;
+padding:5px;
+font-size:11px;
+line-height:1.4em;
+display: inline-block;
+@include border-radius(5px);
+box-shadow:1px 1px 10px #444;
+width:214px;
+height:310px;
+background-color:#F5F5F5;
+-webkit-transition:all .2s;
+transition:all .2s;
+}
+
+.short_box img {
+width:100%;
+@include border-radius(5px);
+}
+
+.short_box_image_box {
+  width: 204px;
+  height: 204px;
+}
+
+.short_box:hover {
+background-color:#fff;
+box-shadow:1px 1px 5px #444;
+}
 .sign_up_box {
   height: 430px;
   width: 220px;
