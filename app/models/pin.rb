@@ -26,7 +26,7 @@ class Pin < ActiveRecord::Base
   def self.search(search)
     if search
       losearch = search.downcase
-      where('lower(description) LIKE ? OR lower(artist) LIKE ? OR lower(album) LIKE ? OR lower(year) LIKE ?', "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.to_s.downcase}%")
+      where('lower(artist) LIKE ? OR lower(album) LIKE ? OR lower(year) LIKE ?', "%#{search.downcase}%", "%#{search.downcase}%", "%#{search.to_s.downcase}%")
     end
   end      
   

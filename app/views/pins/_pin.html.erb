@@ -48,7 +48,9 @@
               Delete
         <% end %>
 		  </p>
-		  <p><%= link_to "Review This Abum", copy_pin_path(pin) %></p>
+		  <% unless pin.user == current_user %>
+		  	<p><%= link_to "Review This Abum", copy_pin_path(pin) %></p>
+		  <% end %>	
 		  
 		<% end %> 
 	<% end %>	

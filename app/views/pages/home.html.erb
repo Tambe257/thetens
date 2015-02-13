@@ -3,7 +3,7 @@
     <% if user_signed_in? == false %>
     <div class="logo_section">
       <div class="logo">
-        <%= link_to image_tag('tensLogo3.png'), root_path %>
+        <%= link_to image_tag('tensLogo3resize.png'), root_path %>
       </div>
       
       <div class="tens_balloons"> 
@@ -33,7 +33,7 @@
     <% else %>
       <div class="logo_section">
         <div class="logo">
-          <%= link_to image_tag('tensLogo3.png'), root_path %>
+          <%= link_to image_tag('tensLogo3resize.png'), root_path %>
         </div>
         
         <div class="tens_balloons"> 
@@ -67,6 +67,19 @@
           <div class="home_page_profile">
             <p><%= current_user.name %></p>
             <p>Reviews Posted: <%= current_user.pins.count %></p>
+
+            <hr>
+            
+            <p>Last Review Posted:</p>
+            <p><%= time_ago_in_words(current_user.pins.last.created_at) %> ago</p>
+
+            <hr>
+
+            <p>Jump To Your:</p>
+
+            <%= link_to "5 Stars", tens5star_user_path(current_user), class: "btn btn-primary "  %>
+            <%= link_to "#1's", tensnum1s_user_path(current_user), class: "btn btn-primary " %>
+
           </div>  
           <div class="review-button"><%= link_to 'New Review',  new_pin_path, class: "btn btn-danger new_review" %></div> 
 
@@ -76,10 +89,10 @@
     <% end %>
   </div>
   
-  <hr>
   <!-- Newest reviews -->
   
     <div class="home_page_rows">
+      <hr>
       <div class="home_page_rows_header">
         <p>Newest Reviews:</p>
         <%= link_to "All Reviews...", "http://localhost:3000" %>
@@ -104,10 +117,10 @@
     </div>  
   <!-- Newest reviews -->
 
-  <hr>
   <!-- Rock reviews -->
   
     <div class="home_page_rows">
+      <hr>
       <div class="home_page_rows_header">
         <p>Rock Reviews:</p>
         <%= link_to "All Rock Reviews...", "http://localhost:3000/tags/Rock" %>
@@ -132,11 +145,10 @@
     </div>
   <!-- Rock reviews -->
 
-  <hr>
-
   <!-- Pop reviews -->
  
     <div class="home_page_rows">
+      <hr>
       <div class="home_page_rows_header">
         <p>Pop Reviews:</p>
         <%= link_to "All Pop Reviews...", "http://localhost:3000/tags/Pop" %>
@@ -161,10 +173,9 @@
     </div>  
   <!-- Pop reviews -->
 
-  <hr>
-
   <!-- Rap reviews -->
     <div class="home_page_rows">
+      <hr>
       <div class="home_page_rows_header">
         <p>Rap Reviews:</p>
         <%= link_to "All Rap Reviews...", "http://localhost:3000/tags/Rap" %>
@@ -189,10 +200,9 @@
     </div>  
   <!-- Rap reviews -->
 
-  <hr>
-
   <!-- Alternative reviews -->
     <div class="home_page_rows">
+      <hr>
       <div class="home_page_rows_header">
         <p>Alternative Reviews:</p>
         <%= link_to "All Alternative Reviews...", "http://localhost:3000/tags/Alternative" %>
