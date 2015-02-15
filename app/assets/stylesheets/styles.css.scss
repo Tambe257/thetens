@@ -69,6 +69,11 @@ position:relative;
 float:right;
 }
 
+.blog_background {
+  background-color: white;
+  width: 1238px;
+  margin-left: -119px;
+}
 .blog_comment_board {
 text-align:center;
 width:auto;
@@ -84,6 +89,15 @@ width:90px;
 margin-bottom:60px;
 }
 
+.blog_container hr {
+  width: 733px;
+  margin-left: 0px;
+}
+
+.blog_nav {
+  height: 25px;
+  padding-left: 123px;
+}
 .blog_pic img {
 height:45px;
 width:45px;
@@ -95,18 +109,30 @@ border-bottom-left-radius:500px;
 }
 
 .blog_posts {
-width:730px;
+width: 733px;
 height:auto;
 padding-left:9px;
 padding-right:8px;
 padding-bottom:8px;
 padding-top:2px;
 box-shadow:1px 1px 10px #444;
+background-color: white;
+}
+
+.blog_posts hr {
+  width: 717px;
 }
 
 .blog_search {
-height:130px;
-box-shadow:1px 1px 1px #444;
+height: 25px;
+width: 353px;
+margin: -37px 0px 0px 821px;
+position: relative;
+right: 50px;
+}
+
+.blog_title {
+  background-color: white;
 }
 
 .blog_wells,.stats_container,.user_show,.page_container,#stats,#stats_content {
@@ -132,8 +158,8 @@ padding-right:15px;
 }
 
 .blogimages img {
-max-width:325px;
-max-height:350px;
+max-width:250px;
+max-height:250px;
 width:auto;
 height:auto;
 padding-right:25px;
@@ -146,6 +172,12 @@ max-height:350px;
 width:auto;
 height:auto;
 text-align:center;
+}
+
+.blog_wells {
+  width: 249px;
+  float: right;
+  margin-top: -2540px;
 }
 
 .box {
@@ -290,8 +322,24 @@ font-size:5px;
   color: #428bca;
 } 
 
+.covers_header {
+  height: 50px;
+  color: black;
+  font-weight: bold;
+  font-size: 35px;
+  text-align: center;
+}
+
+.covers_header a {
+  margin: 0 30px 0 -110px;
+}
+
 p.cover-text a {
   color: #ffffff;
+}
+
+p.cover_copy a {
+  color: blue;
 }
 
 .description {
@@ -343,7 +391,7 @@ color:gray;
 }
 
 .footer {
-height:45px;
+height:55px;
 width:100%;
 background-color:white;
 background-repeat:repeat;
@@ -351,7 +399,7 @@ background-attachment:scroll;
 background-position:0 0;
 font-size:150%;
 padding-left:15px;
-padding-top:10px;
+padding-top: 20px;
 color:#999;
 acolor:#428bca;
 }
@@ -645,10 +693,12 @@ color:#428bca;
 
 .recent_posts ul {
 padding-left:12px;
+width: 231px;
 }
 
 .recent_posts,.blog_about {
 box-shadow:1px 1px 1px #444;
+background-color: white;
 }
 
 .review-button {
@@ -657,7 +707,7 @@ box-shadow:1px 1px 1px #444;
 }
 
 .review_show_copy_button {
-  margin: 15px -35px 0 0px;
+  margin: 35px 0px 0 -85px;
   float: right;
   position: absolute;
 }
@@ -799,6 +849,10 @@ border-radius:5px;
 
 .social,.blogshowsocial,.tens_starburst {
 float:right;
+}
+
+.social {
+  margin-top: -8px;
 }
 
 .social_logo {

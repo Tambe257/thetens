@@ -7,8 +7,10 @@
 
 .index_search {
 text-align:right;
-right: 15px;
+left: 742px;
 margin-top: -37px;
+width: 241px;
+position: relative;
 }
 
 .index_search button {
@@ -49,6 +51,7 @@ nav {
 nav ul {
   margin: 0;
   padding: 0;
+  width: 763px;
 }
 
 nav ul li {
@@ -127,6 +130,7 @@ ul.sub_menu {
   z-index: 99;
   @include border-radius(5px);
   border: 1px solid #ccc;
+  width: 102px;
 }
 
 ul.sub_menu li {
@@ -166,8 +170,7 @@ ul.sub_menu li:hover a {
   }
 
   .index_search {
-    width: 160px;
-    margin: 0px 0 0 15px;
+    width: 140px;
   }
 
   .index_search button {

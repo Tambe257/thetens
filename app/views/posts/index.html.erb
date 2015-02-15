@@ -1,68 +1,65 @@
-<div class="blog_title">
-  <%= image_tag('blog.jpg')%>
-</div>
-<div>
-  <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
-  <%= link_to 'Blog Comment Board', blog_comments_board_path, class: "btn btn-primary" %>
-</div>        
-<div class="col-lg-8 blog_container">
-  <% @posts.each do |post| %>
-    <hr>
-    <div class="blog_posts">
-      <h1><%= link_to post.title, post %></h1>
-      <p class="lead blog_pic">by <%= link_to post.user.name, post.user %> | <%= image_tag post.user.image(:small) %></p>
+<div class="blog_background">
+  <div class="blog_title">
+    <%= image_tag('blog.jpg')%>
+  </div>
+  <div class="blog_nav">
+    <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
+    <%= link_to 'Blog Comment Board', blog_comments_board_path, class: "btn btn-primary" %>      
 
-      <hr>
-      <div class="blogimages">
-        <% if post.image.present? %>
-          <%= image_tag post.image %>
-        <% end %>  
-        <p><%= raw truncate(post.body, length: 600, :escape => false) %></p><%= link_to 'Read More', post, class: "btn-sm btn-primary" %></p>
-
-        <div class="blogcontrols">
-          <p>
-            <% if user_signed_in? %>
-              <% if current_user == post.user || current_user.admin? %>
-                <%= link_to 'Edit', edit_post_path(post) %> |
-                <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-              <% end %>        
-            <% end %>  
-          <i class="fa fa-clock-o"></i> Posted on <%= post.created_at.strftime("%m/%d/%Y") %>
-          </p>
-        </div>  
-        <% if post.video_html.present? %>
-          <div class="blog_video">
-            <div style="clear:both"></div>
-            <br />
-            <%= link_to post.video_html, :class => 'youtube title_link' %>
-          </div>
-        <% end %> 
-      </div><!-- blogimages-->    
-      <div style="clear:both"></div>
-      <br /> 
-    </div><!-- blog_posts-->    
-  <% end %>
-  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
-  <p style="text-align:left;"><a href="#">Back To The Top</a></p>
-</div> <!-- col-lg-8--> 
-  
-<div class="col-lg-4 blog_wells">
-  <div class="well blog_search">
-    <h4>Blog Search</h4>
-    <form class="navbar-form" role="search">
+    <form class="navbar-form blog_search" role="search">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search" name="search" id="search">
+        <input type="text" class="form-control" placeholder="Blog Search" name="search" id="search">
         <div class="input-group-btn">
           <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
         </div>
       </div>
     </form> <!-- search -->        
   </div>
-  <!-- /well -->
-  <div class="well recent_posts">
-    <h4>Recent Posts</h4>
-    <div class="row">
-      <div class="col-lg-10">
+  <hr>
+</div>
+  <div class="blog_container">
+    <% @posts.each do |post| %>
+      <div class="blog_posts">
+        <h3><%= link_to post.title, post %></h3>
+        <p class="lead blog_pic">by <%= link_to post.user.name, post.user %> | <%= image_tag post.user.image(:small) %></p>
+
+        <hr>
+        <div class="blogimages">
+          <% if post.image.present? %>
+            <%= image_tag post.image %>
+          <% end %>  
+          <p><%= raw truncate(post.body, length: 600, :escape => false) %></p><%= link_to 'Read More', post, class: "btn-sm btn-primary" %></p>
+
+          <div class="blogcontrols">
+            <p>
+              <% if user_signed_in? %>
+                <% if current_user == post.user || current_user.admin? %>
+                  <%= link_to 'Edit', edit_post_path(post) %> |
+                  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>        
+              <% end %>  
+            <i class="fa fa-clock-o"></i> Posted on <%= post.created_at.strftime("%m/%d/%Y") %>
+            </p>
+          </div>  
+          <% if post.video_html.present? %>
+            <div class="blog_video">
+              <div style="clear:both"></div>
+              <br />
+              <%= link_to post.video_html, :class => 'youtube title_link' %>
+            </div>
+          <% end %> 
+        </div><!-- blogimages-->    
+        <div style="clear:both"></div>
+        <br /> 
+      </div><!-- blog_posts-->  
+      <hr>  
+    <% end %>
+
+    <div class="blog_wells">
+    <!-- /well -->
+    <div class="well recent_posts">
+      <h4>Recent Posts</h4>
+      <div class="row">
         <ul class="list-unstyled">
           <li>1 - <%= link_to truncate(@recent_posts[0].title, length: 30), @recent_posts[0] %>
           </li>
@@ -75,14 +72,16 @@
           <li>5 - <%= link_to truncate(@recent_posts[4].title, length: 30), @recent_posts[4] %>
           </li>
         </ul>
-      </div> 
+      </div>
     </div>
+    <!-- /well -->
+    <div class="well blog_about">
+      <h4>About theBlog</h4>
+      <p>This blog is your free space to use for all sorts of things. Review a single track that you heard. Post a list of your favorite music videos of all time. Comment on other reviewer's top ten lists. Anything!</p>
+    </div>
+    <!-- /well -->
   </div>
-  <!-- /well -->
-  <div class="well blog_about">
-    <h4>About theBlog</h4>
-    <p>This blog is your free space to use for all sorts of things. Review a single track that you heard. Post a list of your favorite music videos of all time. Comment on other reviewer's top ten lists. Anything!</p>
-  </div>
-  <!-- /well -->
-</div>
 
+    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+    <p style="text-align:left;"><a href="#">Back To The Top</a></p>
+  </div>
