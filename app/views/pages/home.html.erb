@@ -22,13 +22,23 @@
         </div>   
       </div>
       <div class="home-page-box">
-        <div class="sign_up_box">
-          <h4>Sign in and share what you're listening to!</h4>
+        <div class="sign_in_box">
+          <p>Sign in and share what you're listening to!</p>
           
           <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large sign_up_button" %>
           
           <h5><%= link_to "Or Login", new_user_session_path, class: "btn btn-primary btn-xs" %>
         </div>
+
+        <div class="home_social">
+          <%= link_to image_tag("FB_logo.png"), "https://www.facebook.com/pages/The-Tens/271346382911804", :target => "_blank" %>
+    
+          <%= link_to image_tag("twitter29x29.png"), "http://www.twitter.com/thetensreviews", :target => "_blank" %>
+          <%= link_to image_tag("Instagram_small.png"), "http://www.instagram.com/thetensreviews", :target => "_blank" %>
+
+          <%= link_to image_tag("Email_Icon.png"), "http://thetens.us3.list-manage.com/subscribe?u=7bded0743382d632d8e3bdad8&id=077fc54055", :target => "_blank" %>
+        </div>
+
       </div>  
     <% else %>
       <div class="logo_section">
@@ -82,8 +92,16 @@
 
           </div>  
           <div class="review-button"><%= link_to 'New Review',  new_pin_path, class: "btn btn-danger new_review" %></div> 
+        
+        </div>
 
+        <div class="home_social">
+          <%= link_to image_tag("FB_logo.png"), "https://www.facebook.com/pages/The-Tens/271346382911804", :target => "_blank" %>
+    
+          <%= link_to image_tag("twitter29x29.png"), "http://www.twitter.com/thetensreviews", :target => "_blank" %>
+          <%= link_to image_tag("Instagram_small.png"), "http://www.instagram.com/thetensreviews", :target => "_blank" %>
 
+          <%= link_to image_tag("Email_Icon.png"), "http://thetens.us3.list-manage.com/subscribe?u=7bded0743382d632d8e3bdad8&id=077fc54055", :target => "_blank" %>
         </div>
       </div>  
     <% end %>
@@ -109,8 +127,32 @@
             <strong><h5><%= pin.artist %> - <%= pin.year %><h5></strong>
           
           </p>
+
+          <p>   
+            <% if pin.rating == "1" %>
+              <span class="rating r1"></span>
+                <% elsif pin.rating == "1.5" %>
+                  <span class="rating r15"></span>  
+                <% elsif pin.rating == "2" %>
+                  <span class="rating r2"></span>
+                <% elsif pin.rating == "2.5" %>
+                  <span class="rating r25"></span>  
+                <% elsif pin.rating == "3" %>
+                  <span class="rating r3"></span>
+                <% elsif pin.rating == "3.5" %>
+                  <span class="rating r35"></span>    
+                <% elsif pin.rating == "4" %>
+                  <span class="rating r4"></span>
+                <% elsif pin.rating == "4.5" %>
+                  <span class="rating r45"></span>  
+                <% elsif pin.rating == "5" %>
+                  <span class="rating r5"></span>     
+                <% else %>
+                  <span class="rating r0"></span> 
+            <% end %>
+          </p>  
           <p>
-            <strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
+            <strong><h5>Posted by <%= link_to pin.user.name, pin.user %> </h5></strong>
           </p>  
         </div>  
       <% end %> 
@@ -137,8 +179,32 @@
             <strong><h5><%= pin.artist %> - <%= pin.year %><h5></strong>
           
           </p>
+
+          <p>   
+            <% if pin.rating == "1" %>
+              <span class="rating r1"></span>
+                <% elsif pin.rating == "1.5" %>
+                  <span class="rating r15"></span>  
+                <% elsif pin.rating == "2" %>
+                  <span class="rating r2"></span>
+                <% elsif pin.rating == "2.5" %>
+                  <span class="rating r25"></span>  
+                <% elsif pin.rating == "3" %>
+                  <span class="rating r3"></span>
+                <% elsif pin.rating == "3.5" %>
+                  <span class="rating r35"></span>    
+                <% elsif pin.rating == "4" %>
+                  <span class="rating r4"></span>
+                <% elsif pin.rating == "4.5" %>
+                  <span class="rating r45"></span>  
+                <% elsif pin.rating == "5" %>
+                  <span class="rating r5"></span>     
+                <% else %>
+                  <span class="rating r0"></span> 
+            <% end %>
+          </p>
           <p>
-            <strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
+            <strong><h5>Posted by <%= link_to pin.user.name, pin.user %></h5> </strong>
           </p>  
         </div>  
       <% end %> 
@@ -165,8 +231,32 @@
             <strong><h5><%= pin.artist %> - <%= pin.year %><h5></strong>
           
           </p>
+
+          <p>   
+            <% if pin.rating == "1" %>
+              <span class="rating r1"></span>
+                <% elsif pin.rating == "1.5" %>
+                  <span class="rating r15"></span>  
+                <% elsif pin.rating == "2" %>
+                  <span class="rating r2"></span>
+                <% elsif pin.rating == "2.5" %>
+                  <span class="rating r25"></span>  
+                <% elsif pin.rating == "3" %>
+                  <span class="rating r3"></span>
+                <% elsif pin.rating == "3.5" %>
+                  <span class="rating r35"></span>    
+                <% elsif pin.rating == "4" %>
+                  <span class="rating r4"></span>
+                <% elsif pin.rating == "4.5" %>
+                  <span class="rating r45"></span>  
+                <% elsif pin.rating == "5" %>
+                  <span class="rating r5"></span>     
+                <% else %>
+                  <span class="rating r0"></span> 
+            <% end %>
+          </p>
           <p>
-            <strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
+            <strong><h5>Posted by <%= link_to pin.user.name, pin.user %></h5> </strong>
           </p>  
         </div>  
       <% end %> 
@@ -192,8 +282,32 @@
             <strong><h5><%= pin.artist %> - <%= pin.year %><h5></strong>
           
           </p>
+
+          <p>   
+            <% if pin.rating == "1" %>
+              <span class="rating r1"></span>
+                <% elsif pin.rating == "1.5" %>
+                  <span class="rating r15"></span>  
+                <% elsif pin.rating == "2" %>
+                  <span class="rating r2"></span>
+                <% elsif pin.rating == "2.5" %>
+                  <span class="rating r25"></span>  
+                <% elsif pin.rating == "3" %>
+                  <span class="rating r3"></span>
+                <% elsif pin.rating == "3.5" %>
+                  <span class="rating r35"></span>    
+                <% elsif pin.rating == "4" %>
+                  <span class="rating r4"></span>
+                <% elsif pin.rating == "4.5" %>
+                  <span class="rating r45"></span>  
+                <% elsif pin.rating == "5" %>
+                  <span class="rating r5"></span>     
+                <% else %>
+                  <span class="rating r0"></span> 
+            <% end %>
+          </p>
           <p>
-            <strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
+            <strong><h5>Posted by <%= link_to pin.user.name, pin.user %></h5> </strong>
           </p>  
         </div>  
       <% end %> 
@@ -219,8 +333,32 @@
             <strong><h5><%= pin.artist %> - <%= pin.year %><h5></strong>
           
           </p>
+
+          <p>   
+            <% if pin.rating == "1" %>
+              <span class="rating r1"></span>
+                <% elsif pin.rating == "1.5" %>
+                  <span class="rating r15"></span>  
+                <% elsif pin.rating == "2" %>
+                  <span class="rating r2"></span>
+                <% elsif pin.rating == "2.5" %>
+                  <span class="rating r25"></span>  
+                <% elsif pin.rating == "3" %>
+                  <span class="rating r3"></span>
+                <% elsif pin.rating == "3.5" %>
+                  <span class="rating r35"></span>    
+                <% elsif pin.rating == "4" %>
+                  <span class="rating r4"></span>
+                <% elsif pin.rating == "4.5" %>
+                  <span class="rating r45"></span>  
+                <% elsif pin.rating == "5" %>
+                  <span class="rating r5"></span>     
+                <% else %>
+                  <span class="rating r0"></span> 
+            <% end %>
+          </p>
           <p>
-            <strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
+            <strong><h5>Posted by <%= link_to pin.user.name, pin.user %></h5> </strong>
           </p>  
         </div>  
       <% end %> 

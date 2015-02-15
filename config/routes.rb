@@ -64,7 +64,7 @@ Thetens::Application.routes.draw do
   #match 'users/:id' => 'users#tens2011'
   # devise_for :installs
 
-  root :to => 'pins#index'
+  root :to => 'pages#home'
 
   get 'stats' => 'pages#stats' 
 

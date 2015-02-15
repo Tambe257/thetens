@@ -1,3 +1,10 @@
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
 .index_search {
 text-align:right;
 right: 15px;
@@ -21,9 +28,9 @@ ul.menu li {
 }
 
 .navwrapper {
-  outline: auto 1px;
-  outline-width: 1px;
-  outline-color: black;
+  border-width: 1px;
+  border-top-style: solid;
+  border-bottom-style: solid;
   width: 100%;
   height: auto;
 }
@@ -74,7 +81,7 @@ nav > ul > li > a > .caret {
 nav > ul > li > a {
   color: black;
   display: block;
-  padding: 0 24px;
+  padding: 0 15px;
   text-decoration: none;
   font-size: 120%;
 }
@@ -100,7 +107,7 @@ nav > ul > li > ul {
   display: none;
   opacity: 0;
   visibility: hidden;
-  margin: 0px 0 0 20px;
+  margin: 0px 0 0 6px;
   -webkit-transiton: opacity 0.2s;
   -moz-transition: opacity 0.2s;
   -ms-transition: opacity 0.2s;
@@ -118,6 +125,8 @@ ul.sub_menu {
   position: absolute;
   display: block;
   z-index: 99;
+  @include border-radius(5px);
+  border: 1px solid #ccc;
 }
 
 ul.sub_menu li {
@@ -127,7 +136,8 @@ ul.sub_menu li {
  width: 100px;
  text-align: center;
  padding-bottom: 34px;
- background-color: #555
+ background-color: #F5F5F5;
+ border-bottom: 1px solid #ccc;
 }
 
 ul.sub_menu li:hover {
@@ -135,7 +145,7 @@ ul.sub_menu li:hover {
 }
 
 ul.sub_menu li a{
-  color: white;
+  color: black;
   vertical-align: center;
   background-color: inherit;
   display: block;
@@ -144,6 +154,10 @@ ul.sub_menu li a{
 
 ul.sub_menu li a:hover {
   background-color: #666;
+}
+
+ul.sub_menu li:hover a {
+  color: white;
 }
 
 @media (max-width: 767px){

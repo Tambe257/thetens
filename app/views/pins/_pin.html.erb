@@ -32,7 +32,7 @@
 		</br>
 	</p>
 	<p>
-		<strong>Posted by <%= link_to pin.user.name, pin.user %> </strong>
+		<strong><h5>Posted by <%= link_to pin.user.name, pin.user %></h5> </strong>
 	</p>	
 		<% if pin.rank.present? %>
 	<p>
@@ -40,18 +40,8 @@
 	</p>
 	<% end %>
 	<% if user_signed_in? %>
-		<% if current_user == pin.user || current_user.admin? %>
-		  <p>
-			  <%= link_to 'Edit', edit_pin_path(pin) %>
-			  <%= link_to pin, method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <i class="fa fa-trash"></i>
-              Delete
-        <% end %>
-		  </p>
-		  <% unless pin.user == current_user %>
-		  	<p><%= link_to "Review This Abum", copy_pin_path(pin) %></p>
-		  <% end %>	
-		  
-		<% end %> 
+	  <% unless pin.user == current_user %>
+	  	<p><%= link_to "Review This Abum", copy_pin_path(pin) %></p>
+	  <% end %>	
 	<% end %>	
 </div>	

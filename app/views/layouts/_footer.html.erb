@@ -1,39 +1,41 @@
 <div class="footer">
-  <p class="foot_links">
-    <strong><%= link_to "theTens", "http://thetens.us" %>
-    created by <%= link_to "T.Tambe", "http://twitter.com/tambe257", :target => "_blank" %> |
-  	</strong>
-  </p> 
+  <div class="footer_container">
+    <p class="foot_links">
+      <strong><%= link_to "theTens", "http://thetens.us" %>
+      created by <%= link_to "T.Tambe", "http://twitter.com/tambe257", :target => "_blank" %> |
+    	</strong>
+    </p> 
 
-  <p>
-  	<strong><%= link_to "Click to sign up for our newsletter!", "http://eepurl.com/IuQWD" %></strong>
-  </p>	
-	<div class="social">
-		<p>
-<!-- Facebook share -->			
-	  	<a class="social_logo" href="/images/FB_logo.png" 
-				onclick="
-							window.open(
-							'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-							'facebook-share-dialog', 
-							'width=626,height=436'); 
-							return false;">
-				<%= image_submit_tag("FB_logo.png", :name => nil) %>
-			</a> <!-- Facebook share end -->
-<!-- Twitter share -->						
-			<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-hashtags="thetens">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-				</script>
-<!-- Twitter share end-->				
-		</p>
-	  <div id="fb-root"></div>
-			<script>(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=287894011225348";
-			  fjs.parentNode.insertBefore(js, fjs);
-				}(document, 'script', 'facebook-jssdk'));
-			</script>
-	</div>
+    <p>
+    	<strong><%= link_to "Click to sign up for our newsletter!", "http://eepurl.com/IuQWD" %></strong>
+    </p>	
+  	<div class="social">
+  		<p>
+  <!-- Facebook share -->			
+  	  	<a class="social_logo" href="/images/FB_logo.png" 
+  				onclick="
+  							window.open(
+  							'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+  							'facebook-share-dialog', 
+  							'width=626,height=436'); 
+  							return false;">
+  				<%= image_submit_tag("FB_logo.png", :name => nil) %>
+  			</a> <!-- Facebook share end -->
+  <!-- Twitter share -->						
+  			<a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-hashtags="thetens">Tweet</a>
+  				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  				</script>
+  <!-- Twitter share end-->				
+  		</p>
+  	  <div id="fb-root"></div>
+  			<script>(function(d, s, id) {
+  			  var js, fjs = d.getElementsByTagName(s)[0];
+  			  if (d.getElementById(id)) return;
+  			  js = d.createElement(s); js.id = id;
+  			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=287894011225348";
+  			  fjs.parentNode.insertBefore(js, fjs);
+  				}(document, 'script', 'facebook-jssdk'));
+  			</script>
+	   </div>
+  </div> 
 </div>
