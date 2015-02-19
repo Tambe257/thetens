@@ -1,0 +1,34 @@
+<div class="artist_list">
+  <% @pin_albums.each do |pin| %>
+    <%= ((last_artist ||= nil) != pin.artist) ? (last_artist = pin.artist) : ' ' %> |
+    <%= last_artist %> | 
+    <%= link_to pin.album, copy_pin_path(pin) %>
+    <br/>
+  <% end %>
+</div>
+
+<div class="artist_list">
+  <% @pin_albums.each do |pin| %>
+    <% (last_artist ||= nil) != pin.artist %> |
+    <% if last_artist != pin.artist %>
+      <%= last_artist %>
+    <% else %>
+      <%= '' %>
+    <% end %>
+    <% last_artist = pin.artist %>     
+    <%= link_to pin.album, copy_pin_path(pin) %>
+    <br/>
+  <% end %>
+</div>
+
+<div class="artist_right_column">
+  Total Reviews Posted: <%= @pins_total %>
+
+  <br/>
+
+  Total Artists Reviewed: <%= @artist_count %>
+
+  <br/>
+  
+  Total Albums Reviewed: <%= @album_count %>
+</div>  

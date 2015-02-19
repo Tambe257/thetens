@@ -5,6 +5,9 @@
           border-radius: $radius;
 }
 
+input#search {
+  width: 172px;
+}
 .index_search {
 text-align:right;
 left: 742px;
@@ -27,6 +30,10 @@ position: relative;
 
 ul.menu li {
   display: inline-block;
+}
+
+.navbar-form {
+  margin: 0;
 }
 
 .navwrapper {
@@ -52,6 +59,7 @@ nav ul {
   margin: 0;
   padding: 0;
   width: 763px;
+  display: table;
 }
 
 nav ul li {
@@ -122,6 +130,10 @@ nav > ul > li:hover > ul {
   display: block;
   opacity: 1;
   visibility: visible;
+}
+
+#search {
+  float: left;
 }
 
 ul.sub_menu {

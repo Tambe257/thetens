@@ -28,6 +28,29 @@
           <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large sign_up_button" %>
           
           <h5><%= link_to "Or Login", new_user_session_path, class: "btn btn-primary btn-xs" %>
+        <p>
+          <% if Pin.last.created_at >= 1.week.ago.utc %>
+            Reviewer of the week is
+
+            <br/>
+
+             <%= @user_week.name %> 
+
+             <br/>
+             <br/>
+
+             <%= image_tag @user_week.image(:small), class: "sign_in_box_pic" %>
+            
+
+            <br/>
+            <br/>
+
+            This week <%= @user_week.name %> posted <%= @user_week_count[1] %> reviews!
+          <% end %> 
+        </p>
+
+
+
         </div>
 
         <div class="home_social">
@@ -113,7 +136,7 @@
       <hr>
       <div class="home_page_rows_header">
         <p>Newest Reviews:</p>
-        <%= link_to "All Reviews...", "http://localhost:3000" %>
+        <%= link_to "All Reviews...", "http://www.thetens.us/pins" %>
       </div>  
       <% @pins_newest.each do |pin| %>
         <div class="short_box">
@@ -165,7 +188,7 @@
       <hr>
       <div class="home_page_rows_header">
         <p>Rock Reviews:</p>
-        <%= link_to "All Rock Reviews...", "http://localhost:3000/tags/Rock" %>
+        <%= link_to "All Rock Reviews...", "http://www.thetens.us/tags/Rock" %>
       </div>  
       <% @pins_rock.each do |pin| %>
         <div class="short_box">
@@ -217,7 +240,7 @@
       <hr>
       <div class="home_page_rows_header">
         <p>Pop Reviews:</p>
-        <%= link_to "All Pop Reviews...", "http://localhost:3000/tags/Pop" %>
+        <%= link_to "All Pop Reviews...", "http://www.thetens.us/tags/Pop" %>
       </div>  
       <% @pins_pop.each do |pin| %>
         <div class="short_box">
@@ -268,7 +291,7 @@
       <hr>
       <div class="home_page_rows_header">
         <p>Rap Reviews:</p>
-        <%= link_to "All Rap Reviews...", "http://localhost:3000/tags/Rap" %>
+        <%= link_to "All Rap Reviews...", "http://www.thetens.us/tags/Rap" %>
       </div>  
       <% @pins_rap.each do |pin| %>
         <div class="short_box">
@@ -319,7 +342,7 @@
       <hr>
       <div class="home_page_rows_header">
         <p>Alternative Reviews:</p>
-        <%= link_to "All Alternative Reviews...", "http://localhost:3000/tags/Alternative" %>
+        <%= link_to "All Alternative Reviews...", "http://www.thetens.us/tags/Alternative" %>
       </div>  
       <% @pins_alternative.each do |pin| %>
         <div class="short_box">

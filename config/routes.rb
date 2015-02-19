@@ -92,6 +92,8 @@ Thetens::Application.routes.draw do
 
   get 'home' => 'pages#home'
 
+  get 'artists' => 'pages#artists'
+
   get 'tags/:tag', to: 'pins#index', as: :tag
 
   # The priority is based upon order of creation:

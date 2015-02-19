@@ -1,4 +1,13 @@
 class PagesController < ApplicationController
+  def artists
+    @pin_artists = Pin.group(:artist)
+    @pin_albums = Pin.group(:album).order('artist')  
+    @pin = Pin.all
+    @pins_total = Pin.count
+    @artist_count = Pin.group(:artist).count.length
+    @album_count = Pin.group(:album).count.length
+  end
+    
   def home
     @pins = Pin.all
     @pin_shuffle = Pin.all.shuffle
@@ -7,6 +16,9 @@ class PagesController < ApplicationController
     @pins_rap = Pin.tagged_with('Rap').last(5)
     @pins_alternative = Pin.tagged_with('Alternative').last(5)
     @pins_newest = Pin.last(5).reverse
+    @rating_count = Pin.group(:rating).order('count_rating desc').count('rating').first
+    @user_week_count = User.joins(:pins).where('pins.created_at >= ?', 1.week.ago.utc).group(:name).order('count_name desc').count('name').first
+    @user_week = User.joins(:pins).group('users.id').where('pins.created_at >= ?', 1.week.ago.utc).order('count(pins.id) desc').limit(1).first
   end
 
   def stats
