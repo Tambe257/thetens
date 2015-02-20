@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="main-home-section">
-		<% if user_signed_in? == false %>
+		
 		<div class="logo_section">
 			<div class="logo">
 				<%= link_to image_tag('theTensLogo3.png'), root_path %>
@@ -18,21 +18,15 @@
 					<%= render pin %>
 				<% end %>
 			</div>
-			<div class="home-page-box">
-				<div class="sign_up_box">
-					<p>Sign in and share what you're listening to!</p> 
-					<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large sign_up_button" %>
-				</div>
-			</div>	
-		<% else %>
-			<%= link_to image_tag('theTensLogo3.png'), root_path, class: "logo" %>
+			<% if user_signed_in? == false %>
+				<div class="home-page-box">
+					<div class="sign_up_box">
+						<p>Sign in and share what you're listening to!</p> 
+						<%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large sign_up_button" %>
+					</div>
+				</div>	
 			
-			<div class="home_page_tens">
-			  <%= link_to image_tag('starburst2012small.png'), tens2012_path %>
-			  <%= link_to image_tag('starburst2013small.png'), tens2013_path %>
-			  <%= link_to image_tag('starburst2014small.png'), tens2014_path %>
-			  <%= link_to image_tag('starburst2015small.png'), tens2015_path %>
-			</div>
+			<% else %>
 			
 			<div class="home-page-box">
 				<div class="sign_up_box">

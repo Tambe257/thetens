@@ -17,8 +17,7 @@
           <td><%= (last_artist == pin.artist)  ?  ''   :   pin.artist %></td>
           <td><%= link_to image_tag(pin.image), pin %></td>
           <td><%= link_to pin.album, copy_pin_path(pin) %></td>
-        </tr>  
-          
+        </tr>      
     <% last_artist = pin.artist %>     
     <% end %>
   </table>

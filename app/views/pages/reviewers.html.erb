@@ -27,9 +27,7 @@
 		    	</td>
 
 		    	<td id="status">
-		    		<% if user.status.present? %>
-		      	  <%= user.status %>
-		      	<% end %>  
+		    		<%= user.status if user.status.present? %> 
 		    	</td>
 
 		    	<td>

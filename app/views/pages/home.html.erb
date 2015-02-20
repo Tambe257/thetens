@@ -1,6 +1,5 @@
 <div id="home_wrapper">
-  <div class="main-home-section">
-    <% if user_signed_in? == false %>
+  <div class="main-home-section"> 
     <div class="logo_section">
       <div class="logo">
         <%= link_to image_tag('tensLogo3resize.png'), root_path %>
@@ -12,80 +11,45 @@
         <%= link_to image_tag('starburst2014small.png'), tens2014_path %>
         <%= link_to image_tag('starburst2015small.png'), tens2015_path %>
       </div>  
-    </div>  
-      <div class="home_page_tens">
-        <div class="home_page_tens_title">Editor's Picks</div>
-        <div class="editors_picks">
-          <%= render @pin_shuffle[0] %>
-          <%= render @pin_shuffle[1] %>
-          <%= render @pin_shuffle[2] %>  
-        </div>   
-      </div>
-      <div class="home-page-box">
+    </div><!-- logo section -->  
+    <div class="home_page_tens">
+      <div class="home_page_tens_title">Editor's Picks</div>
+      <div class="editors_picks">
+        <%= render @pin_shuffle[0] %>
+        <%= render @pin_shuffle[1] %>
+        <%= render @pin_shuffle[2] %>  
+      </div>   
+    </div><!-- home page tens --> 
+    
+    <div class="home-page-box">
+      <% if user_signed_in? == false %>
         <div class="sign_in_box">
           <p>Sign in and share what you're listening to!</p>
           
           <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-primary btn-large sign_up_button" %>
           
           <h5><%= link_to "Or Login", new_user_session_path, class: "btn btn-primary btn-xs" %>
-        <p>
-          <% if Pin.last.created_at >= 1.week.ago.utc %>
-            Reviewer of the week is
+          <p>
+            <% if Pin.last.created_at >= 1.week.ago.utc %>
+              Reviewer of the week is
 
-            <br/>
+              <br/>
 
-             <%= @user_week.name %> 
+               <%= @user_week.name %> 
 
-             <br/>
-             <br/>
+               <br/><br/>
 
-             <%= image_tag @user_week.image(:small), class: "sign_in_box_pic" %>
-            
+               <%= image_tag @user_week.image(:small), class: "sign_in_box_pic" %>
+              
+              <br/><br/>
 
-            <br/>
-            <br/>
-
-            This week <%= @user_week.name %> posted <%= @user_week_count[1] %> reviews!
-          <% end %> 
-        </p>
-
-
-
-        </div>
-
-        <div class="home_social">
-          <%= link_to image_tag("FB_logo.png"), "https://www.facebook.com/pages/The-Tens/271346382911804", :target => "_blank" %>
+              This week <%= @user_week.name %> posted <%= @user_week_count[1] %> reviews!
+            <% end %> 
+          </p>
+        </div><!-- Sign_In_Box -->
     
-          <%= link_to image_tag("twitter29x29.png"), "http://www.twitter.com/thetensreviews", :target => "_blank" %>
-          <%= link_to image_tag("Instagram_small.png"), "http://www.instagram.com/thetensreviews", :target => "_blank" %>
+      <% else %>
 
-          <%= link_to image_tag("Email_Icon.png"), "http://thetens.us3.list-manage.com/subscribe?u=7bded0743382d632d8e3bdad8&id=077fc54055", :target => "_blank" %>
-        </div>
-
-      </div>  
-    <% else %>
-      <div class="logo_section">
-        <div class="logo">
-          <%= link_to image_tag('tensLogo3resize.png'), root_path %>
-        </div>
-        
-        <div class="tens_balloons"> 
-          <%= link_to image_tag('starburst2012small.png'), tens2012_path %>
-          <%= link_to image_tag('starburst2013small.png'), tens2013_path %>
-          <%= link_to image_tag('starburst2014small.png'), tens2014_path %>
-          <%= link_to image_tag('starburst2015small.png'), tens2015_path %>
-        </div>  
-      </div>  
-      <div class="home_page_tens">
-        <div class="home_page_tens_title">Editor's Picks</div>
-        <div class="editors_picks">
-          <%= render @pin_shuffle[0] %>
-          <%= render @pin_shuffle[1] %>
-          <%= render @pin_shuffle[2] %>  
-        </div>   
-      </div>
-      
-      <div class="home-page-box">
         <div class="sign_up_box">
           <!-- Single button -->
           <div class="avatar-home">
@@ -96,7 +60,7 @@
               <li><%= link_to 'Edit Profile',  edit_user_registration_path %></li>
               <li><%= link_to 'Logout',  destroy_user_session_path, method: :delete %></li>
             </ul>
-          </div> 
+          </div><!-- avatar-home -->  
           <div class="home_page_profile">
             <p><%= current_user.name %></p>
             <p>Reviews Posted: <%= current_user.pins.count %></p>
@@ -112,23 +76,23 @@
 
             <%= link_to "5 Stars", tens5star_user_path(current_user), class: "btn btn-primary "  %>
             <%= link_to "#1's", tensnum1s_user_path(current_user), class: "btn btn-primary " %>
-
-          </div>  
+          </div><!-- home_page_profile -->  
+          
           <div class="review-button"><%= link_to 'New Review',  new_pin_path, class: "btn btn-danger new_review" %></div> 
-        
-        </div>
+        </div><!-- Sign_Up_Box -->
 
-        <div class="home_social">
-          <%= link_to image_tag("FB_logo.png"), "https://www.facebook.com/pages/The-Tens/271346382911804", :target => "_blank" %>
+      <% end %> 
     
-          <%= link_to image_tag("twitter29x29.png"), "http://www.twitter.com/thetensreviews", :target => "_blank" %>
-          <%= link_to image_tag("Instagram_small.png"), "http://www.instagram.com/thetensreviews", :target => "_blank" %>
+      <div class="home_social">
+        <%= link_to image_tag("FB_logo.png"), "https://www.facebook.com/pages/The-Tens/271346382911804", :target => "_blank" %>
+  
+        <%= link_to image_tag("twitter29x29.png"), "http://www.twitter.com/thetensreviews", :target => "_blank" %>
+        <%= link_to image_tag("Instagram_small.png"), "http://www.instagram.com/thetensreviews", :target => "_blank" %>
 
-          <%= link_to image_tag("Email_Icon.png"), "http://thetens.us3.list-manage.com/subscribe?u=7bded0743382d632d8e3bdad8&id=077fc54055", :target => "_blank" %>
-        </div>
+        <%= link_to image_tag("Email_Icon.png"), "http://thetens.us3.list-manage.com/subscribe?u=7bded0743382d632d8e3bdad8&id=077fc54055", :target => "_blank" %>
       </div>  
-    <% end %>
-  </div>
+    </div><!-- Home_Page_Box -->   
+  </div><!-- Main Home Section -->
   
   <!-- Newest reviews -->
   
