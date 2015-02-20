@@ -40,19 +40,52 @@ a:visited {
   color: inherit;
 }
 
-.artist_list {
-  width: 400px;
-  height: auto;
-  background-color: grey;
-  float: left;
+.artist_header {
+  text-align: center;
+  color: black;
+  font-size: 25px;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
 }
 
-.artist_right_column {
-  width: 500px;
-  height: 500px;
-  background-color: green;
+.artist_list {
+  width: 720px;
+  height: auto;
   float: left;
-  font-size: 15px;
+  color: black;
+}
+
+.artist_list a {
+  color: blue;
+}
+
+.artist_list a:hover {
+  color: blue;
+}
+
+table#artist, table#artist td, table#artist th {
+  border: 1px solid black;
+  text-align: center;
+}
+
+table#artist tr:hover {
+  background-color: #AFAFAF;
+}
+
+.artist_list td {
+  padding: 5px;
+}
+
+.artist_list img {
+  height: 50px;
+  width: 50px;
+}
+.artist_right_column {
+  width: 230px;
+  height: 500px;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
   color: black;
   padding: 15px 0 0 15px;
 }
