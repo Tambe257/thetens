@@ -288,6 +288,14 @@ transition:all .2s;
   color: white;
 }
 
+.btn-primary {
+  background-color: #009afd;
+}
+
+.btn-primary:hover {
+  background-color: #009afd;
+}
+
 .center {
   text-align: center;
 }
@@ -510,6 +518,7 @@ outline-width:1px;
 font-family: 'Merriweather', serif;
 left: 150px;
 font-size: 214%;
+margin-top: 5px;
 }
 
 .header_title img {
