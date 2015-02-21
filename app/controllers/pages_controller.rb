@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   def artists
-    @pin_artists = Pin.group(:artist)
     @pin_albums = Pin.group(:album).order('artist')  
     @pin = Pin.all
     @pins_total = Pin.count
