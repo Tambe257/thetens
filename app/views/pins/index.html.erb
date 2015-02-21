@@ -1,6 +1,7 @@
 <div id="tag_cloud">
-  Sort by: <% tag_cloud Pin.tag_counts, %w[s m l] do |tag, css_class| %>
-    <%= link_to tag.name.downcase, tag_path(tag.name), class: "btn btn-primary" %>
+  Sort by: 
+  <% @tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag.name), class: "btn btn-primary" %>
   <% end %>
 </div>
 
@@ -9,7 +10,7 @@
 </div>  
 
 </br>
-
+  
 <%= will_paginate @pins, renderer: BootstrapPagination::Rails %>
 
 <p style="text-align:left;"><a href="#">Back To The Top</a></p>

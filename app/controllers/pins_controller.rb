@@ -13,6 +13,8 @@ class PinsController < ApplicationController
     end  
 
     @pins_rock = Pin.tagged_with("Rock")
+
+    @tags = Pin.tag_counts.order('name asc')
     
     respond_to do |format|
       format.html # index.html.erb
@@ -104,7 +106,7 @@ class PinsController < ApplicationController
   end
 
   def tag_cloud
-    @tags = Post.tag_counts_on(:tags)
+    @tags = Pin.tag_counts_on(:tags)
   end
 end
 
