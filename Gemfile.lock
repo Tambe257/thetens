@@ -194,6 +194,7 @@ DEPENDENCIES
   jbuilder (~> 2.0.2)
   jquery-rails (~> 3.1.0)
   jquery-turbolinks
+  nokogiri
   paperclip (~> 4.2.0)
   pg
   protected_attributes
