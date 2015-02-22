@@ -323,6 +323,7 @@ font-size:5px;
 }
 
 .container {
+  display: block;
   padding: 0px;
   width: 998px;
   min-height: 1200px;
@@ -598,7 +599,7 @@ width:40px;
 
 #home_wrapper {
   padding-bottom: 20px;
-  width: 1170px;
+  width: 998px;
   margin: 0px auto;
   padding-top: 20px;
 }
@@ -1326,6 +1327,14 @@ text-indent:-9999px;
 }
 
 /* End of covers page CSS */
+@media only screen and (max-device-width: 480px) {
+  .container {
+    display: block;
+    margin: 0 auto;
+    width: 998px;
+    min-height: 1200px;
+  }
+}
 
 @media (max-width: 767px){
   

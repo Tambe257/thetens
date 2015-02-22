@@ -12,8 +12,6 @@ class PinsController < ApplicationController
       @pins = Pin.paginate(:page => params[:page], :per_page => 50).order("created_at DESC")
     end  
 
-    @pins_rock = Pin.tagged_with("Rock")
-
     @tags = Pin.tag_counts.order('name asc')
     
     respond_to do |format|
