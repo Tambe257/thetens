@@ -1334,6 +1334,21 @@ text-indent:-9999px;
     width: 998px;
     min-height: 1200px;
   }
+
+  .header_row1 {
+    height: 50px;
+    width: 998px;
+    margin: 0 auto;
+    text-align: center;
+    padding-left: 160px;
+  }
+  #home_wrapper {
+    padding-bottom: 20px;
+    width: 998px;
+    margin: 0px auto;
+    padding-top: 20px;
+    padding-left: 160px;
+  }
 }
 
 @media (max-width: 767px){

@@ -176,6 +176,18 @@ ul.sub_menu li:hover a {
   color: white;
 }
 
+@media only screen and (max-device-width: 480px) {
+ .navwrapper {
+   border-width: 1px;
+   border-top-style: solid;
+   border-bottom-style: solid;
+    width: 100%;
+    height: auto;
+    padding-left: 160px;
+  }
+}
+
+
 @media (max-width: 767px){
   .header_title {
     font-size: 120%;
