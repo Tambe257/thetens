@@ -1328,6 +1328,10 @@ text-indent:-9999px;
 
 /* End of covers page CSS */
 @media only screen and (max-device-width: 480px) {
+  body {
+    padding-left: 140px;
+  }
+
   .container {
     display: block;
     margin: 0 auto;
@@ -1340,14 +1344,12 @@ text-indent:-9999px;
     width: 998px;
     margin: 0 auto;
     text-align: center;
-    padding-left: 160px;
   }
   #home_wrapper {
     padding-bottom: 20px;
     width: 998px;
     margin: 0px auto;
     padding-top: 20px;
-    padding-left: 160px;
   }
 }
 
