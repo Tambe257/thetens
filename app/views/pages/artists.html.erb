@@ -12,7 +12,7 @@
         <th></th>
         <th>Album</th>
       </tr>
-    <% @pin_albums.each do |pin| %>  
+    <% @pin_artists.each do |pin| %>  
         <tr>
           <td><%= (last_artist == pin.artist)  ?  ''   :   pin.artist %></td>
           <td><%= link_to image_tag(pin.image), pin %></td>
