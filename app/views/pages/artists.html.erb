@@ -16,7 +16,7 @@
       <% pins.each do |pin| %> 
         <tr>
           <td><%= (last_artist == artist)  ?  ''   :   artist %></td>
-          <td><%= image_tag(pin.image) %></td>
+          <td><%= link_to image_tag(pin.image), pin %></td>
           <td><%= link_to pin.album, copy_pin_path(pin) %></td>
         </tr>  
       <% end %>
