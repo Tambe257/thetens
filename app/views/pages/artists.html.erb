@@ -4,21 +4,23 @@
   Click the album cover to read a review and click the album title to review the album yourself! 
 </div>
 
-<div class="artist_list">
-  <% last_artist ||= nil %>
+<div class="artist_list"> 
   <table id="artist">
-      <tr>
-        <th>Artist</th>
-        <th></th>
-        <th>Album</th>
-      </tr>
-    <% @pin_artists.each do |pin| %>  
+    <tr>
+      <th>Artist</th>
+      <th></th>
+      <th>Album</th>
+    </tr>
+    <% last_artist ||= nil %>
+    <% @pin_albums.each do |artist, pins| %> 
+      <% pins.each do |pin| %> 
         <tr>
-          <td><%= (last_artist == pin.artist)  ?  ''   :   pin.artist %></td>
-          <td><%= link_to image_tag(pin.image), pin %></td>
+          <td><%= (last_artist == artist)  ?  ''   :   artist %></td>
+          <td><%= image_tag(pin.image) %></td>
           <td><%= link_to pin.album, copy_pin_path(pin) %></td>
-        </tr>      
-    <% last_artist = pin.artist %>     
+        </tr>  
+      <% end %>
+      <% last_artist = artist %>           
     <% end %>
   </table>
 </div>

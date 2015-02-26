@@ -12,7 +12,11 @@
       </div>
       <div class="back">
         <%= link_to pin do %>
-          <p><%= truncate(pin.album, length:20) %> by <br/><%= pin.artist %></p> <br/><%= link_to "Review This Abum", copy_pin_path(pin), class: "btn btn-primary" %>
+          <p><%= truncate(pin.album, length:20) %> by <br/><%= pin.artist %></p> 
+          
+          <br/>
+          
+          <%= link_to "Review This Abum", copy_pin_path(pin), class: "btn btn-primary" %>
         <% end %>  
       </div>      
     </div>

@@ -3,14 +3,14 @@
 	<table class="table-striped  table-condensed table-hover comment_board">
 	  <tbody>
 		  <tr>
-		   <tr>
-		    <th></th>	    
-		    <th><h4>Album - Artist</h4></th>
-		    <th><h4>Click On The Comment Below:</h4></th>
-		    <th><h4>Commenter:</h4></th>
-		    <th><h4>Reviewer:</h4></th>
-		    <th><h4>Posted:</h4></th>
-		   </tr>	
+			  <tr>
+			    <th></th>	    
+			    <th><h4>Album - Artist</h4></th>
+			    <th><h4>Click On The Comment Below:</h4></th>
+			    <th><h4>Commenter:</h4></th>
+			    <th><h4>Reviewer:</h4></th>
+			    <th><h4>Posted:</h4></th>
+			  </tr>	
 		    <% @comments.reverse.take(30).each do |comment| %>
 		    	<td>
 		      	<%= image_tag comment.pin.image %>
