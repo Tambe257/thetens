@@ -80,6 +80,12 @@ table#artist tr:hover {
   height: 50px;
   width: 50px;
 }
+
+table#artist .artist-name {
+  text-align: center;
+  font-weight: bold;
+}
+
 .artist_right_column {
   width: 230px;
   height: 500px;

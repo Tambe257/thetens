@@ -6,21 +6,22 @@
 
 <div class="artist_list"> 
   <table id="artist">
-    <tr>
-      <th>Artist</th>
-      <th></th>
-      <th>Album</th>
-    </tr>
     <% last_artist ||= nil %>
-    <% @pin_albums.each do |artist, pins| %> 
-      <% pins.each do |pin| %> 
-        <tr>
-          <td><%= (last_artist == artist)  ?  ''   :   artist %></td>
-          <td><%= link_to image_tag(pin.image), pin %></td>
-          <td><%= link_to pin.album, copy_pin_path(pin) %></td>
-        </tr>  
+    <% last_album ||= nil %>
+    <% @pin_albums.each do |artist, pins| %>
+      <tr>
+        <td colspan="2" class="artist-name"><%= (last_artist == artist)  ?  ''   :   artist %></td> 
+      </tr>  
+      <% pins.each do |pin| %>
+        <% if last_album != pin.album %> 
+          <tr>
+            <td><%= link_to image_tag(pin.image), pin %></td>
+            <td><%= link_to pin.album, copy_pin_path(pin) %></td>
+          </tr> 
+          <% last_album = pin.album %>
+        <% end %>   
       <% end %>
-      <% last_artist = artist %>           
+      <% last_artist = artist %>         
     <% end %>
   </table>
 </div>
