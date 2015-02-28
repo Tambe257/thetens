@@ -86,12 +86,27 @@ table#artist .artist-name {
   font-weight: bold;
 }
 
+table#artist th {
+  background-color: #DFDFDF;
+}
+
+table#artist td {
+
+}
+
+table#artist tr {
+  background-color: #F1F1F1;
+}
+
+table#artist tr:nth-child(even) td { background: #F1F1F1; }
+
+table#artist tr:nth-child(odd) td { background: #FEFEFE; }
+
 .artist_right_column {
-  width: 230px;
+  width: 260px;
   height: 500px;
   float: left;
   font-size: 16px;
-  font-weight: bold;
   color: black;
   padding: 15px 0 0 15px;
 }
@@ -984,6 +999,10 @@ background-position:-20px;
 
 .stars5 {
 background-position:0;
+}
+
+.star-ratings {
+  font-size: 22px;
 }
 
 .stats_container a:visited {

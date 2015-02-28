@@ -5,7 +5,13 @@ class PagesController < ApplicationController
     @pins_total = Pin.count
     @artist_count = Pin.group(:artist).count.length
     @album_count = Pin.group(:album).count.length
-    @pin_artists = Pin.select(:album, :artist).distinct.order('artist')
+    @popular_artist = Pin.group(:artist).order('count_artist desc').count('artist').first
+    @popular_album = Pin.group(:album).order('count_album desc').count('album').first
+    @rating_count = Pin.group(:rating).order('count_rating desc').count('rating').first
+    @five_stars = Pin.where(:rating => '5').count
+    @four_stars = Pin.where(:rating => '4').count
+    @three_stars = Pin.where(:rating => '3').count
+    @no_1_album = Pin.where(:rank => '1').group(:album).order('count_album desc').count('album').first
   end
     
   def home

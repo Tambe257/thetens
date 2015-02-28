@@ -9,9 +9,11 @@
     <% last_artist ||= nil %>
     <% last_album ||= nil %>
     <% @pin_albums.each do |artist, pins| %>
-      <tr>
-        <td colspan="2" class="artist-name"><%= (last_artist == artist)  ?  ''   :   artist[0] %></td> 
-      </tr>  
+      <% unless last_artist == artist[0] %>
+        <tr>
+          <th colspan="2" class="artist-name"><%= artist[0] %></th> 
+        </tr>  
+      <% end %>  
       <% pins.each do |pin| %>
         <% if last_album != pin.album %> 
           <tr>
@@ -21,7 +23,7 @@
           <% last_album = pin.album %>
         <% end %>   
       <% end %>
-      <% last_artist = artist %>         
+      <% last_artist = artist[0] %>         
     <% end %>
   </table>
 </div>
@@ -36,4 +38,46 @@
   <br/>
   
   Total Albums Reviewed: <%= @album_count %>
+
+  <hr>
+
+  The most reviewed artist: 
+
+  <br/>
+
+  <%= @popular_artist[0] %> (<%= @popular_artist[1] %>)
+  
+  <br/>
+  
+  The most reviewed album: <%= @popular_album[0] %> (<%= @popular_album[1] %>)
+  
+  <br/>
+  
+  
+  Album most ranked as #1: <%= @no_1_album[0] %> (<%= @no_1_album[1] %>)
+  
+  <hr>
+  Star Counts:
+  <div class="star-ratings">
+    <span class="rating r5"></span> - <%= @pin.where(rating: '5').count %>  
+    <span class="rating r45"></span> - <%= @pin.where(rating: '4.5').count %> 
+    <span class="rating r4"></span> - <%= @pin.where(rating: '4').count %> 
+    <span class="rating r35"></span> - <%= @pin.where(rating: '3.5').count %> 
+    <span class="rating r3"></span> - <%= @pin.where(rating: '3').count %> 
+    <span class="rating r25"></span> - <%= @pin.where(rating: '2.5').count %> 
+    <span class="rating r2"></span> - <%= @pin.where(rating: '2').count %> 
+    <span class="rating r15"></span> - <%= @pin.where(rating: '1.5').count %> 
+    <span class="rating r1"></span> - <%= @pin.where(rating: '1').count %> 
+    <span class="rating r5"></span> - <%= @pin.where(rating: '0.5').count %>   
+    <span class="rating r0"></span> - <%= @pin.where(rating: '0').count %> 
+  </div>  
+
+  <br>
+
+  <%= link_to 'Click To See All 5 Star Reviews!', five_star_path, class: 'btn btn-primary' %>
+
+  <br><br>
+
+  <%= link_to 'Click To See All #1 Reviews!', number_ones_path, class: 'btn btn-primary' %>
 </div>  
+
