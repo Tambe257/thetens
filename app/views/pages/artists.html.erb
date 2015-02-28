@@ -10,7 +10,7 @@
     <% last_album ||= nil %>
     <% @pin_albums.each do |artist, pins| %>
       <tr>
-        <td colspan="2" class="artist-name"><%= (last_artist == artist)  ?  ''   :   artist %></td> 
+        <td colspan="2" class="artist-name"><%= (last_artist == artist)  ?  ''   :   artist[0] %></td> 
       </tr>  
       <% pins.each do |pin| %>
         <% if last_album != pin.album %> 
