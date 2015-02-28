@@ -64,8 +64,9 @@ a:visited {
 }
 
 table#artist, table#artist td, table#artist th {
-  border: 1px solid black;
+  border: 1px solid #666;
   text-align: center;
+  @include border-radius(5px);
 }
 
 table#artist tr:hover {
@@ -81,26 +82,27 @@ table#artist tr:hover {
   width: 50px;
 }
 
-table#artist .artist-name {
-  text-align: center;
-  font-weight: bold;
-}
 
 table#artist th {
   background-color: #DFDFDF;
+  height: 30px;
 }
 
 table#artist td {
+  background-color: white;
+}
 
+table#artist td:hover {
+  background-color: #666;
+}
+
+table#artist td:hover a{
+  color: white;
 }
 
 table#artist tr {
   background-color: #F1F1F1;
 }
-
-table#artist tr:nth-child(even) td { background: #F1F1F1; }
-
-table#artist tr:nth-child(odd) td { background: #FEFEFE; }
 
 .artist_right_column {
   width: 260px;
