@@ -8,8 +8,10 @@
 	
 	</p>
 	<p>	  
-		<% if pin.rating == "1" %>
-			<span class="rating r1"></span>
+		<% if pin.rating == "0.5" %>
+			<span class="rating r05"></span>
+				<% elsif pin.rating == "1" %>
+					<span class="rating r1"></span>
 				<% elsif pin.rating == "1.5" %>
 					<span class="rating r15"></span>	
 				<% elsif pin.rating == "2" %>
