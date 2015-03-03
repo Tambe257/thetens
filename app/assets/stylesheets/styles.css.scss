@@ -44,7 +44,7 @@ a:visited {
   text-align: center;
   color: black;
   font-size: 25px;
-  font-family: 'Merriweather', serif;
+  font-family: 'Oswald', serif;
   font-weight: bold;
 }
 
@@ -799,6 +799,12 @@ background-color: white;
 
 .review_show_copy_button {
   margin: 35px 0px 0 -85px;
+  float: right;
+  position: absolute;
+}
+
+.review_other_reviews_button {
+  margin: 64px 0px 0 -94px;
   float: right;
   position: absolute;
 }

@@ -3,6 +3,9 @@
   	<p><%= link_to "Review This Abum Yourself!", copy_pin_path(@pin), class: "btn btn-primary review_show_copy_button" %></p>
   <% end %>	
 <% end %>
+
+<p><%= link_to "Other Reviews Of This Album", ("http://thetens.us/pins?utf8=%E2%9C%93&search=" + @pin.album), class: "btn btn-primary review_other_reviews_button" %></p>
+
 <div class="boxwell well">					
 	<div class="boxshow">
 		<div class="review-title">
