@@ -9,6 +9,9 @@
       <li class="home">
         <%= link_to image_tag('homeicon.png'), root_path %>  
       </li> 
+      <li>
+        <%= link_to 'theArtists',  artists_path %>
+      </li>
       <li>    
         <%= link_to 'theReviewers',  reviewers_path, class: "header_text" %>
       </li>
@@ -20,9 +23,6 @@
       </li>
       <li>
         <%= link_to 'theCovers',  covers_path %>
-      </li>
-      <li>
-        <%= link_to 'theStats',  stats_path %>
       </li>  
       <li>
         <a href="#"> theGenres 
