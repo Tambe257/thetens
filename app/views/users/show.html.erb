@@ -61,20 +61,22 @@
 							<th colspan="4"><%= @user.name %>'s <br /> Rating Count</th>
 							<tr>
 								<td><span class="rating r0"></span> <%= @rating_count[nil] %></td>
-								<td><span class="rating r15"></span> <%= @rating_count["1.5"] %></td>	
-								<td><span class="rating r3"></span> <%= @rating_count["3"] %></td>
-								<td><span class="rating r45"></span> <%= @rating_count["4.5"] %></td>	
-							</tr>
-							<tr>
 								<td><span class="rating r05"></span> <%= @rating_count["0.5"] %></td>
-								<td><span class="rating r2"></span> <%= @rating_count["2"] %></td>	
-								<td><span class="rating r35"></span> <%= @rating_count["3.5"] %></td>
-								<td><span class="rating r5"></span> <%= @rating_count["5"] %></td>	
+								<td><span class="rating r1"></span> <%= @rating_count["1"] %></td>
+								<td><span class="rating r15"></span> <%= @rating_count["1.5"] %></td>	
+								
+								
 							</tr>
 							<tr>
-								<td><span class="rating r1"></span> <%= @rating_count["1"] %></td>
-								<td><span class="rating r25"></span> <%= @rating_count["2.5"] %></td>	
-								<td><span class="rating r4"></span> <%= @rating_count["4"] %></td>	
+								<td><span class="rating r2"></span> <%= @rating_count["2"] %></td>	
+								<td><span class="rating r25"></span> <%= @rating_count["2.5"] %></td>
+								<td><span class="rating r3"></span> <%= @rating_count["3"] %></td>
+								<td><span class="rating r35"></span> <%= @rating_count["3.5"] %></td>	
+							</tr>
+							<tr>
+								<td><span class="rating r4"></span> <%= @rating_count["4"] %></td>
+								<td><span class="rating r45"></span> <%= @rating_count["4.5"] %></td>	
+								<td><span class="rating r5"></span> <%= @rating_count["5"] %></td>	
 								<td>Total Reviews: <%= @user.pins.count %></td>
 							</tr>
 						</table>
