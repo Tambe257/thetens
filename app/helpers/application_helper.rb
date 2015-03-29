@@ -8,7 +8,7 @@ module ApplicationHelper
 
   def og_url_path
     if @pin.present? 
-      "www.thetens.us/pins/" + @pin.to_param
+      "http://www.thetens.us/pins/" + @pin.to_param
     end  
   end 
 end
