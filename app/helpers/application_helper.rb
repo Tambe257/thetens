@@ -11,4 +11,10 @@ module ApplicationHelper
       "http://www.thetens.us/pins/" + @pin.to_param
     end  
   end 
+
+  def og_title_path
+    if @pin.present? 
+      @pin.album
+    end  
+  end 
 end
