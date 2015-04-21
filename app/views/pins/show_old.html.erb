@@ -1,0 +1,111 @@
+<% if user_signed_in? %>
+  <% unless @pin.user == current_user %>
+    <p><%= link_to "Review This Abum Yourself!", copy_pin_path(@pin), class: "btn btn-primary review_show_copy_button" %></p>
+  <% end %> 
+<% end %>
+
+<p><%= link_to "Other Reviews Of This Album", ("http://thetens.us/pins?utf8=%E2%9C%93&search=" + @pin.album), class: "btn btn-primary review_other_reviews_button" %></p>
+
+<div class="boxwell well">          
+  <div class="boxshow">
+    <div class="review-title">
+      <p>
+        <strong><%= @pin.title %></strong>
+      </p>
+    </div>  
+    <div class="boxshow_image">
+      <%= image_tag @pin.image(:medium) %>
+    </div>  
+    <p>
+      <strong><%= @pin.album %></strong>
+    </p>
+    <p>
+      <strong><%= @pin.artist %> - <%= @pin.year %></strong>
+    </p>
+    <p>
+      <% if @pin.rank.present? %>
+        <strong><%= link_to @pin.user.name, @pin.user %> ranks this as their #<%= @pin.rank %> favorite album of the year</strong>
+      <% end %> 
+    </p>
+    <p>
+      <%= raw @pin.description %>
+    </p>
+    <p>  
+      <% if @pin.rating == "0.5" %>
+        <span class="rating r05"></span>
+        <% elsif @pin.rating == "1" %>
+          <span class="rating r1"></span>
+        <% elsif @pin.rating == "1.5" %>
+          <span class="rating r15"></span>  
+        <% elsif @pin.rating == "2" %>
+          <span class="rating r2"></span>
+        <% elsif @pin.rating == "2.5" %>
+          <span class="rating r25"></span>  
+        <% elsif @pin.rating == "3" %>
+          <span class="rating r3"></span>
+        <% elsif @pin.rating == "3.5" %>
+          <span class="rating r35"></span>    
+        <% elsif @pin.rating == "4" %>
+          <span class="rating r4"></span>
+        <% elsif @pin.rating == "4.5" %>
+          <span class="rating r45"></span>  
+        <% elsif @pin.rating == "5" %>
+          <span class="rating r5"></span>     
+        <% else %>
+          <span class="rating r0"></span> 
+      <% end %>
+    </br>
+    </p>
+    <div class="vid">
+      <% unless @pin.video_html.blank? %>
+        <%= link_to @pin.video_html, :class => 'youtube title_link' %>
+      <% end %> 
+    </div>
+        <strong>Posted by <%= link_to @pin.user.name, @pin.user %></strong>
+      </p>
+    <% if user_signed_in? %>
+      <% if current_user == @pin.user || current_user.admin? %>
+        <%= link_to 'Edit', edit_pin_path(@pin) %> | <!--<%= link_to "copy", copy_pin_path(params[:id]) %> |--> 
+      <% end %> 
+    <% end %>
+      <%= link_to 'Back', pins_path %>
+    
+      <h4>Comments</h4>
+        <div id="comments">
+          <%= render :partial => @pin.comments %>
+        </div>
+        <% if user_signed_in? %>
+          <%= simple_form_for [@pin, Comment.new] do |f| %>
+            
+            <p>
+              <%= f.input :body, :label => "New Comment", as: :text, input_html: { rows: '3', :class => "form-control" } %>
+            </p>  
+
+            <p><%= f.submit "Add Comment", class: "btn btn-primary" %></p>
+          <% end %>   
+        <% end %>
+    <div>   
+    <a class="social_logo" href="/images/FB_logo.png" 
+      onclick="
+      window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+      'facebook-share-dialog', 
+      'width=626,height=436'); 
+      return false;">
+      <%= image_submit_tag("FB_logo.png", :name => nil) %>
+    </a>
+    
+    <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-hashtags="thetens, albumreview">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      </script>
+      <div id="timestamp">Posted: <%= @pin.created_at.strftime("%m/%d/%Y") %></div>
+      <% if user_signed_in? && current_user.admin? %>
+      <br/>
+        <div class="tags">
+          Tags: <%= @pin.tag_list %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>  

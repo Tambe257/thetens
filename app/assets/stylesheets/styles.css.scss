@@ -297,8 +297,10 @@ margin-bottom:15px;
 margin: 15px 0 40px 0;
 width: 685px;
 height: auto;
-margin-left: 146px;
 background-color: white;
+position: absolute;
+top: 15px;
+left: 0px;
 }
 
 .btn:hover {
@@ -742,6 +744,35 @@ padding-left:10px;
 padding-bottom:10px;
 }
 
+#notice_wrapper {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 999;
+  background-color: #009afd;
+  opacity: 0.85;
+}
+
+p.alert {
+  padding: (2.75rem 0);
+  text-align: center;
+  margin: 0px;
+  font-size: 1.25em;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+p.notice {
+  padding: (2.75rem 0);
+  text-align: center;
+  margin: 0px;
+  font-size: 1.25em;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
 #ones a:visited {
   color: white;
 }
@@ -799,14 +830,71 @@ background-color: white;
   margin: -8px 0 0 39px;
 }
 
+.review_comments {
+  width: 293px;
+  position: absolute;
+  top: 372px;
+  left: 700px;
+  background-color: white;
+  @include border-radius(5px);
+  padding: 5px;
+}
+
+.review_info {
+  height: 330px;
+  width: 293px;
+  position: absolute;
+  top: 30px;
+  left: 700px;
+  background-color: white;
+  @include border-radius(5px);
+  border: 1px solid #e3e3e3;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  padding: 5px;
+}
+
+.review_info p {
+  text-align: center;
+}
+
+.review_info p.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.review_info p.name {
+  font-size: 18px;
+  font-weight: bold;
+}
+.review_info a {
+  margin-left: 40px;
+}
+
+.review_info img {
+  -webkit-border-radius:500px;
+  border-top-left-radius:500px;
+  border-top-right-radius:500px;
+  border-bottom-right-radius:500px;
+  border-bottom-left-radius:500px;
+  -moz-border-radius:500px;
+  zoom:1;
+}
+
+#review_show_container {
+  padding-bottom: 20px;
+  width: 998px;
+  margin: 0px auto;
+  height: auto;
+}
+
 .review_show_copy_button {
-  margin: 35px 0px 0 -85px;
+  margin: 0px 0px 0 0px;
   float: right;
   position: absolute;
 }
 
 .review_other_reviews_button {
-  margin: 64px 0px 0 -94px;
+  margin: 30px 0px 0 0px;
   float: right;
   position: absolute;
 }
@@ -883,6 +971,12 @@ width: 168px;
 .short_box:hover {
 background-color:#fff;
 box-shadow:1px 1px 5px #444;
+}
+
+.show_section {
+  display: inline-block;
+  position: relative;
+  height: 411px;
 }
 
 .sign_up_box {
@@ -1156,6 +1250,10 @@ padding-left:5px;
 padding-top:15px;
 float:right;
 position:absolute;
+}
+
+.userForms {
+  margin-top: 20px;
 }
 
 .users img {
