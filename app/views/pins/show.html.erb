@@ -35,6 +35,20 @@
     		<% end %>
     			<%= link_to 'Back', pins_path %>
     		
+          <h4>Comments</h4>
+          <div id="comments">
+            <%= render :partial => @pin.comments %>
+          </div>
+          <% if user_signed_in? %>
+            <%= simple_form_for [@pin, Comment.new] do |f| %>
+              
+              <p>
+                <%= f.input :body, :label => "New Comment", as: :text, input_html: { rows: '3', :class => "form-control" } %>
+              </p>  
+
+              <p><%= f.submit "Add Comment", class: "btn btn-primary" %></p>
+            <% end %>   
+          <% end %>
     		<div>		
     		<a class="social_logo" href="/images/FB_logo.png" 
     			onclick="
@@ -61,67 +75,59 @@
     </div>	
 
     <div class="review_info">
-      <p class="title">Review by:</p>
-      <p><%= image_tag @pin.user.image(:small) %></p> 
-      <p class="name"><%= link_to @pin.user.name, @pin.user %></p>
+      <div class="review_info_header">
+        <p class="title">Review by:</p>
+        <p><%= image_tag @pin.user.image(:small) %></p> 
+        <p class="name"><%= link_to @pin.user.name, @pin.user %></p>
+      </div>  
       <hr>
-      <p>
-        <% if @pin.rank.present? %>
-          <strong><%= link_to @pin.user.name, @pin.user %> ranks this as the</strong>
-          <br/>
-          <strong>#<%= @pin.rank %> favorite album of the year</strong>
-        <% end %> 
-      </p>
-      <p>  
-        <% if @pin.rating == "0.5" %>
-          <span class="rating r05"></span>
-          <% elsif @pin.rating == "1" %>
-            <span class="rating r1"></span>
-          <% elsif @pin.rating == "1.5" %>
-            <span class="rating r15"></span>  
-          <% elsif @pin.rating == "2" %>
-            <span class="rating r2"></span>
-          <% elsif @pin.rating == "2.5" %>
-            <span class="rating r25"></span>  
-          <% elsif @pin.rating == "3" %>
-            <span class="rating r3"></span>
-          <% elsif @pin.rating == "3.5" %>
-            <span class="rating r35"></span>    
-          <% elsif @pin.rating == "4" %>
-            <span class="rating r4"></span>
-          <% elsif @pin.rating == "4.5" %>
-            <span class="rating r45"></span>  
-          <% elsif @pin.rating == "5" %>
-            <span class="rating r5"></span>     
-          <% else %>
-            <span class="rating r0"></span> 
-        <% end %>
-        </br>
-      </p>
-      <% if user_signed_in? %>
-        <% unless @pin.user == current_user %>
-          <%= link_to "Review This Abum Yourself!", copy_pin_path(@pin), class: "btn btn-primary review_show_copy_button" %>
-          <br/>
-        <% end %> 
-      <% end %>
-
-      <%= link_to "Other Reviews Of This Album", ("http://thetens.us/pins?utf8=%E2%9C%93&search=" + @pin.album), class: "btn btn-primary review_other_reviews_button" %>
+      <div class="review_info_body">
+        <p>
+          <% if @pin.rank.present? %>
+            <strong><%= @pin.user.name %> ranks this as the</strong>
+            <br/>
+            <strong>#<%= @pin.rank %> favorite album of the year</strong>
+          <% end %> 
+        </p>
+        <p class="title">Rating:</p>
+        <p>
+          <% if @pin.rating == "0.5" %>
+            <span class="rating r05"></span>
+            <% elsif @pin.rating == "1" %>
+              <span class="rating r1"></span>
+            <% elsif @pin.rating == "1.5" %>
+              <span class="rating r15"></span>  
+            <% elsif @pin.rating == "2" %>
+              <span class="rating r2"></span>
+            <% elsif @pin.rating == "2.5" %>
+              <span class="rating r25"></span>  
+            <% elsif @pin.rating == "3" %>
+              <span class="rating r3"></span>
+            <% elsif @pin.rating == "3.5" %>
+              <span class="rating r35"></span>    
+            <% elsif @pin.rating == "4" %>
+              <span class="rating r4"></span>
+            <% elsif @pin.rating == "4.5" %>
+              <span class="rating r45"></span>  
+            <% elsif @pin.rating == "5" %>
+              <span class="rating r5"></span>     
+            <% else %>
+              <span class="rating r0"></span> 
+          <% end %>
+          </br>
+        </p>
+        <div class="review_info_buttons">
+          <% if user_signed_in? %>
+            <% unless @pin.user == current_user %>
+              <%= link_to "Review This Abum Yourself!", copy_pin_path(@pin), class: "btn btn-primary review_show_copy_button" %>
+              <br/>
+              <br/>
+              <br/>
+            <% end %> 
+          <% end %>
+            <%= link_to "Other Reviews Of This Album", ("http://thetens.us/pins?utf8=%E2%9C%93&search=" + @pin.album), class: "btn btn-primary review_other_reviews_button" %>  
+        </div>    
+      </div>  
     </div>  
-    <div class="review_comments">
-      <h4>Comments</h4>
-      <div id="comments">
-        <%= render :partial => @pin.comments %>
-      </div>
-      <% if user_signed_in? %>
-        <%= simple_form_for [@pin, Comment.new] do |f| %>
-          
-          <p>
-            <%= f.input :body, :label => "New Comment", as: :text, input_html: { rows: '3', :class => "form-control" } %>
-          </p>  
-
-          <p><%= f.submit "Add Comment", class: "btn btn-primary" %></p>
-        <% end %>   
-      <% end %>
-    </div>
   </div>  
 </div>  
