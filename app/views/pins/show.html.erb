@@ -86,7 +86,7 @@
           <% if @pin.rank.present? %>
             <strong><%= @pin.user.name %> ranks this as the</strong>
             <br/>
-            <strong>#<%= @pin.rank %> favorite album of the year</strong>
+            <strong>#<%= @pin.rank %> favorite album of <%= @pin.year %></strong>
           <% end %> 
         </p>
         <p class="title">Rating:</p>
