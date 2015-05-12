@@ -13,7 +13,7 @@ module ApplicationHelper
   end 
 
   def og_title_path
-    if @pin.present? 
+    if @pin.present? && @pin.save
       @pin.artist + " | " + @pin.album
     end  
   end 
