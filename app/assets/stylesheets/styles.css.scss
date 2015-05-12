@@ -298,9 +298,9 @@ margin: 15px 0 40px 0;
 width: 685px;
 height: auto;
 background-color: white;
-position: absolute;
 top: 15px;
 left: 0px;
+overflow: hidden;
 }
 
 .btn:hover {
@@ -353,7 +353,14 @@ font-size:5px;
   display: block;
   padding: 0px;
   width: 998px;
-  min-height: 1200px;
+  min-height: 100%; /* Set to minimum height so overflow doesn't get hidden */
+  position: relative;
+}
+
+.container:after {
+  content:"";
+  display: table;
+  clear:both;
 }
 
 .copy-image {
