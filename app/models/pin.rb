@@ -1,7 +1,7 @@
 class Pin < ActiveRecord::Base
   attr_accessible :description, :image, :image_remote_url, :artist, :album, :date, :rank, :video, :video_html, :rating, :year, :title, :tag_list
 
-  has_attached_file :image, styles: { :medium => "320x240>", :small => "200x200>" }
+  has_attached_file :image, styles: { :large => "500x500>", :medium => "320x240>", :small => "200x200>" }
   validates :description, presence: true
   validates :user_id, presence: true
   validates :artist, presence: true
