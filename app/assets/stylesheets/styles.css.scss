@@ -353,8 +353,6 @@ font-size:5px;
   display: block;
   padding: 0px;
   width: 998px;
-  min-height: 100%; /* Set to minimum height so overflow doesn't get hidden */
-  position: relative;
 }
 
 .container:after {
@@ -908,7 +906,6 @@ background-color: white;
   padding-bottom: 20px;
   width: 998px;
   margin: 0px auto;
-  height: auto;
 }
 
 .review_show_copy_button {
@@ -1000,7 +997,7 @@ box-shadow:1px 1px 5px #444;
 .show_section {
   display: inline-block;
   position: relative;
-  height: 411px;
+  height: auto;
 }
 
 .sign_up_box {
@@ -1267,6 +1264,7 @@ width: 60px;
 .twitter-share-button {
 padding-left:5px;
 padding-top:0;
+width: 110px;
 }
 
 .twitter-share-button-foot {
