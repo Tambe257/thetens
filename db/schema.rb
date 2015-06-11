@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127214423) do
+ActiveRecord::Schema.define(version: 20150611173011) do
 
   create_table "blog_comments", force: true do |t|
     t.integer  "post_id"
@@ -148,6 +148,7 @@ ActiveRecord::Schema.define(version: 20150127214423) do
     t.string   "lastfm"
     t.string   "status"
     t.boolean  "admin"
+    t.integer  "pins_count"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

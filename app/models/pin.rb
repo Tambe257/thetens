@@ -13,7 +13,7 @@ class Pin < ActiveRecord::Base
   														 size: { less_than: 5.megabytes }
   has_many :videos
 
-  belongs_to :user
+  belongs_to :user, :counter_cache => true
   
   has_many :comments, dependent: :destroy
 
