@@ -47,7 +47,7 @@ class PagesController < ApplicationController
   end
 
   def reviewers
-  	@users = User.eager_load(:pins)
+  	@users = User.eager_load(:pins).order('pins_count desc')
   end	
 
   def comments_board
