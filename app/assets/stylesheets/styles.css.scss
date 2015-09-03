@@ -240,6 +240,7 @@ width:auto;
 height:auto;
 padding-right:25px;
 float:left;
+margin-bottom: 2px;
 }
 
 .blogshowimages img {
@@ -253,7 +254,7 @@ text-align:center;
 .blog_wells {
   width: 249px;
   float: right;
-  margin-top: -2540px;
+  margin-top: -2082px;
 }
 
 .box {
@@ -818,6 +819,10 @@ margin:0 auto;
 
 .rating_table a:visited,.reviewer_board a:visited,.panel-footer a,.boxshow a:visited,.pin_edit a:visited,.comment_board a:visited,.blog_comment_board a:visited,.user_dropdown a:visited,#pins a:visited {
 color:#428bca;
+}
+
+.read-more {
+  margin-top: 10px;
 }
 
 .recent_posts ul {

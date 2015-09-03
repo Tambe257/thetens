@@ -28,7 +28,8 @@
           <% if post.image.present? %>
             <%= image_tag post.image %>
           <% end %>  
-          <p><%= raw truncate(post.body, length: 600, :escape => false) %></p><%= link_to 'Read More', post, class: "btn-sm btn-primary" %></p>
+          <p><%= raw truncate(post.body, length: 600, :escape => false) %></p>
+          <%= link_to 'Read More', post, class: "btn-sm btn-primary" %>
 
           <div class="blogcontrols">
             <p>
