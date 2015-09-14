@@ -17,45 +17,51 @@
   </div>
   <hr>
 </div>
-  <div class="blog_container">
-    <% @posts.each do |post| %>
-      <div class="blog_posts">
-        <h3><%= link_to post.title, post %></h3>
-        <p class="lead blog_pic">by <%= link_to post.user.name, post.user %> | <%= image_tag post.user.image(:small) %></p>
+<div class="row">
+  <div class="col-md-9"> 
+    <div class="blog_container">
+      <% @posts.each do |post| %>
+        <div class="blog_posts">
+          <h3><%= link_to post.title, post %></h3>
+          <p class="lead blog_pic">by <%= link_to post.user.name, post.user %> | <%= image_tag post.user.image(:small) %></p>
 
-        <hr>
-        <div class="blogimages">
-          <% if post.image.present? %>
-            <%= image_tag post.image %>
-          <% end %>  
-          <p><%= raw truncate(post.body, length: 600, :escape => false) %></p>
-          <%= link_to 'Read More', post, class: "btn-sm btn-primary" %>
+          <hr>
+          <div class="blogimages">
+            <% if post.image.present? %>
+              <%= image_tag post.image %>
+            <% end %>  
+            <p><%= raw truncate(post.body, length: 600, :escape => false) %></p>
+            <%= link_to 'Read More', post, class: "btn-sm btn-primary" %>
 
-          <div class="blogcontrols">
-            <p>
-              <% if user_signed_in? %>
-                <% if current_user == post.user || current_user.admin? %>
-                  <%= link_to 'Edit', edit_post_path(post) %> |
-                  <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-                <% end %>        
-              <% end %>  
-            <i class="fa fa-clock-o"></i> Posted on <%= post.created_at.strftime("%m/%d/%Y") %>
-            </p>
-          </div>  
-          <% if post.video_html.present? %>
-            <div class="blog_video">
-              <div style="clear:both"></div>
-              <br />
-              <%= link_to post.video_html, :class => 'youtube title_link' %>
-            </div>
-          <% end %> 
-        </div><!-- blogimages-->    
-        <div style="clear:both"></div>
-        <br /> 
-      </div><!-- blog_posts-->  
-      <hr>  
-    <% end %>
-
+            <div class="blogcontrols">
+              <p>
+                <% if user_signed_in? %>
+                  <% if current_user == post.user || current_user.admin? %>
+                    <%= link_to 'Edit', edit_post_path(post) %> |
+                    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <% end %>        
+                <% end %>  
+              <i class="fa fa-clock-o"></i> Posted on <%= post.created_at.strftime("%m/%d/%Y") %>
+              </p>
+            </div>  
+            <% if post.video_html.present? %>
+              <div class="blog_video">
+                <div style="clear:both"></div>
+                <br />
+                <%= link_to post.video_html, :class => 'youtube title_link' %>
+              </div>
+            <% end %> 
+          </div><!-- blogimages-->    
+          <div style="clear:both"></div>
+          <br /> 
+        </div><!-- blog_posts-->  
+        <hr>  
+      <% end %>
+      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+      <p style="text-align:left;"><a href="#">Back To The Top</a></p> 
+    </div>  
+  </div>
+  <div class="col-md-3">
     <div class="blog_wells">
     <!-- /well -->
     <div class="well recent_posts">
@@ -81,8 +87,8 @@
       <p>This blog is your free space to use for all sorts of things. Review a single track that you heard. Post a list of your favorite music videos of all time. Comment on other reviewer's top ten lists. Anything!</p>
     </div>
     <!-- /well -->
-  </div>
+    </div>
 
-    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
-    <p style="text-align:left;"><a href="#">Back To The Top</a></p>
-  </div>
+    </div>
+  </div>  
+</div> 
