@@ -84,6 +84,16 @@ Thetens::Application.routes.draw do
   get 'tens2013' => 'pages#tens2013'
 
   get 'tens2012' => 'pages#tens2012'
+  
+  get 'tens2011' => 'pages#tens2011'
+  
+  get 'tens2010' => 'pages#tens2010'
+  
+  get 'tens2009' => 'pages#tens2009'
+  
+  get 'tens2008' => 'pages#tens2008'
+  
+  get 'tens2007' => 'pages#tens2007'
 
   get 'five_star' => 'pages#five_star'
 

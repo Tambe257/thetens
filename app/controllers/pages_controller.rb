@@ -87,6 +87,36 @@ class PagesController < ApplicationController
     @pins = Pin.all
     @pins_ten = Pin.where(:year => '2012', :rank => ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1'], :rank => !nil)
   end
+  
+  def tens2011
+    @users = User.eager_load(:pins).where('pins.year=?', '2011').where.not('pins.rank' => nil)
+    @pins = Pin.all
+    @pins_ten = Pin.where(:year => '2011', :rank => ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1'], :rank => !nil)
+  end
+  
+  def tens2010
+    @users = User.eager_load(:pins).where('pins.year=?', '2011').where.not('pins.rank' => nil)
+    @pins = Pin.all
+    @pins_ten = Pin.where(:year => '2010', :rank => ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1'], :rank => !nil)
+  end
+  
+  def tens2009
+    @users = User.eager_load(:pins).where('pins.year=?', '2011').where.not('pins.rank' => nil)
+    @pins = Pin.all
+    @pins_ten = Pin.where(:year => '2009', :rank => ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1'], :rank => !nil)
+  end
+  
+  def tens2008
+    @users = User.eager_load(:pins).where('pins.year=?', '2011').where.not('pins.rank' => nil)
+    @pins = Pin.all
+    @pins_ten = Pin.where(:year => '2008', :rank => ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1'], :rank => !nil)
+  end
+  
+  def tens2007
+    @users = User.eager_load(:pins).where('pins.year=?', '2011').where.not('pins.rank' => nil)
+    @pins = Pin.all
+    @pins_ten = Pin.where(:year => '2007', :rank => ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1'], :rank => !nil)
+  end
 
   def five_star
     @pins = Pin.all
