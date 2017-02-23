@@ -8,7 +8,7 @@ class BlogCommentsController < ApplicationController
     @blog_comment = @post.blog_comments.create(params[:blog_comment])
     @blog_comment.user = current_user
 
-    MyMailer.blog_alert(@post.user).deliver
+#    MyMailer.blog_alert(@post.user).deliver
 
     respond_to do |format|
       if @blog_comment.save
@@ -18,11 +18,11 @@ class BlogCommentsController < ApplicationController
         @blog_commenter = @post.blog_comments.collect(&:user)
         @blog_commenter = @blog_commenter.uniq
         
-        @blog_commenter.each do |blog_commenter|  
-          if blog_commenter != @post.user || blog_commenter != @blog_comment.user
-            MyMailer.blog_commenter_email(blog_commenter).deliver
-          end  
-        end  
+#        @blog_commenter.each do |blog_commenter|  
+#          if blog_commenter != @post.user || blog_commenter != @blog_comment.user
+#            MyMailer.blog_commenter_email(blog_commenter).deliver
+#          end  
+#        end  
 
       else
         format.html { render action: 'new' }
