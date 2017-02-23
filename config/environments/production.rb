@@ -73,7 +73,7 @@ Thetens::Application.configure do
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'gmail.com',
+    domain:               'thetens.us',
     user_name:            ENV["MAILER_EMAIL"],
     password:             ENV["MAILER_PASSWORD"],
     authentication:       'plain',
