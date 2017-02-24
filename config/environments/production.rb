@@ -67,7 +67,7 @@ Thetens::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # In production host should be updated to the actual host of your application
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'thetens.us' }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
