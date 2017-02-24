@@ -7,9 +7,9 @@ class CommentsController < ApplicationController
     @comment = @pin.comments.create(params[:comment])
     @comment.user = current_user
 
-#    if @comment.user != @pin.user
-#      MyMailer.comment_email(@pin.user).deliver
-#    end  
+    if @comment.user != @pin.user
+      MyMailer.comment_email(@pin.user).deliver
+    end  
 
     respond_to do |format|
       if @comment.save
@@ -19,11 +19,11 @@ class CommentsController < ApplicationController
         @commenter = @pin.comments.collect(&:user)
         @commenter = @commenter.uniq
         
-#        @commenter.each do |commenter| 
-#          if commenter.id != @pin.user_id && commenter.id != @comment.user_id
-#            MyMailer.commenter_email(commenter).deliver
-#          end  
-#        end  
+        @commenter.each do |commenter| 
+          if commenter.id != @pin.user_id && commenter.id != @comment.user_id
+            MyMailer.commenter_email(commenter).deliver
+          end  
+        end  
       
       else
         format.html { render action: "new" }
