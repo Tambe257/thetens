@@ -30,7 +30,7 @@ Thetens::Application.routes.draw do
   end
 
   devise_for :users
-  resources :users, only: [:show, :tens2000, :tens2001, :tens2002, :tens2003, :tens2004, :tens2005, :tens2006, :tens2007, :tens2008, :tens2009, :tens2010, :tens2011, :tens2013, :tens2012, :tens2014, :tens2015, :tens2016, :tens2017] do
+  resources :users, only: [:show, :tens2000, :tens2001, :tens2002, :tens2003, :tens2004, :tens2005, :tens2006, :tens2007, :tens2008, :tens2009, :tens2010, :tens2011, :tens2013, :tens2012, :tens2014, :tens2015, :tens2016, :tens2017, :tens2018] do
     member do
       get :show
       get :tens2000
@@ -51,6 +51,7 @@ Thetens::Application.routes.draw do
       get :tens2015
       get :tens2016
       get :tens2017
+      get :tens2018
       get :tens5star
       get :tensnum1s
     end
@@ -76,6 +77,8 @@ Thetens::Application.routes.draw do
 
   get 'blog_comments_board' => 'pages#blog_comments_board'
 
+  get 'tens2018' => 'pages#tens2018'
+  
   get 'tens2017' => 'pages#tens2017'
   
   get 'tens2016' => 'pages#tens2016'

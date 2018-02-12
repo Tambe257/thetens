@@ -58,6 +58,12 @@ class PagesController < ApplicationController
     @blog_comments = BlogComment.all
   end
 
+  def tens2018
+    @users = User.eager_load(:pins).where('pins.year=?', '2018').where.not('pins.rank' => nil)
+    @pins = Pin.all
+    @pins_ten = Pin.where(:year => '2018', :rank => ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1'], :rank => !nil)
+  end
+  
   def tens2017
     @users = User.eager_load(:pins).where('pins.year=?', '2017').where.not('pins.rank' => nil)
     @pins = Pin.all
